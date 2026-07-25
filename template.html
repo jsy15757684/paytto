@@ -113,7 +113,7 @@
       border-bottom:1px solid var(--line);
     }
     nav{display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:0 auto;padding:14px 24px;}
-    nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;}
     nav ul li a{
       font-size:14.5px;
       font-weight:600;
@@ -236,6 +236,63 @@
     .btn{padding:13px 24px;border-radius:999px;font-weight:700;font-size:14px;display:inline-block;cursor:pointer;text-align:center;}
     .btn.primary{background:var(--orange);color:#052018;}
     .btn.ghost{border:1px solid rgba(255,255,255,.35);color:#fff;}
+
+    /* DASHBOARD PORTAL CARDS */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 32px;
+    }
+    .dash-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .dash-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(0, 229, 255, 0.12);
+      border-color: var(--orange);
+    }
+    .dash-card .dash-icon {
+      font-size: 32px;
+      color: var(--orange);
+      margin-bottom: 14px;
+    }
+    .dash-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 0 0 8px;
+    }
+    .dash-card p {
+      font-size: 14px;
+      color: var(--sub);
+      line-height: 1.5;
+      margin: 0 0 18px;
+    }
+    .dash-card .dash-link {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--orange);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dash-card .dash-link i {
+      transition: transform 0.2s ease;
+    }
+    .dash-card:hover .dash-link i {
+      transform: translateX(4px);
+    }
 
     /* MARQUEE */
     .marquee-wrap{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel);padding:18px 0;overflow:hidden;white-space:nowrap;}
@@ -442,7 +499,7 @@
     /* RESPONSIVE MEDIA QUERIES (MOBILE OPTIMIZATION) */
     @media (max-width: 960px) {
       .g5 { grid-template-columns: repeat(2, 1fr); }
-      .g3, .g4 { grid-template-columns: repeat(2, 1fr); }
+      .g3, .g4, .dashboard-grid { grid-template-columns: repeat(2, 1fr); }
       .timeline { grid-template-columns: repeat(2, 1fr); }
       .org-grid-divs { grid-template-columns: repeat(2, 1fr); }
     }
@@ -494,7 +551,7 @@
       .btnrow { flex-direction: column; }
       .btn { width: 100%; }
 
-      .g2, .g3, .g4, .g5 { grid-template-columns: 1fr; }
+      .g2, .g3, .g4, .g5, .dashboard-grid { grid-template-columns: 1fr; }
       .timeline { grid-template-columns: 1fr; }
       .org-grid-divs { grid-template-columns: 1fr; }
       .org-advisory-row { flex-direction: column; width: 100%; }
@@ -509,12 +566,13 @@
 
 <header>
   <nav>
-    <a href="#about" onclick="showPage('about')" class="brand-logo">
+    <a href="#home" onclick="showPage('home')" class="brand-logo">
       <i class="fa-solid fa-gem logo-icon"></i>
       <span class="logo-text">PAYTTO</span>
     </a>
     <div class="navlinks">
       <ul id="mainNav">
+        <li><a href="#home" id="nav-home" onclick="showPage('home')" data-i18n="nav-home">홈</a></li>
         <li><a href="#about" id="nav-about" onclick="showPage('about')" data-i18n="nav-company">회사 개요</a></li>
         <li><a href="#vision" id="nav-vision" onclick="showPage('vision')" data-i18n="nav-vision">미래 비전</a></li>
         <li><a href="#business" id="nav-business" onclick="showPage('business')" data-i18n="nav-business">주요 사업</a></li>
@@ -536,15 +594,17 @@
 
 <main>
 
-  <!-- ================= 1. PAGE: ABOUT (회사 개요 & 조직도) ================= -->
-  <div id="page-about" class="page-view active">
+  <!-- ================= 0. PAGE: HOME DASHBOARD (신규 메인 대시보드 포털) ================= -->
+  <div id="page-home" class="page-view active">
     <section class="hero" style="padding:0;">
-      <img class="bg" src="__HERO__" alt="PAYTTO EV Showroom">
+      <img class="bg" src="__HERO__" alt="PAYTTO EV Showroom Panorama">
       <div class="wrap">
+        <div class="eyebrow" style="color:var(--orange);" data-i18n="dash-eyebrow">Global Trade &amp; Green Mobility Portal</div>
         <h1 data-i18n="hero-title">친환경 모빌리티와<br><span>글로벌 무역의 미래</span></h1>
         <p data-i18n="hero-desc">전기차, 충전 인프라, 신재생 에너지, 원자재 무역을 선도하는 글로벌 종합 산업 솔루션 기업 페이또(PAYTTO)입니다.</p>
         <div class="btnrow">
-          <a onclick="showPage('business')" class="btn primary" data-i18n="hero-btn-primary">주요 사업 알아보기</a>
+          <a onclick="showPage('business')" class="btn primary" data-i18n="hero-btn-primary">주요 사업 둘러보기</a>
+          <a onclick="showPage('about')" class="btn ghost" data-i18n="nav-company">회사 개요</a>
           <a onclick="showPage('contact')" class="btn ghost" data-i18n="hero-btn-secondary">협력 문의하기</a>
         </div>
         <div class="stats">
@@ -560,6 +620,102 @@
       <div class="marquee">
         <span>BAIC</span><span>BAW</span><span>Geely</span><span>FAW / HONGQI</span><span>Leapmotor</span><span>SAIC</span><span>Hanjin</span><span>Weidong Ferry</span><span>Huatai Automobile</span>
         <span>BAIC</span><span>BAW</span><span>Geely</span><span>FAW / HONGQI</span><span>Leapmotor</span><span>SAIC</span><span>Hanjin</span><span>Weidong Ferry</span><span>Huatai Automobile</span>
+      </div>
+    </div>
+
+    <!-- Executive Business Portal Grid -->
+    <section>
+      <div class="wrap">
+        <div class="sectionhead">
+          <div class="eyebrow" style="justify-content:center;" data-i18n="dash-sec-tag">Global Business Dashboard</div>
+          <h2 class="title" data-i18n="dash-sec-title">PAYTTO 5대 핵심 사업 대시보드</h2>
+          <p class="lede" data-i18n="dash-sec-desc">각 핵심 사업 분야를 클릭하시면 상세 정보와 사업 포트폴리오를 확인하실 수 있습니다.</p>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="dash-card" onclick="showPage('business')">
+            <div>
+              <div class="dash-icon"><i class="fa-solid fa-car-battery"></i></div>
+              <h3 data-i18n="biz1-title">전기차 유통 및 부품 공급</h3>
+              <p data-i18n="biz1-desc">순수 전기차 7대 시리즈 및 자동차 부품의 수출입과 완벽한 전국 사후 관리 지원 서비스</p>
+            </div>
+            <div class="dash-link"><span>자세히 보기</span> <i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+
+          <div class="dash-card" onclick="showPage('business')">
+            <div>
+              <div class="dash-icon" style="color:#00e5ff;"><i class="fa-solid fa-tv"></i></div>
+              <h3 data-i18n="biz2-title">전자제품 및 가전 무역</h3>
+              <p data-i18n="biz2-desc">소비자 및 공공기관 전용 다양한 규격의 고품질 전자·가전 제품 글로벌 무역 및 유통</p>
+            </div>
+            <div class="dash-link"><span>자세히 보기</span> <i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+
+          <div class="dash-card" onclick="showPage('business')">
+            <div>
+              <div class="dash-icon" style="color:#ff7f50;"><i class="fa-solid fa-bolt"></i></div>
+              <h3 data-i18n="biz3-title">전기차 충전 인프라</h3>
+              <p data-i18n="biz3-desc">공공기관, 지자체 거점, 아파트 전용 100kW~350kW 초급속/완속 충전기 시공 및 관제</p>
+            </div>
+            <div class="dash-link"><span>자세히 보기</span> <i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+
+          <div class="dash-card" onclick="showPage('business')">
+            <div>
+              <div class="dash-icon" style="color:#ffd700;"><i class="fa-solid fa-cubes"></i></div>
+              <h3 data-i18n="biz4-title">원자재 글로벌 무역</h3>
+              <p data-i18n="biz4-desc">알루미늄 잉곳, 구리 케소드, 석탄, 원유, 금, 대두 등 핵심 대종 자원의 안정적 수급</p>
+            </div>
+            <div class="dash-link"><span>자세히 보기</span> <i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+
+          <div class="dash-card" onclick="showPage('business')">
+            <div>
+              <div class="dash-icon" style="color:#8b5cf6;"><i class="fa-solid fa-leaf"></i></div>
+              <h3 data-i18n="biz5-title">비즈니스 컨설팅 &amp; 그린 에너지</h3>
+              <p data-i18n="biz5-desc">폐배터리 리사이클링, 해외 100MW급 태양광 발전소 및 특수 무역 컨설팅 프로젝트</p>
+            </div>
+            <div class="dash-link"><span>자세히 보기</span> <i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+
+          <div class="dash-card" onclick="showPage('network')" style="background:var(--navy-deep);color:#fff;">
+            <div>
+              <div class="dash-icon" style="color:var(--orange);"><i class="fa-solid fa-network-wired"></i></div>
+              <h3 style="color:#fff;" data-i18n="dash-net-title">파트너십 &amp; 전국 딜러망</h3>
+              <p style="color:#b0c4b8;" data-i18n="dash-net-desc">BAIC &amp; BAW 한국 총판 독점 계약 및 대한민국 전역 48개 거점 공식 딜러 네트워크</p>
+            </div>
+            <div class="dash-link" style="color:var(--orange);"><span>네트워크 지도 보기</span> <i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Highlights / Vision Teaser -->
+    <section class="section-alt">
+      <div class="wrap split">
+        <div>
+          <div class="eyebrow" data-i18n="dash-highlight-tag">Global Vision Highlight</div>
+          <h2 class="title" data-i18n="dash-highlight-title">지속 가능한 친환경 모빌리티 솔루션</h2>
+          <p class="lede" data-i18n="dash-highlight-desc">페이또는 2013년부터 글로벌 완성차 제조사 및 국제 물류 그룹과의 전면 파트너십을 통해 탄소중립 넷제로 시대를 준비하고 있습니다.</p>
+          <div class="btnrow">
+            <a onclick="showPage('vision')" class="btn primary" data-i18n="nav-vision">미래 비전 프로젝트 보기</a>
+          </div>
+        </div>
+        <div class="imgcard">
+          <img src="__SHOWROOM_GRID__" alt="PAYTTO EV Showroom Lineup Grid">
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- ================= 1. PAGE: ABOUT (회사 개요 & 조직도) ================= -->
+  <div id="page-about" class="page-view">
+    <div class="page-banner">
+      <div class="wrap">
+        <div class="eyebrow" data-i18n="about-eyebrow">Company Profile</div>
+        <h1 data-i18n="about-title">글로벌 무역과 친환경 산업의 교량</h1>
+        <p data-i18n="about-p1">페이또는 2013년 설립 이후 전기차·부품 수출입, EV 충전 인프라 구축, 태양광 및 신재생 에너지 프로젝트를 전개하는 글로벌 종합 무역 기업입니다.</p>
       </div>
     </div>
 
@@ -888,7 +1044,7 @@
         <div class="grid g5">
           <div class="card">
             <div class="num">01</div>
-            <h3 data-i18n="biz1-title">전기차 유통 및 A/S</h3>
+            <h3 data-i18n="biz1-title">전기차 유통 및 부품 공급</h3>
             <p data-i18n="biz1-desc">순수 전기차 및 주요 부품의 수출입과 완벽한 전국 사후 관리 지원 서비스</p>
           </div>
           <div class="card">
@@ -947,7 +1103,7 @@
       </div>
     </section>
 
-    <!-- 02. 전자제품 및 가전 무역 (새로 독립 섹션 배치) -->
+    <!-- 02. 전자제품 및 가전 무역 -->
     <section>
       <div class="wrap">
         <div class="sectionhead">
@@ -1217,7 +1373,7 @@
 <footer>
   <div class="wrap">
     <div>
-      <a href="#about" onclick="showPage('about')" class="brand-logo" style="margin-bottom:16px;">
+      <a href="#home" onclick="showPage('home')" class="brand-logo" style="margin-bottom:16px;">
         <i class="fa-solid fa-gem logo-icon"></i>
         <span class="logo-text">PAYTTO</span>
       </a>
@@ -1225,6 +1381,7 @@
     <div>
       <h4 data-i18n="footer-col1">기업 정보</h4>
       <ul>
+        <li><a onclick="showPage('home')" data-i18n="nav-home">홈</a></li>
         <li><a onclick="showPage('about')" data-i18n="nav-company">회사 개요</a></li>
         <li><a onclick="showPage('vision')" data-i18n="nav-vision">미래 비전</a></li>
         <li><a onclick="showPage('business')" data-i18n="nav-business">주요 사업</a></li>
@@ -1252,6 +1409,7 @@
   const i18n = {
     ko: {
       "doc-title": "PAYTTO 페이또 | Green Mobility, Vision for Future",
+      "nav-home": "홈",
       "nav-company": "회사 개요",
       "nav-vision": "미래 비전",
       "nav-business": "주요 사업",
@@ -1259,9 +1417,19 @@
       "nav-contact": "협력 문의",
       "nav-cta": "문의하기",
 
+      "dash-eyebrow": "Global Trade & Green Mobility Portal",
+      "dash-sec-tag": "Global Business Dashboard",
+      "dash-sec-title": "PAYTTO 5대 핵심 사업 대시보드",
+      "dash-sec-desc": "각 핵심 사업 분야를 클릭하시면 상세 정보와 사업 포트폴리오를 확인하실 수 있습니다.",
+      "dash-net-title": "파트너십 & 전국 딜러망",
+      "dash-net-desc": "BAIC & BAW 한국 총판 독점 계약 및 대한민국 전역 48개 거점 공식 딜러 네트워크",
+      "dash-highlight-tag": "Global Vision Highlight",
+      "dash-highlight-title": "지속 가능한 친환경 모빌리티 솔루션",
+      "dash-highlight-desc": "페이또는 2013년부터 글로벌 완성차 제조사 및 국제 물류 그룹과의 전면 파트너십을 통해 탄소중립 넷제로 시대를 준비하고 있습니다.",
+
       "hero-title": "친환경 모빌리티와<br><span>글로벌 무역의 미래</span>",
       "hero-desc": "전기차, 충전 인프라, 신재생 에너지, 원자재 무역을 선도하는 글로벌 종합 산업 솔루션 기업 페이또(PAYTTO)입니다.",
-      "hero-btn-primary": "주요 사업 알아보기",
+      "hero-btn-primary": "주요 사업 둘러보기",
       "hero-btn-secondary": "협력 문의하기",
       "stat1-val": "2013",
       "stat1-lbl": "설립 연도",
@@ -1471,12 +1639,23 @@
     },
     en: {
       "doc-title": "PAYTTO | Green Mobility, Vision for Future",
+      "nav-home": "Home",
       "nav-company": "Company",
       "nav-vision": "Future Vision",
       "nav-business": "Business",
       "nav-network": "Partners & Network",
       "nav-contact": "Contact",
       "nav-cta": "Get in Touch",
+
+      "dash-eyebrow": "Global Trade & Green Mobility Portal",
+      "dash-sec-tag": "Global Business Dashboard",
+      "dash-sec-title": "PAYTTO Core Business Dashboard",
+      "dash-sec-desc": "Click on any core business line to explore detailed portfolios.",
+      "dash-net-title": "Partnership & Dealer Network",
+      "dash-net-desc": "Exclusive Korea distribution for BAIC & BAW and 48 nationwide dealer networks.",
+      "dash-highlight-tag": "Global Vision Highlight",
+      "dash-highlight-title": "Sustainable Green Mobility Solutions",
+      "dash-highlight-desc": "Preparing for the Net-Zero era through alliances with global automakers and logistics leaders since 2013.",
 
       "hero-title": "Green Mobility &<br><span>Global Trade Future</span>",
       "hero-desc": "PAYTTO is a global industrial solutions provider leading electric vehicles, charging infrastructure, renewable energy, and raw materials trade.",
@@ -1619,7 +1798,7 @@
       "biz5-title": "Business Consulting",
       "biz5-desc": "Market research and strategy development leveraging trade expertise",
 
-      "ev-models-title": "Full EV Lineup for Public Fleet",
+      "ev-models-title": "EV Lineup & Automotive Parts Supply",
       "ev-m1": "EV Sedan", "ev-m2": "EV SUV", "ev-m3": "EV Pickup Truck",
       "ev-m4": "EV VAN", "ev-m5": "EV BUS", "ev-m6": "EV Sanitation Vehicle", "ev-m7": "EV Fire Truck",
 
@@ -1690,12 +1869,23 @@
     },
     ch: {
       "doc-title": "PAYTTO | 绿色出行，远见未来",
+      "nav-home": "首页",
       "nav-company": "公司概况",
       "nav-vision": "未来愿景",
       "nav-business": "核心业务",
       "nav-network": "合作伙伴与网络",
       "nav-contact": "联系我们",
       "nav-cta": "立即咨询",
+
+      "dash-eyebrow": "Global Trade & Green Mobility Portal",
+      "dash-sec-tag": "Global Business Dashboard",
+      "dash-sec-title": "PAYTTO 五大核心业务仪表板",
+      "dash-sec-desc": "点击各核心业务领域查看详细信息与组合。",
+      "dash-net-title": "合作与全国经销商网络",
+      "dash-net-desc": "北汽与北汽制造韩国独家总代理及全国48家授权经销商",
+      "dash-highlight-tag": "Global Vision Highlight",
+      "dash-highlight-title": "可持续绿色出行解决方案",
+      "dash-highlight-desc": "自2013年起与全球车企及国际物流集团建立全面合作，迎接净零碳时代。",
 
       "hero-title": "绿色出行与<br><span>全球贸易的未来</span>",
       "hero-desc": "PAYTTO 是一家引领电动汽车、充电设施、新能源与大宗原材料贸易的全球综合工业解决方案企业。",
@@ -1763,7 +1953,7 @@
       "rm3-year": "2026", "rm3-title": "垂直一体化", "rm3-desc": "实现电动车、充电桩和大宗原材料贸易垂直一体化。",
       "rm4-year": "2030", "rm4-title": "净零碳领军企业", "rm4-desc": "10 万辆电动车、2 万台充电桩、100MW 光伏达产。",
 
-      "proj-mnd-tag": "Project Plan 01 — 국방복지단 협력 사업",
+      "proj-mnd-tag": "Project Plan 01 — 国防福利团合作项目",
       "proj-mnd-title": "国防福利团绿色电动车供应项目",
       "proj-mnd-desc": "与700万会员国防福利团签订独家供应协议（首批已确认 3,000 台）。",
       "mnd-tbl-model": "车型",
@@ -1838,7 +2028,7 @@
       "biz5-title": "商业咨询",
       "biz5-desc": "依托国际贸易专业知识，提供市场调研与战略规划",
 
-      "ev-models-title": "面向公共机构的全系电动车阵容",
+      "ev-models-title": "电动汽车阵容与零部件供应",
       "ev-m1": "电动轿车", "ev-m2": "电动 SUV", "ev-m3": "电动皮卡",
       "ev-m4": "电动货车", "ev-m5": "电动公交", "ev-m6": "电动环卫车", "ev-m7": "电动消防车",
 
@@ -1910,8 +2100,8 @@
   };
 
   function showPage(pageId) {
-    const validPages = ['about', 'vision', 'business', 'network', 'contact'];
-    if (!validPages.includes(pageId)) pageId = 'about';
+    const validPages = ['home', 'about', 'vision', 'business', 'network', 'contact'];
+    if (!validPages.includes(pageId)) pageId = 'home';
 
     // Close mobile menu if open
     const navUl = document.getElementById('mainNav');
@@ -1991,13 +2181,13 @@
     if (hash) {
       showPage(hash);
     } else {
-      showPage('about');
+      showPage('home');
     }
   });
 
   window.addEventListener('popstate', () => {
     const hash = window.location.hash.replace('#', '');
-    showPage(hash || 'about');
+    showPage(hash || 'home');
   });
 </script>
 </body>

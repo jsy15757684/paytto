@@ -263,6 +263,7 @@
       box-shadow:0 10px 30px rgba(0,0,0,.05);
     }
     .imgcard img{width:100%;height:auto;object-fit:cover;display:block;}
+    .imgcard img.contain-fit{object-fit:contain;background:#fff;padding:12px;}
 
     .pillrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;}
     .pill{background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:8px 16px;border-radius:999px;font-size:13.5px;font-weight:600;}
@@ -782,7 +783,7 @@
   </div>
 
 
-  <!-- ================= 3. PAGE: MAIN BUSINESS (PDF p.17 차 사진 적용) ================= -->
+  <!-- ================= 3. PAGE: MAIN BUSINESS (PDF p.17 차 사진 축소 및 완전 노출) ================= -->
   <div id="page-business" class="page-view">
     <div class="page-banner">
       <div class="wrap">
@@ -830,7 +831,7 @@
       </div>
     </section>
 
-    <!-- 02. 전 차종 전기차 (PDF 17페이지 사진 적용) -->
+    <!-- 02. 전 차종 전기차 (PDF 17페이지 사진 축소 적용 - 짤림 방지) -->
     <section class="section-alt">
       <div class="wrap">
         <div class="sectionhead">
@@ -848,8 +849,10 @@
           <span class="pill" data-i18n="ev-m7">EV 소방차 (Fire Truck)</span>
         </div>
 
-        <!-- PDF Page 17 Photo -->
-        <div class="imgcard" style="margin-bottom:40px;"><img src="__BIZ_EV_PAGE17__" alt="PAYTTO PDF Page 17 Full Vehicle Lineup"></div>
+        <!-- PDF Page 17 Full Vehicles Photo (Uncropped Contain-Fit Container) -->
+        <div class="imgcard" style="margin-bottom:40px;background:#ffffff;padding:16px;text-align:center;">
+          <img src="__BIZ_EV_PAGE17__" alt="PAYTTO PDF Page 17 Full Vehicle Lineup" style="width:100%;height:auto;max-height:560px;object-fit:contain;margin:0 auto;">
+        </div>
 
         <div class="grid g2">
           <div class="imgcard">
@@ -1016,7 +1019,7 @@
       </div>
     </section>
 
-    <!-- Nationwide 48 Dealer Network Map Section (PDF Page 30 Map Included!) -->
+    <!-- Nationwide 48 Dealer Network Map Section -->
     <section class="section-alt">
       <div class="wrap">
         <div class="sectionhead">
@@ -1025,8 +1028,10 @@
           <p class="lede" data-i18n="net-desc-tbl">대한민국 전 지역을 아우르는 총판 및 공식 지정 딜러망 보유.</p>
         </div>
 
-        <!-- PDF Page 30 Dealer Map Image -->
-        <div class="imgcard" style="margin-bottom:30px;background:#fff;"><img src="__NET_DEALER_MAP__" alt="PAYTTO PDF Page 30 Nationwide 48 Dealer Network Map"></div>
+        <!-- PDF Page 30 Dealer Map Image (Uncropped Contain Fit) -->
+        <div class="imgcard" style="margin-bottom:30px;background:#ffffff;padding:16px;text-align:center;">
+          <img src="__NET_DEALER_MAP__" alt="PAYTTO PDF Page 30 Nationwide 48 Dealer Network Map" style="width:100%;height:auto;max-height:560px;object-fit:contain;margin:0 auto;">
+        </div>
 
         <div class="card" style="padding:0;overflow:hidden;">
           <table>

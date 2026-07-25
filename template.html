@@ -322,6 +322,64 @@
       color: var(--sub);
     }
 
+    /* ORGANIZATIONAL CHART (조직도) */
+    .org-chart-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .org-node {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 28px;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+    .org-node:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    }
+    .org-node.top-leader {
+      background: var(--navy-deep);
+      color: #fff;
+      border-color: var(--orange);
+      padding: 24px 44px;
+    }
+    .org-node.top-leader h3 {
+      color: #fff;
+      font-size: 22px;
+      margin: 0 0 4px;
+    }
+    .org-node.top-leader p {
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 700;
+      margin: 0;
+    }
+    .org-connector-v {
+      width: 2px;
+      height: 20px;
+      background: var(--orange);
+    }
+    .org-advisory-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .org-grid-divs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      width: 100%;
+    }
+    @media (max-width: 920px) { .org-grid-divs { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) { .org-grid-divs { grid-template-columns: 1fr; } }
+
     table{width:100%;border-collapse:collapse;text-align:left;font-size:14px;}
     th,td{padding:14px 20px;border-bottom:1px solid var(--line);}
     th{background:var(--bg);color:var(--ink);font-weight:800;}
@@ -395,7 +453,7 @@
 
 <main>
 
-  <!-- ================= 1. PAGE: ABOUT (회사 개요) ================= -->
+  <!-- ================= 1. PAGE: ABOUT (회사 개요 & 조직도) ================= -->
   <div id="page-about" class="page-view active">
     <section class="hero" style="padding:0;">
       <img class="bg" src="__HERO__" alt="PAYTTO EV Showroom">
@@ -443,12 +501,90 @@
       </div>
     </section>
 
+    <!-- CEO Quote -->
     <section class="section-alt">
       <div class="wrap">
         <div class="ceo">
           <blockquote data-i18n="ceo-quote">“친환경 모빌리티, <span>미래를 향한 비전.</span>”<br>깨끗하고 효율적인 수송 기술이 미래 모빌리티 산업을 이끄는 핵심 동력이 될 것임을 믿습니다.</blockquote>
           <div class="who"><b data-i18n="ceo-name">양기웅</b><span data-i18n="ceo-role">페이또 주식회사 대표이사</span></div>
         </div>
+      </div>
+    </section>
+
+    <!-- ORGANIZATIONAL CHART SECTION (PDF Page 15) -->
+    <section>
+      <div class="wrap">
+        <div class="sectionhead">
+          <div class="eyebrow" style="justify-content:center;" data-i18n="org-eyebrow">조직 구조</div>
+          <h2 class="title" data-i18n="org-title">체계적인 글로벌 전문 조직망</h2>
+          <p class="lede" data-i18n="org-desc">경영진을 비롯하여 기술팀, 교육팀, A/S 전담팀, 해외사업부, 관세 및 법무 자문단이 유기적으로 협력하는 종합 조직 체계를 갖추고 있습니다.</p>
+        </div>
+
+        <div class="org-chart-wrap">
+          <!-- Level 1: CEO -->
+          <div class="org-node top-leader">
+            <i class="fa-solid fa-user-tie" style="font-size:28px;color:var(--orange);margin-bottom:8px;"></i>
+            <h3 data-i18n="role-ceo">CEO (최고경영자)</h3>
+            <p>PAYTTO Co., Ltd.</p>
+          </div>
+          
+          <div class="org-connector-v"></div>
+
+          <!-- Level 2: Executive & Advisory Board -->
+          <div class="org-advisory-row">
+            <div class="org-node">
+              <span class="badge-box">Executive</span>
+              <h4 style="margin:0;font-size:16px;" data-i18n="role-coo">COO (최고운영책임자)</h4>
+            </div>
+            <div class="org-node">
+              <span class="badge-box">Advisory</span>
+              <h4 style="margin:0;font-size:16px;" data-i18n="adv-tariff">관세 자문 팀장 (관세사)</h4>
+            </div>
+            <div class="org-node">
+              <span class="badge-box">Advisory</span>
+              <h4 style="margin:0;font-size:16px;" data-i18n="adv-legal">법무 자문 팀장 (변호사)</h4>
+            </div>
+            <div class="org-node">
+              <span class="badge-box">Executive</span>
+              <h4 style="margin:0;font-size:16px;" data-i18n="role-cfo">CFO / 회계사 (자금·재무)</h4>
+            </div>
+            <div class="org-node">
+              <span class="badge-box">Executive</span>
+              <h4 style="margin:0;font-size:16px;" data-i18n="role-center">Center Director (센터장)</h4>
+            </div>
+          </div>
+
+          <div class="org-connector-v"></div>
+
+          <!-- Level 3: 4 Division Directors & Teams -->
+          <div class="org-grid-divs">
+            <div class="card">
+              <div class="num"><i class="fa-solid fa-building-user"></i></div>
+              <h3 data-i18n="div1-title">행정 &amp; 해외사업본부</h3>
+              <p style="font-weight:700;color:var(--ink);margin-bottom:6px;" data-i18n="div1-dir">행정 총괄 이사 (Admin Director)</p>
+              <p data-i18n="div1-team">행정 팀장 &amp; 해외사업부 스태프</p>
+            </div>
+            <div class="card">
+              <div class="num"><i class="fa-solid fa-ship"></i></div>
+              <h3 data-i18n="div2-title">수출입 사업본부</h3>
+              <p style="font-weight:700;color:var(--ink);margin-bottom:6px;" data-i18n="div2-dir">수출입 총괄 이사 (Trade Director)</p>
+              <p data-i18n="div2-team">글로벌 통관 &amp; 수속 전담팀</p>
+            </div>
+            <div class="card">
+              <div class="num"><i class="fa-solid fa-car-tunnel"></i></div>
+              <h3 data-i18n="div3-title">영업 &amp; 딜러 네트워크본부</h3>
+              <p style="font-weight:700;color:var(--ink);margin-bottom:6px;" data-i18n="div3-dir">영업 총괄 이사 (Sales Director)</p>
+              <p data-i18n="div3-team">전시장 팀장 &amp; 딜러 네트워크 팀장</p>
+            </div>
+            <div class="card">
+              <div class="num"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+              <h3 data-i18n="div4-title">기술 &amp; A/S 전담본부</h3>
+              <p style="font-weight:700;color:var(--ink);margin-bottom:6px;" data-i18n="div4-dir">기술 총괄 이사 (Technical Director)</p>
+              <p data-i18n="div4-team">교육 팀장 &amp; A/S 전담 엔지니어 팀</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   </div>
@@ -978,6 +1114,28 @@
       "ceo-name": "양기웅",
       "ceo-role": "페이또 주식회사 대표이사",
 
+      "org-eyebrow": "조직 구조",
+      "org-title": "체계적인 글로벌 전문 조직망",
+      "org-desc": "경영진을 비롯하여 기술팀, 교육팀, A/S 전담팀, 해외사업부, 관세 및 법무 자문단이 유기적으로 협력하는 종합 조직 체계를 갖추고 있습니다.",
+      "role-ceo": "CEO (최고경영자)",
+      "role-coo": "COO (최고운영책임자)",
+      "role-cfo": "CFO / 회계사 (자금·재무)",
+      "role-center": "Center Director (센터장)",
+      "adv-tariff": "관세 자문 팀장 (관세사)",
+      "adv-legal": "법무 자문 팀장 (변호사)",
+      "div1-title": "행정 &amp; 해외사업본부",
+      "div1-dir": "행정 총괄 이사 (Admin Director)",
+      "div1-team": "행정 팀장 &amp; 해외사업부 스태프",
+      "div2-title": "수출입 사업본부",
+      "div2-dir": "수출입 총괄 이사 (Trade Director)",
+      "div2-team": "글로벌 통관 &amp; 수속 전담팀",
+      "div3-title": "영업 &amp; 딜러 네트워크본부",
+      "div3-dir": "영업 총괄 이사 (Sales Director)",
+      "div3-team": "전시장 팀장 &amp; 딜러 네트워크 팀장",
+      "div4-title": "기술 &amp; A/S 전담본부",
+      "div4-dir": "기술 총괄 이사 (Technical Director)",
+      "div4-team": "교육 팀장 &amp; A/S 전담 엔지니어 팀",
+
       "vis-eyebrow": "Future Vision & Project Plan",
       "vis-banner-title": "지속 가능한 미래를 위한 페이또의 비전 &amp; 프로젝트 플랜",
       "vis-title": "친환경 모빌리티와 자원 순환이 그리는 지속 가능한 미래",
@@ -1164,6 +1322,28 @@
       "ceo-name": "Kiwoong Yang",
       "ceo-role": "Legal Representative & CEO, PAYTTO Co., Ltd.",
 
+      "org-eyebrow": "Organizational Structure",
+      "org-title": "Systematic & Professional Organizational Structure",
+      "org-desc": "Comprehensive organizational structure featuring technical, training, after-sales service, corporate finance, and legal/tariff advisory teams.",
+      "role-ceo": "CEO (Chief Executive Officer)",
+      "role-coo": "COO (Chief Operating Officer)",
+      "role-cfo": "CFO / Accountant",
+      "role-center": "Center Director",
+      "adv-tariff": "Tariff Team Leader",
+      "adv-legal": "Legal Affairs Team Leader",
+      "div1-title": "Administration &amp; Overseas Division",
+      "div1-dir": "Administration Director",
+      "div1-team": "Admin Section Chief &amp; Overseas Dept.",
+      "div2-title": "Import &amp; Export Division",
+      "div2-dir": "Import &amp; Export Director",
+      "div2-team": "Global Trade &amp; Clearance Team",
+      "div3-title": "Sales &amp; Dealer Network Division",
+      "div3-dir": "Sales Director",
+      "div3-team": "Exhibition &amp; Dealer Network Leaders",
+      "div4-title": "Technical &amp; After-Sales Division",
+      "div4-dir": "Technical Director",
+      "div4-team": "Training Leader &amp; After-Sales Team",
+
       "vis-eyebrow": "Future Vision & Project Plan",
       "vis-banner-title": "PAYTTO's Vision &amp; Project Plan for a Sustainable Future",
       "vis-title": "A Sustainable Future Driven by Green Mobility &amp; Resource Circulation",
@@ -1349,6 +1529,28 @@
       "ceo-quote": "“绿色出行，<span>远见未来。</span>”<br>我们坚信清洁高效的交通运输将成为塑造未来出行产业的核心力量。",
       "ceo-name": "梁基雄",
       "ceo-role": "PAYTTO 株式会社 代表理事",
+
+      "org-eyebrow": "组织结构",
+      "org-title": "系统化与专业化的组织架构",
+      "org-desc": "拥有包括技术团队、培训团队、售后服务团队、财务团队以及关税与法律顾问团在内的完善组织架构。",
+      "role-ceo": "CEO (首席执行官)",
+      "role-coo": "COO (首席运营官)",
+      "role-cfo": "CFO / 会计师",
+      "role-center": "中心总监",
+      "adv-tariff": "关税团队主管",
+      "adv-legal": "法务团队主管",
+      "div1-title": "行政与海外事业部",
+      "div1-dir": "行政总监",
+      "div1-team": "行政主管与海外事业部",
+      "div2-title": "进出口事业部",
+      "div2-dir": "进出口总监",
+      "div2-team": "全球通关与物流团队",
+      "div3-title": "销售与经销商网络部",
+      "div3-dir": "销售总监",
+      "div3-team": "展厅主管与经销商网络主管",
+      "div4-title": "技术与售后服务部",
+      "div4-dir": "技术总监",
+      "div4-team": "培训主管与售后工程师团队",
 
       "vis-eyebrow": "Future Vision & Project Plan",
       "vis-banner-title": "PAYTTO 实现可持续未来的宏伟愿景与项目规划",

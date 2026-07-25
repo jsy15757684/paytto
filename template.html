@@ -1,198 +1,292 @@
-<title>PAYTTO | Green Mobility, Vision for Future</title>
-<style>
-  :root{
-    --navy:#132a26;
-    --navy-deep:#0b1917;
-    --orange:#3ddc97;
-    --ink:#0e1613;
-    --sub:#5b6a63;
-    --bg:#fbfbf8;
-    --panel:#f0f2ed;
-    --line:#dde2d9;
-    --radius:14px;
-  }
-  @media (prefers-color-scheme: dark){
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="doc-title">PEITO 페이또 | Green Mobility, Vision for Future</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
     :root{
-      --ink:#eaf2ec;
-      --sub:#9fb0a6;
-      --bg:#0c1412;
-      --panel:#131f1b;
-      --line:#233029;
-      --navy:#2f5c50;
-      --navy-deep:#081312;
+      --navy:#132a26;
+      --navy-deep:#0b1917;
+      --orange:#3ddc97;
+      --ink:#0e1613;
+      --sub:#5b6a63;
+      --bg:#fbfbf8;
+      --panel:#f0f2ed;
+      --line:#dde2d9;
+      --radius:14px;
+      --accent-gradient: linear-gradient(135deg, #00e5ff 0%, #3b82f6 50%, #8b5cf6 100%);
     }
-  }
-  :root[data-theme="dark"]{
-    --ink:#eaf2ec; --sub:#9fb0a6; --bg:#0c1412; --panel:#131f1b; --line:#233029; --navy:#2f5c50; --navy-deep:#081312;
-  }
-  :root[data-theme="light"]{
-    --ink:#0e1613; --sub:#5b6a63; --bg:#fbfbf8; --panel:#f0f2ed; --line:#dde2d9; --navy:#132a26; --navy-deep:#0b1917;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    font-family:"Iowan Old Style","Palatino Linotype",Georgia,"Noto Serif KR",serif;
-    background:var(--bg);
-    color:var(--ink);
-    line-height:1.6;
-    overflow-x:hidden;
-  }
-  h1,h2,h3,.navcta,.btn,nav ul li a,.eyebrow,footer h4,.card .num{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  }
-  a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
-  section{padding:88px 0;}
-  h1,h2,h3{margin:0;letter-spacing:-0.01em;}
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:8px;
-    font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-    color:var(--orange);margin-bottom:14px;
-  }
-  .eyebrow::before{content:"";width:22px;height:2px;background:var(--orange);display:inline-block;}
-  h2.title{font-size:clamp(28px,4vw,42px);font-weight:800;color:var(--ink);}
-  p.lede{color:var(--sub);font-size:17px;max-width:680px;margin-top:14px;}
+    @media (prefers-color-scheme: dark){
+      :root{
+        --ink:#eaf2ec;
+        --sub:#9fb0a6;
+        --bg:#0c1412;
+        --panel:#131f1b;
+        --line:#233029;
+        --navy:#2f5c50;
+        --navy-deep:#081312;
+      }
+    }
+    :root[data-theme="dark"]{
+      --ink:#eaf2ec; --sub:#9fb0a6; --bg:#0c1412; --panel:#131f1b; --line:#233029; --navy:#2f5c50; --navy-deep:#081312;
+    }
+    :root[data-theme="light"]{
+      --ink:#0e1613; --sub:#5b6a63; --bg:#fbfbf8; --panel:#f0f2ed; --line:#dde2d9; --navy:#132a26; --navy-deep:#0b1917;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:'Outfit', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    h1,h2,h3,.navcta,.btn,nav ul li a,.eyebrow,footer h4,.card .num{
+      font-family:'Outfit', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    a{color:inherit;text-decoration:none;}
+    img{max-width:100%;display:block;}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+    section{padding:88px 0;}
+    h1,h2,h3{margin:0;letter-spacing:-0.01em;}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+      color:var(--orange);margin-bottom:14px;
+    }
+    .eyebrow::before{content:"";width:22px;height:2px;background:var(--orange);display:inline-block;}
+    h2.title{font-size:clamp(28px,4vw,42px);font-weight:800;color:var(--ink);}
+    p.lede{color:var(--sub);font-size:17px;max-width:680px;margin-top:14px;}
 
-  /* NAV */
-  header{
-    position:sticky;top:0;z-index:50;
-    background:color-mix(in srgb, var(--bg) 88%, transparent);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  nav{display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:0 auto;padding:14px 24px;}
-  nav .logo{height:26px;}
-  nav .logo-dark{display:none;}
-  :root[data-theme="dark"] nav .logo-light{display:none;}
-  :root[data-theme="dark"] nav .logo-dark{display:block;}
-  @media (prefers-color-scheme: dark){
-    nav .logo-light{display:none;}
-    nav .logo-dark{display:block;}
-  }
-  :root[data-theme="light"] nav .logo-light{display:block;}
-  :root[data-theme="light"] nav .logo-dark{display:none;}
-  nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;}
-  nav ul li a{font-size:14.5px;font-weight:600;color:var(--sub);transition:color .2s;}
-  nav ul li a:hover{color:var(--orange);}
-  nav .navlinks{display:flex;align-items:center;gap:30px;}
-  .navcta{background:var(--navy);color:#fff !important;padding:10px 20px;border-radius:999px;font-weight:700;font-size:13.5px;}
-  .burger{display:none;background:none;border:0;font-size:22px;color:var(--ink);cursor:pointer;}
-  @media (max-width:820px){
-    nav ul{display:none;}
-    .burger{display:block;}
-  }
+    /* BRAND LOGO FROM RESOURCE */
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      color: var(--ink);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .brand-logo:hover {
+      transform: scale(1.03);
+    }
+    .brand-logo .logo-icon {
+      font-size: 22px;
+      color: #00e5ff;
+      filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.7));
+      animation: pulse-gem 3s ease-in-out infinite alternate;
+    }
+    .brand-logo .logo-text {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+    }
+    @keyframes pulse-gem {
+      0% { transform: scale(1); filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.5)); }
+      100% { transform: scale(1.12); filter: drop-shadow(0 0 14px rgba(0, 229, 255, 0.9)); }
+    }
 
-  /* HERO */
-  .hero{
-    position:relative;min-height:88vh;display:flex;align-items:center;
-    background:var(--navy-deep);
-    overflow:hidden;
-  }
-  .hero img.bg{
-    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;
-  }
-  .hero::after{
-    content:"";position:absolute;inset:0;
-    background:linear-gradient(100deg, rgba(8,19,18,.96) 20%, rgba(8,19,18,.72) 55%, rgba(19,42,38,.35) 100%);
-  }
-  .hero .wrap{position:relative;z-index:2;padding-top:60px;padding-bottom:60px;}
-  .hero .kicker{color:var(--orange);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;margin-bottom:18px;}
-  .hero h1{font-size:clamp(34px,5.6vw,62px);color:#fff;font-weight:800;max-width:760px;line-height:1.12;}
-  .hero h1 span{color:var(--orange);}
-  .hero p{color:#cfe0d6;font-size:18px;max-width:560px;margin-top:20px;}
-  .hero .stats{display:flex;gap:40px;margin-top:48px;flex-wrap:wrap;}
-  .hero .stat b{display:block;font-size:28px;color:#fff;font-weight:800;}
-  .hero .stat span{color:#8ea79c;font-size:13.5px;}
-  .btnrow{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;}
-  .btn{padding:14px 26px;border-radius:999px;font-weight:700;font-size:14.5px;display:inline-block;}
-  .btn.primary{background:var(--orange);color:#052018;}
-  .btn.ghost{border:1px solid rgba(255,255,255,.35);color:#fff;}
+    /* NAV */
+    header{
+      position:sticky;top:0;z-index:50;
+      background:color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    nav{display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:0 auto;padding:14px 24px;}
+    nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;}
+    nav ul li a{font-size:14.5px;font-weight:600;color:var(--sub);transition:color .2s;}
+    nav ul li a:hover{color:var(--orange);}
+    nav .navlinks{display:flex;align-items:center;gap:20px;}
+    .navcta{background:var(--navy);color:#fff !important;padding:10px 20px;border-radius:999px;font-weight:700;font-size:13.5px;transition:opacity 0.2s;}
+    .navcta:hover{opacity:0.9;}
 
-  /* MARQUEE */
-  .marquee-wrap{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel);padding:22px 0;overflow:hidden;white-space:nowrap;}
-  .marquee{display:inline-flex;gap:60px;animation:scroll 28s linear infinite;font-weight:700;color:var(--sub);letter-spacing:.03em;font-size:14px;}
-  .marquee span{opacity:.85}
-  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    /* LANGUAGE SELECTOR */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-btn {
+      border: 0;
+      background: transparent;
+      color: var(--sub);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .lang-btn.active, .lang-btn:hover {
+      background: var(--orange);
+      color: #052018;
+      box-shadow: 0 2px 8px rgba(61, 220, 151, 0.3);
+    }
 
-  /* GRID / CARDS */
-  .grid{display:grid;gap:26px;}
-  .g2{grid-template-columns:1fr 1fr;}
-  .g3{grid-template-columns:1fr 1fr 1fr;}
-  .g5{grid-template-columns:repeat(5,1fr);}
-  @media (max-width:900px){.g2,.g3,.g5{grid-template-columns:1fr 1fr;}}
-  @media (max-width:600px){.g2,.g3,.g5{grid-template-columns:1fr;}}
+    @media (max-width:860px){
+      nav ul{display:none;}
+    }
 
-  .card{
-    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
-    padding:28px;transition:transform .25s, box-shadow .25s;
-  }
-  .card:hover{transform:translateY(-4px);box-shadow:0 16px 40px -20px rgba(0,0,0,.25);}
-  .card .num{font-size:13px;font-weight:800;color:var(--orange);letter-spacing:.08em;}
-  .card h3{font-size:18px;margin:12px 0 8px;font-weight:800;}
-  .card p{color:var(--sub);font-size:14.5px;margin:0;}
+    /* HERO */
+    .hero{
+      position:relative;min-height:88vh;display:flex;align-items:center;
+      background:var(--navy-deep);
+      overflow:hidden;
+    }
+    .hero img.bg{
+      position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;
+    }
+    .hero::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(100deg, rgba(8,19,18,.96) 20%, rgba(8,19,18,.72) 55%, rgba(19,42,38,.35) 100%);
+    }
+    .hero .wrap{position:relative;z-index:2;padding-top:60px;padding-bottom:60px;}
+    .hero .kicker{color:var(--orange);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;margin-bottom:18px;}
+    .hero h1{font-size:clamp(34px,5.6vw,62px);color:#fff;font-weight:800;max-width:760px;line-height:1.12;}
+    .hero h1 span{color:var(--orange);}
+    .hero p{color:#cfe0d6;font-size:18px;max-width:600px;margin-top:20px;}
+    .hero .stats{display:flex;gap:40px;margin-top:48px;flex-wrap:wrap;}
+    .hero .stat b{display:block;font-size:28px;color:#fff;font-weight:800;}
+    .hero .stat span{color:#8ea79c;font-size:13.5px;}
+    .btnrow{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;}
+    .btn{padding:14px 26px;border-radius:999px;font-weight:700;font-size:14.5px;display:inline-block;}
+    .btn.primary{background:var(--orange);color:#052018;}
+    .btn.ghost{border:1px solid rgba(255,255,255,.35);color:#fff;}
 
-  .section-alt{background:var(--panel);}
+    /* MARQUEE */
+    .marquee-wrap{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel);padding:22px 0;overflow:hidden;white-space:nowrap;}
+    .marquee{display:inline-flex;gap:60px;animation:scroll 28s linear infinite;font-weight:700;color:var(--sub);letter-spacing:.03em;font-size:14px;}
+    .marquee span{opacity:.85}
+    @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-  .imgcard{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);}
-  .imgcard img{width:100%;height:100%;object-fit:cover;}
+    /* GRID / CARDS */
+    .grid{display:grid;gap:26px;}
+    .g2{grid-template-columns:1fr 1fr;}
+    .g3{grid-template-columns:repeat(3,1fr);}
+    .g5{grid-template-columns:repeat(5,1fr);}
+    @media (max-width:960px){.g5{grid-template-columns:1fr 1fr;}.g3{grid-template-columns:1fr;}}
+    @media (max-width:640px){.g2,.g5{grid-template-columns:1fr;}}
 
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
-  @media (max-width:860px){.split{grid-template-columns:1fr;}}
-  .split.rev{direction:rtl;}
-  .split.rev > *{direction:ltr;}
+    .card{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:32px;
+      position:relative;
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.06);}
+    .card .num{font-size:32px;font-weight:800;color:var(--orange);margin-bottom:12px;}
+    .card h3{font-size:20px;font-weight:800;color:var(--ink);margin-bottom:10px;}
+    .card p{color:var(--sub);font-size:14.5px;margin:0;}
 
-  .taglist{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;}
-  .taglist li{display:flex;gap:12px;color:var(--sub);font-size:15px;}
-  .taglist li::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--orange);margin-top:7px;flex-shrink:0;}
-  .taglist b{color:var(--ink);}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+    .split.rev{grid-template-columns:1fr 1fr;}
+    @media (max-width:820px){.split,.split.rev{grid-template-columns:1fr;}}
 
-  /* CEO */
-  .ceo{
-    background:var(--navy-deep);color:#fff;border-radius:24px;padding:56px;position:relative;overflow:hidden;
-  }
-  .ceo::before{content:"“";position:absolute;top:-10px;left:24px;font-size:160px;color:rgba(255,255,255,.06);font-family:Georgia,serif;}
-  .ceo blockquote{font-size:clamp(20px,2.6vw,30px);font-weight:700;margin:0;line-height:1.4;max-width:800px;position:relative;z-index:1;}
-  .ceo blockquote span{color:var(--orange);}
-  .ceo .who{margin-top:26px;color:#a6b8ad;font-size:14.5px;}
-  .ceo .who b{color:#fff;display:block;font-size:16px;}
+    .imgcard{
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:var(--panel);
+      box-shadow:0 10px 30px rgba(0,0,0,.05);
+    }
+    .imgcard img{width:100%;height:auto;object-fit:cover;display:block;}
 
-  /* TABLE */
-  table{width:100%;border-collapse:collapse;font-size:14.5px;}
-  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);}
-  th{color:var(--sub);font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.06em;}
-  tr:hover td{background:var(--panel);}
+    .pillrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;}
+    .pill{background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:8px 16px;border-radius:999px;font-size:13.5px;font-weight:600;}
 
-  .pillrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
-  .pill{border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--sub);background:var(--panel);}
+    .section-alt{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 
-  footer{background:var(--navy-deep);color:#c7d4cc;padding:60px 0 30px;}
-  footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;}
-  @media (max-width:700px){footer .wrap{grid-template-columns:1fr;}}
-  footer h4{color:#fff;font-size:15px;margin-bottom:14px;}
-  footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:14px;}
-  footer .bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-top:22px;font-size:12.5px;color:#7a8c81;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;max-width:1180px;margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px;}
+    .ceo{
+      text-align:center;max-width:820px;margin:0 auto;padding:20px 0;
+    }
+    .ceo blockquote{
+      font-size:clamp(20px,3vw,30px);
+      font-weight:700;
+      color:var(--ink);
+      margin:0 0 24px;
+      line-height:1.35;
+      font-style:normal;
+    }
+    .ceo blockquote span{color:var(--orange);}
+    .ceo .who{color:var(--sub);font-size:15px;}
+    .ceo .who b{color:var(--ink);display:block;font-size:17px;margin-bottom:2px;}
 
-  .flexcenter{display:flex;align-items:center;gap:10px;}
-  .sectionhead{text-align:center;max-width:640px;margin:0 auto 50px;}
-  .sectionhead p.lede{margin-left:auto;margin-right:auto;}
-</style>
+    .taglist{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-direction:column;gap:10px;}
+    .taglist li{font-size:14.5px;color:var(--sub);padding-left:22px;position:relative;}
+    .taglist li::before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:800;}
+    .taglist li b{color:var(--ink);}
+
+    table{width:100%;border-collapse:collapse;text-align:left;font-size:14px;}
+    th,td{padding:14px 20px;border-bottom:1px solid var(--line);}
+    th{background:var(--bg);color:var(--ink);font-weight:800;}
+    td{color:var(--sub);}
+    tr:last-child td{border-bottom:0;}
+
+    /* FOOTER */
+    footer{background:var(--navy-deep);color:#d1e0d7;padding:60px 0 30px;border-top:1px solid var(--line);}
+    footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;}
+    @media (max-width:700px){footer .wrap{grid-template-columns:1fr;}}
+    footer h4{color:#fff;font-size:15px;margin-bottom:14px;}
+    footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:14px;}
+    footer .bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-top:22px;font-size:12.5px;color:#7a8c81;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;max-width:1180px;margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px;}
+
+    .flexcenter{display:flex;align-items:center;gap:10px;}
+    .sectionhead{text-align:center;max-width:640px;margin:0 auto 50px;}
+    .sectionhead p.lede{margin-left:auto;margin-right:auto;}
+
+    .contact-success {
+      display: none;
+      background: rgba(61, 220, 151, 0.15);
+      border: 1px solid var(--orange);
+      color: var(--ink);
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
 
 <header>
   <nav>
-    <a href="#top" class="flexcenter">
-      <img class="logo logo-light" src="__LOGO__" alt="PAYTTO">
-      <img class="logo logo-dark" src="__LOGO__" alt="PAYTTO" style="filter:brightness(0) invert(1);">
+    <a href="#top" class="brand-logo">
+      <i class="fa-solid fa-gem logo-icon"></i>
+      <span class="logo-text">PAYTTO</span>
     </a>
     <div class="navlinks">
       <ul>
-        <li><a href="#about">Company</a></li>
-        <li><a href="#business">Business</a></li>
-        <li><a href="#facilities">Facilities</a></li>
-        <li><a href="#network">Network</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about" data-i18n="nav-company">기업 소개</a></li>
+        <li><a href="#business" data-i18n="nav-business">주요 사업</a></li>
+        <li><a href="#facilities" data-i18n="nav-facilities">시설 및 인프라</a></li>
+        <li><a href="#network" data-i18n="nav-network">전국 네트워크</a></li>
+        <li><a href="#contact" data-i18n="nav-contact">협력 문의</a></li>
       </ul>
-      <a href="#contact" class="navcta">Get in Touch</a>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ko" onclick="changeLanguage('ko')">KO</button>
+        <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="ch" onclick="changeLanguage('ch')">CH</button>
+      </div>
+      <a href="#contact" class="navcta" data-i18n="nav-cta">문의하기</a>
     </div>
   </nav>
 </header>
@@ -201,18 +295,18 @@
 <section class="hero" style="padding:0;">
   <img class="bg" src="__HERO__" alt="PAYTTO EV Showroom">
   <div class="wrap">
-    <div class="kicker">Est. 2013 · Goyang-si, Gyeonggi-do, South Korea</div>
-    <h1>Green Mobility,<br><span>Vision for Future.</span></h1>
-    <p>PAYTTO is a comprehensive international trading and industrial solutions provider — spanning electric vehicles, EV charging infrastructure, new energy, and global resource trade.</p>
+    <div class="kicker" data-i18n="hero-kicker">2013년 설립 · 대한민국 경기도 고양시 본사</div>
+    <h1 data-i18n="hero-title">친환경 모빌리티,<br><span>미래를 향한 비전</span></h1>
+    <p data-i18n="hero-desc">페이또(PAYTTO)는 전기차, EV 충전 인프라, 신재생 에너지, 글로벌 원자재 무역을 아우르는 종합 국제 무역 및 산업 솔루션 전문 기업입니다.</p>
     <div class="btnrow">
-      <a href="#business" class="btn primary">Explore Our Business</a>
-      <a href="#contact" class="btn ghost">Contact Us</a>
+      <a href="#business" class="btn primary" data-i18n="hero-btn-primary">주요 사업 알아보기</a>
+      <a href="#contact" class="btn ghost" data-i18n="hero-btn-secondary">협력 문의하기</a>
     </div>
     <div class="stats">
-      <div class="stat"><b>2013</b><span>Founded</span></div>
-      <div class="stat"><b>48</b><span>Dealers Nationwide</span></div>
-      <div class="stat"><b>5</b><span>Core Business Lines</span></div>
-      <div class="stat"><b>10+</b><span>Global OEM Partners</span></div>
+      <div class="stat"><b data-i18n="stat1-val">2013</b><span data-i18n="stat1-lbl">설립 연도</span></div>
+      <div class="stat"><b data-i18n="stat2-val">48</b><span data-i18n="stat2-lbl">전국 딜러망</span></div>
+      <div class="stat"><b data-i18n="stat3-val">5</b><span data-i18n="stat3-lbl">핵심 사업부</span></div>
+      <div class="stat"><b data-i18n="stat4-val">10+</b><span data-i18n="stat4-lbl">글로벌 OEM 파트너</span></div>
     </div>
   </div>
 </section>
@@ -227,17 +321,17 @@
 <section id="about">
   <div class="wrap split">
     <div>
-      <div class="eyebrow">Company Introduction</div>
-      <h2 class="title">Building a bridge for friendly trade between Korea and the world.</h2>
-      <p class="lede" style="margin-top:20px;">PAYTTO was established in 2013 and is headquartered in Goyang-si, Gyeonggi-do, South Korea. It is a comprehensive international trading and industrial solutions provider — importing and exporting electric vehicles and related components, delivering complete vehicle assembly plant solutions, and installing EV charging infrastructure alongside photovoltaic power and new-energy solutions.</p>
-      <p class="lede" style="margin-top:14px;">Beyond mobility, PAYTTO trades electronics, cosmetics, health supplements and food products, operates cross-border e-commerce and live-streaming businesses, and conducts international trade of raw materials such as aluminum, copper, gold, coal and crude oil — while advancing used-battery recycling to build a full-circle industrial system across new energy, trade, and resource circulation.</p>
+      <div class="eyebrow" data-i18n="about-eyebrow">기업 개요</div>
+      <h2 class="title" data-i18n="about-title">한국과 세계를 잇는 친선 무역의 교량</h2>
+      <p class="lede" style="margin-top:20px;" data-i18n="about-p1">페이또(PAYTTO)는 2013년 설립되어 대한민국 경기도 고양시에 본사를 두고 있습니다. 전기차 및 핵심 부품의 수출입, 완제차 조립 공장 솔루션 제공, EV 충전 인프라 및 태양광/신에너지 솔루션을 구축하는 종합 무역 기업입니다.</p>
+      <p class="lede" style="margin-top:14px;" data-i18n="about-p2">모빌리티 영역을 넘어 전자제품, 화장품, 건강식품 무역 및 크로스보더 이커머스를 운영하며, 알루미늄·구리·금·석탄·원유 등 핵심 원자재 국제 무역과 폐배터리 리사이클링까지 전 주기 산업 생태계를 구축하고 있습니다.</p>
       <div class="pillrow">
-        <span class="pill">Electric Vehicles</span>
-        <span class="pill">EV Charging Infrastructure</span>
-        <span class="pill">Raw Materials Trade</span>
-        <span class="pill">Battery Recycling</span>
-        <span class="pill">Solar Power</span>
-        <span class="pill">Cross-Border E-Commerce</span>
+        <span class="pill" data-i18n="pill1">전기자동차</span>
+        <span class="pill" data-i18n="pill2">EV 충전 인프라</span>
+        <span class="pill" data-i18n="pill3">원자재 무역</span>
+        <span class="pill" data-i18n="pill4">배터리 리사이클링</span>
+        <span class="pill" data-i18n="pill5">태양광 발전</span>
+        <span class="pill" data-i18n="pill6">크로스보더 이커머스</span>
       </div>
     </div>
     <div class="imgcard"><img src="__LOUNGE__" alt="PAYTTO showroom lounge"></div>
@@ -247,8 +341,8 @@
 <section class="section-alt">
   <div class="wrap">
     <div class="ceo">
-      <blockquote>“Green Mobility, <span>Vision for Future.</span>”<br>We believe clean and efficient transportation will be a key force shaping the future mobility industry.</blockquote>
-      <div class="who"><b>Kiwoong Yang</b>Legal Representative &amp; CEO, PAYTTO Co., Ltd.</div>
+      <blockquote data-i18n="ceo-quote">“친환경 모빌리티, <span>미래를 향한 비전.</span>”<br>깨끗하고 효율적인 수송 기술이 미래 모빌리티 산업을 이끄는 핵심 동력이 될 것임을 믿습니다.</blockquote>
+      <div class="who"><b data-i18n="ceo-name">양기웅</b><span data-i18n="ceo-role">페이또 주식회사 대표이사</span></div>
     </div>
   </div>
 </section>
@@ -256,35 +350,35 @@
 <section id="business">
   <div class="wrap">
     <div class="sectionhead">
-      <div class="eyebrow" style="justify-content:center;">Main Business</div>
-      <h2 class="title">Five pillars, one integrated industrial system.</h2>
-      <p class="lede">From electric vehicles to raw materials, PAYTTO operates across the full value chain of sustainable mobility and global trade.</p>
+      <div class="eyebrow" style="justify-content:center;" data-i18n="business-eyebrow">주요 사업 분야</div>
+      <h2 class="title" data-i18n="business-title">5대 핵심 축, 하나의 통합 산업 시스템</h2>
+      <p class="lede" data-i18n="business-desc">전기차부터 원자재 무역까지, 페이또는 지속 가능한 모빌리티와 글로벌 무역의 전 가치 사슬을 운영합니다.</p>
     </div>
     <div class="grid g5">
       <div class="card">
         <div class="num">01</div>
-        <h3>EV Sales &amp; After-Service</h3>
-        <p>Import and export of pure electric vehicles and components, with comprehensive after-sales support.</p>
+        <h3 data-i18n="biz1-title">전기차 유통 및 A/S</h3>
+        <p data-i18n="biz1-desc">순수 전기차 및 주요 부품의 수출입과 완벽한 전국 사후 관리 지원 서비스.</p>
       </div>
       <div class="card">
         <div class="num">02</div>
-        <h3>Electronics &amp; Appliances</h3>
-        <p>International trade of electronic and home appliance products for consumers and public institutions.</p>
+        <h3 data-i18n="biz2-title">전자제품 및 가전 무역</h3>
+        <p data-i18n="biz2-desc">소비자 및 공공기관용 전자·가전 제품의 글로벌 무역 및 유통.</p>
       </div>
       <div class="card">
         <div class="num">03</div>
-        <h3>EV Charging Stations</h3>
-        <p>Sales and installation of charging infrastructure, supporting the growth of electric mobility.</p>
+        <h3 data-i18n="biz3-title">전기차 충전 인프라</h3>
+        <p data-i18n="biz3-desc">전기차 충전 인프라의 공급 및 시공을 통한 친환경 모빌리티 확장 지원.</p>
       </div>
       <div class="card">
         <div class="num">04</div>
-        <h3>Raw Materials Trade</h3>
-        <p>Import and export of aluminum, copper, coal, gold and crude oil with stable, high-quality supply.</p>
+        <h3 data-i18n="biz4-title">원자재 글로벌 무역</h3>
+        <p data-i18n="biz4-desc">알루미늄, 구리, 석탄, 금, 원유 등 핵심 자원의 안정적이고 정밀한 수급 체계 유지.</p>
       </div>
       <div class="card">
         <div class="num">05</div>
-        <h3>Business Consulting</h3>
-        <p>Market research and strategy development leveraging deep international trade expertise.</p>
+        <h3 data-i18n="biz5-title">비즈니스 컨설팅</h3>
+        <p data-i18n="biz5-desc">축적된 국제 무역 전문성과 인프라를 활용한 시장 조사 및 전략 컨설팅.</p>
       </div>
     </div>
   </div>
@@ -295,14 +389,14 @@
     <div class="split rev">
       <div class="imgcard"><img src="__VEHICLE_LINEUP__" alt="PAYTTO EV lineup"></div>
       <div>
-        <div class="eyebrow">Full Electric Vehicle Lineup</div>
-        <h2 class="title">A vehicle for every mission.</h2>
-        <p class="lede">In cooperation with local governments in Korea, PAYTTO supplies electric vehicles comprehensively to designated departments — sedans, SUVs, vans, buses and special-purpose vehicles.</p>
+        <div class="eyebrow" data-i18n="fac1-eyebrow">전기 모빌리티 라인업</div>
+        <h2 class="title" data-i18n="fac1-title">상용 및 승용 전기차 글로벌 유통</h2>
+        <p class="lede" data-i18n="fac1-desc">글로벌 유수 OEM 제조사와의 제휴를 통해 안정적인 승용 EV, 상용 밴 및 트럭을 글로벌 시장에 공급합니다.</p>
         <ul class="taglist">
-          <li><b>EV Sedan &amp; SUV</b> — personal commuting and family travel</li>
-          <li><b>EV Van &amp; Pickup</b> — logistics and commercial operations</li>
-          <li><b>EV Bus</b> — public and municipal transportation</li>
-          <li><b>EV Sanitation &amp; Fire Truck</b> — municipal service fleets</li>
+          <li><b data-i18n="tag1-lbl">승용 EV &amp; SUV</b> — <span data-i18n="tag1-desc">출퇴근 및 가정용 스마트 전기 승용차</span></li>
+          <li><b data-i18n="tag2-lbl">상용 밴 &amp; 픽업</b> — <span data-i18n="tag2-desc">도심 물류 및 상업용 특화 차량</span></li>
+          <li><b data-i18n="tag3-lbl">전기 버스</b> — <span data-i18n="tag3-desc">시내버스 및 공공 대중교통 라인업</span></li>
+          <li><b data-i18n="tag4-lbl">특수목적 EV</b> — <span data-i18n="tag4-desc">청소차, 소방차 등 지자체 맞춤형 차량</span></li>
         </ul>
       </div>
     </div>
@@ -312,9 +406,9 @@
 <section id="facilities">
   <div class="wrap">
     <div class="sectionhead">
-      <div class="eyebrow" style="justify-content:center;">Facilities</div>
-      <h2 class="title">Showroom — Deokyang-gu, Goyang-si</h2>
-      <p class="lede">A flagship showroom and lounge space where customers experience PAYTTO's electric vehicle lineup firsthand.</p>
+      <div class="eyebrow" style="justify-content:center;" data-i18n="fac2-eyebrow">전국 거점 인프라</div>
+      <h2 class="title" data-i18n="fac2-title">최첨단 전시장 및 물류 거점 센터</h2>
+      <p class="lede" data-i18n="fac2-desc">차량 검수, 정비 센터, 고객 전용 라운지가 통합된 고품격 서비스 네트워크.</p>
     </div>
     <div class="imgcard"><img src="__SHOWROOM_GRID__" alt="PAYTTO showroom gallery"></div>
   </div>
@@ -324,21 +418,21 @@
   <div class="wrap">
     <div class="split">
       <div>
-        <div class="eyebrow">EV Charging Infrastructure</div>
-        <h2 class="title">Powering the road ahead.</h2>
-        <p class="lede">PAYTTO works closely with local governments to supply and install electric vehicle charging stations in designated areas across Korea.</p>
+        <div class="eyebrow" data-i18n="fac3-eyebrow">클린 에너지 솔루션</div>
+        <h2 class="title" data-i18n="fac3-title">고효율 전기차 충전 인프라</h2>
+        <p class="lede" data-i18n="fac3-desc">급속 충전소부터 가정용 충전기까지, 법인 차고지 및 공공장소에 최적화된 인증 충전 시스템 공급.</p>
         <div class="grid g3" style="margin-top:26px;gap:16px;">
           <div class="card" style="padding:18px;text-align:center;">
             <h3 style="margin:0;font-size:26px;">300</h3>
-            <p style="margin-top:4px;">10k units, EV projection by 2030</p>
+            <p style="margin-top:4px;" data-i18n="stat-c1">2030년 10만 대 EV 보급 목표</p>
           </div>
           <div class="card" style="padding:18px;text-align:center;">
             <h3 style="margin:0;font-size:26px;">20,000</h3>
-            <p style="margin-top:4px;">Fast-charging stations by 2030</p>
+            <p style="margin-top:4px;" data-i18n="stat-c2">2030년 급속 충전기 보급 목표</p>
           </div>
           <div class="card" style="padding:18px;text-align:center;">
             <h3 style="margin:0;font-size:26px;">48</h3>
-            <p style="margin-top:4px;">General distributors &amp; dealers nationwide</p>
+            <p style="margin-top:4px;" data-i18n="stat-c3">전국 총판 및 공식 지정 딜러망</p>
           </div>
         </div>
       </div>
@@ -350,29 +444,29 @@
 <section>
   <div class="wrap">
     <div class="sectionhead">
-      <div class="eyebrow" style="justify-content:center;">Resources &amp; New Energy</div>
-      <h2 class="title">Trade, recycle, regenerate.</h2>
-      <p class="lede">A closed-loop approach spanning raw materials trade, used-battery recycling, and solar power generation.</p>
+      <div class="eyebrow" style="justify-content:center;" data-i18n="fac4-eyebrow">원자재 수급 리더십</div>
+      <h2 class="title" data-i18n="fac4-title">핵심 산업 원자재 및 원유 트레이딩</h2>
+      <p class="lede" data-i18n="fac4-desc">알루미늄, 구리, 석탄, 금 등 첨단 제조 및 에너지 인프라에 필수적인 핵심 자원 공급망 확보.</p>
     </div>
     <div class="grid g3">
       <div class="imgcard" style="grid-column:span 2;"><img src="__RAW_MATERIALS__" alt="Raw materials: aluminum, copper, coal, gold" style="height:100%;"></div>
       <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
-        <h3>Raw Materials</h3>
-        <p>Aluminum ingots, copper cathodes, coal and gold — traded with efficient circulation and high quality standards, including aluminum from Cameroon and copper from Gabon.</p>
+        <h3 data-i18n="res1-title">원자재 트레이딩</h3>
+        <p data-i18n="res1-desc">카메룬 알루미늄, 가봉 구리를 포함하여 알루미늄 잉곳, 구리 케소드, 석탄, 금 등 최상급 원자재를 안정적으로 유통합니다.</p>
       </div>
     </div>
     <div class="grid g3" style="margin-top:26px;">
       <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
-        <h3>Battery Recycling</h3>
-        <p>Recycling and reutilization of used EV batteries — reducing dependence on raw material imports and supporting a sustainable supply chain.</p>
+        <h3 data-i18n="res2-title">배터리 리사이클링</h3>
+        <p data-i18n="res2-desc">사용 후 전기차 배터리의 회수 및 재활용을 통해 원자재 수입 의존도를 낮추고 지속 가능한 자원 순환 체계를 구축합니다.</p>
       </div>
       <div class="imgcard" style="grid-column:span 2;"><img src="__BATTERY__" alt="Battery recycling business" style="height:100%;"></div>
     </div>
     <div class="grid g3" style="margin-top:26px;">
       <div class="imgcard" style="grid-column:span 2;"><img src="__SOLAR__" alt="Kazakhstan solar power project" style="height:100%;"></div>
       <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
-        <h3>Solar Power</h3>
-        <p>Solar power plant projects in Kazakhstan and Uzbekistan, plus a solar-powered aquaculture project — each targeting 100 MW installations.</p>
+        <h3 data-i18n="res3-title">태양광 발전 프로젝트</h3>
+        <p data-i18n="res3-desc">카자흐스탄 및 우즈베키스탄 태양광 발전소 프로젝트와 태양광 수산 양식 사업 등 100MW 규모의 친환경 에너지를 개발합니다.</p>
       </div>
     </div>
   </div>
@@ -381,22 +475,22 @@
 <section id="network" class="section-alt">
   <div class="wrap">
     <div class="sectionhead">
-      <div class="eyebrow" style="justify-content:center;">Global Network</div>
-      <h2 class="title">Trusted partnerships, worldwide reach.</h2>
-      <p class="lede">PAYTTO holds exclusive distribution agreements and cooperation partnerships with leading global automakers and logistics groups.</p>
+      <div class="eyebrow" style="justify-content:center;" data-i18n="net-eyebrow">글로벌 파트너십</div>
+      <h2 class="title" data-i18n="net-title">신뢰 기반의 글로벌 네트워크</h2>
+      <p class="lede" data-i18n="net-desc">글로벌 완성차 제조사 및 물류 그룹과의 독점 유통 및 협력 파트너십을 보유하고 있습니다.</p>
     </div>
     <div class="grid g3">
       <div class="card">
         <h3>BAIC · BAW</h3>
-        <p>Exclusive distribution agreements with Beijing Automotive Group (BAIC) and Beijing Automobile Manufacturing Factory (BAW) for Korea.</p>
+        <p data-i18n="net1-desc">베이징자동차그룹(BAIC) 및 베이징자동차제조창(BAW)의 한국 총판 독점 계약 체결.</p>
       </div>
       <div class="card">
         <h3>Geely · FAW · Leapmotor</h3>
-        <p>Business cooperation agreements with Geely (owner of Volvo, Polestar, Lotus), FAW Group (HONGQI), and Leapmotor.</p>
+        <p data-i18n="net2-desc">지리자동차(Volvo, Polestar), 일기그룹(HONGQI), 립모터와의 전략적 비즈니스 협력 체결.</p>
       </div>
       <div class="card">
         <h3>Hanjin · Weidong Ferry</h3>
-        <p>Logistics partnerships enabling export hubs into the Americas, Europe, and Southeast Asia via Korea–China ferry and freight networks.</p>
+        <p data-i18n="net3-desc">한진그룹 및 위동항운과의 물류 협력을 통해 한중 페리 및 글로벌 해상 유통망 구축.</p>
       </div>
     </div>
   </div>
@@ -405,25 +499,30 @@
 <section>
   <div class="wrap">
     <div class="sectionhead">
-      <div class="eyebrow" style="justify-content:center;">Nationwide Sales Network</div>
-      <h2 class="title">48 dealers, one national network.</h2>
-      <p class="lede">Carefully selected general distributors and authorized dealers spanning every major region of Korea.</p>
+      <div class="eyebrow" style="justify-content:center;" data-i18n="net-eyebrow-tbl">전국 판매 네트워크</div>
+      <h2 class="title" data-i18n="net-title-tbl">전국 48개 거점 딜러 네트워크</h2>
+      <p class="lede" data-i18n="net-desc-tbl">대한민국 전 지역을 아우르는 총판 및 공식 지정 딜러망 보유.</p>
     </div>
     <div class="card" style="padding:0;overflow:hidden;">
       <table>
         <thead>
-          <tr><th>Region</th><th>General Distributor</th><th>Dealers</th><th>Total</th></tr>
+          <tr>
+            <th data-i18n="tbl-region">지역구분</th>
+            <th data-i18n="tbl-distributor">총판</th>
+            <th data-i18n="tbl-dealers">딜러</th>
+            <th data-i18n="tbl-total">합계</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td>Seoul</td><td>1</td><td>5</td><td>6</td></tr>
-          <tr><td>Incheon, Gyeonggi-do</td><td>2</td><td>8</td><td>10</td></tr>
-          <tr><td>Gangwon-do</td><td>—</td><td>2</td><td>2</td></tr>
-          <tr><td>Daejeon, Chungcheongnam-do</td><td>1</td><td>5</td><td>6</td></tr>
-          <tr><td>Gwangju, Jeollanam-do</td><td>1</td><td>5</td><td>6</td></tr>
-          <tr><td>Daegu, Gyeongsangbuk-do</td><td>1</td><td>5</td><td>6</td></tr>
-          <tr><td>Busan, Gyeongsangnam-do</td><td>2</td><td>8</td><td>10</td></tr>
-          <tr><td>Jeju Island</td><td>—</td><td>2</td><td>2</td></tr>
-          <tr style="font-weight:800;"><td>Total</td><td>8</td><td>40</td><td>48</td></tr>
+          <tr><td data-i18n="reg-seoul">서울</td><td>1</td><td>5</td><td>6</td></tr>
+          <tr><td data-i18n="reg-incheon">인천 · 경기도</td><td>2</td><td>8</td><td>10</td></tr>
+          <tr><td data-i18n="reg-gangwon">강원도</td><td>—</td><td>2</td><td>2</td></tr>
+          <tr><td data-i18n="reg-daejeon">대전 · 충청도</td><td>1</td><td>5</td><td>6</td></tr>
+          <tr><td data-i18n="reg-gwangju">광주 · 전라도</td><td>1</td><td>5</td><td>6</td></tr>
+          <tr><td data-i18n="reg-daegu">대구 · 경상북도</td><td>1</td><td>5</td><td>6</td></tr>
+          <tr><td data-i18n="reg-busan">부산 · 경상남도</td><td>2</td><td>8</td><td>10</td></tr>
+          <tr><td data-i18n="reg-jeju">제주특별자치도</td><td>—</td><td>2</td><td>2</td></tr>
+          <tr style="font-weight:800;"><td data-i18n="reg-tot-lbl">전국 총계</td><td>8</td><td>40</td><td>48</td></tr>
         </tbody>
       </table>
     </div>
@@ -433,24 +532,29 @@
 <section id="contact" class="section-alt">
   <div class="wrap split">
     <div>
-      <div class="eyebrow">Contact</div>
-      <h2 class="title">Let's build the future of mobility together.</h2>
-      <p class="lede">For partnership, distribution, or investment inquiries, reach out to the PAYTTO team.</p>
+      <div class="eyebrow" data-i18n="contact-eyebrow">협력 문의</div>
+      <h2 class="title" data-i18n="contact-title">미래 모빌리티의 혁신을 함께 만듭니다.</h2>
+      <p class="lede" data-i18n="contact-desc">파트너십, 유통 제휴, 투자 문의 등 페이또 글로벌 담당자가 신속히 안내해 드립니다.</p>
       <ul class="taglist" style="margin-top:30px;">
-        <li><b>Headquarters</b> — Goyang-si, Gyeonggi-do, South Korea</li>
-        <li><b>Founded</b> — 2013</li>
-        <li><b>Business Scope</b> — Electric Vehicles · Charging Infrastructure · Raw Materials · Battery Recycling · Solar Power</li>
+        <li><b data-i18n="info-hq-lbl">본사 소재지</b> — <span data-i18n="info-hq-val">대한민국 경기도 고양시</span></li>
+        <li><b data-i18n="info-est-lbl">설립 연도</b> — <span>2013</span></li>
+        <li><b data-i18n="info-scope-lbl">사업 영역</b> — <span data-i18n="info-scope-val">전기자동차 · 충전 인프라 · 원자재 무역 · 배터리 리사이클링 · 태양광 발전</span></li>
       </ul>
     </div>
     <div class="card">
-      <h3 style="margin-top:0;">Send an inquiry</h3>
-      <p style="margin-bottom:20px;">Fill in your details and our business development team will follow up.</p>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <input placeholder="Your name" style="padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:14px;">
-        <input placeholder="Company" style="padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:14px;">
-        <input placeholder="Email" style="padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:14px;">
-        <textarea placeholder="Message" rows="3" style="padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:14px;font-family:inherit;"></textarea>
-        <button style="padding:13px;border-radius:10px;border:0;background:var(--orange);color:#052018;font-weight:800;font-size:14.5px;cursor:pointer;">Submit Inquiry</button>
+      <h3 style="margin-top:0;" data-i18n="form-title">협력 및 문의 신청</h3>
+      <p style="margin-bottom:20px;" data-i18n="form-subtitle">상세 내용을 입력해주시면 담당자가 빠른 시일 내에 연락드리겠습니다.</p>
+      <form onsubmit="handleContact(event)">
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <input required data-i18n-ph="ph-name" placeholder="성명 / 담당자명" style="padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:14px;">
+          <input required data-i18n-ph="ph-company" placeholder="회사명" style="padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:14px;">
+          <input type="email" required data-i18n-ph="ph-email" placeholder="이메일 주소" style="padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:14px;">
+          <textarea required data-i18n-ph="ph-msg" placeholder="문의 상세내용" rows="3" style="padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:14px;font-family:inherit;"></textarea>
+          <button type="submit" style="padding:13px;border-radius:10px;border:0;background:var(--orange);color:#052018;font-weight:800;font-size:14.5px;cursor:pointer;" data-i18n="form-submit">협력 요청서 전송</button>
+        </div>
+      </form>
+      <div id="contactSuccess" class="contact-success" data-i18n="form-success">
+        성공적으로 접수되었습니다! 빠른 시일 내에 답변 드리겠습니다.
       </div>
     </div>
   </div>
@@ -459,28 +563,464 @@
 <footer>
   <div class="wrap">
     <div>
-      <img src="__LOGO__" alt="PAYTTO" style="height:24px;margin-bottom:16px;filter:brightness(0) invert(1);">
-      <p style="max-width:340px;color:#8a9c92;font-size:14px;">A comprehensive international trading and industrial solutions provider based in Goyang-si, South Korea, since 2013.</p>
+      <a href="#top" class="brand-logo" style="margin-bottom:16px;">
+        <i class="fa-solid fa-gem logo-icon"></i>
+        <span class="logo-text">PAYTTO</span>
+      </a>
+      <p style="max-width:340px;color:#8a9c92;font-size:14px;" data-i18n="footer-desc">2013년부터 경기도 고양시에 본사를 두고 글로벌 무역 및 친환경 산업 솔루션을 선도하는 페이또(PAYTTO)입니다.</p>
     </div>
     <div>
-      <h4>Company</h4>
+      <h4 data-i18n="footer-col1">기업 정보</h4>
       <ul>
-        <li><a href="#about">About PAYTTO</a></li>
-        <li><a href="#business">Main Business</a></li>
-        <li><a href="#network">Global Network</a></li>
+        <li><a href="#about" data-i18n="nav-company">기업 소개</a></li>
+        <li><a href="#business" data-i18n="nav-business">주요 사업</a></li>
+        <li><a href="#network" data-i18n="nav-network">전국 네트워크</a></li>
       </ul>
     </div>
     <div>
-      <h4>Business</h4>
+      <h4 data-i18n="footer-col2">사업 분야</h4>
       <ul>
-        <li><a href="#business">Electric Vehicles</a></li>
-        <li><a href="#business">Charging Infrastructure</a></li>
-        <li><a href="#business">Raw Materials &amp; Recycling</a></li>
+        <li><a href="#business" data-i18n="pill1">전기자동차</a></li>
+        <li><a href="#business" data-i18n="pill2">EV 충전 인프라</a></li>
+        <li><a href="#business" data-i18n="pill3">원자재 무역</a></li>
       </ul>
     </div>
   </div>
   <div class="bottom">
-    <span>© 2026 PAYTTO Co., Ltd. All rights reserved.</span>
-    <span>Goyang-si, Gyeonggi-do, South Korea</span>
+    <span data-i18n="footer-copy">© 2026 PEITO / PAYTTO Co., Ltd. All rights reserved.</span>
+    <span data-i18n="info-hq-val">대한민국 경기도 고양시</span>
   </div>
 </footer>
+
+<script>
+  // Multilingual i18n Dictionary
+  const i18n = {
+    ko: {
+      "doc-title": "PEITO 페이또 | Green Mobility, Vision for Future",
+      "nav-company": "기업 소개",
+      "nav-business": "주요 사업",
+      "nav-facilities": "시설 및 인프라",
+      "nav-network": "전국 네트워크",
+      "nav-contact": "협력 문의",
+      "nav-cta": "문의하기",
+      
+      "hero-kicker": "2013년 설립 · 대한민국 경기도 고양시 본사",
+      "hero-title": "친환경 모빌리티,<br><span>미래를 향한 비전</span>",
+      "hero-desc": "페이또(PAYTTO)는 전기차, EV 충전 인프라, 신재생 에너지, 글로벌 원자재 무역을 아우르는 종합 국제 무역 및 산업 솔루션 전문 기업입니다.",
+      "hero-btn-primary": "주요 사업 알아보기",
+      "hero-btn-secondary": "협력 문의하기",
+      "stat1-val": "2013",
+      "stat1-lbl": "설립 연도",
+      "stat2-val": "48",
+      "stat2-lbl": "전국 딜러망",
+      "stat3-val": "5",
+      "stat3-lbl": "핵심 사업부",
+      "stat4-val": "10+",
+      "stat4-lbl": "글로벌 OEM 파트너",
+
+      "about-eyebrow": "기업 개요",
+      "about-title": "한국과 세계를 잇는 친선 무역의 교량",
+      "about-p1": "페이또(PAYTTO)는 2013년 설립되어 대한민국 경기도 고양시에 본사를 두고 있습니다. 전기차 및 핵심 부품의 수출입, 완제차 조립 공장 솔루션 제공, EV 충전 인프라 및 태양광/신에너지 솔루션을 구축하는 종합 무역 기업입니다.",
+      "about-p2": "모빌리티 영역을 넘어 전자제품, 화장품, 건강식품 무역 및 크로스보더 이커머스를 운영하며, 알루미늄·구리·금·석탄·원유 등 핵심 원자재 국제 무역과 폐배터리 리사이클링까지 전 주기 산업 생태계를 구축하고 있습니다.",
+      "pill1": "전기자동차",
+      "pill2": "EV 충전 인프라",
+      "pill3": "원자재 무역",
+      "pill4": "배터리 리사이클링",
+      "pill5": "태양광 발전",
+      "pill6": "크로스보더 이커머스",
+
+      "ceo-quote": "“친환경 모빌리티, <span>미래를 향한 비전.</span>”<br>깨끗하고 효율적인 수송 기술이 미래 모빌리티 산업을 이끄는 핵심 동력이 될 것임을 믿습니다.",
+      "ceo-name": "양기웅",
+      "ceo-role": "페이또 주식회사 대표이사",
+
+      "business-eyebrow": "주요 사업 분야",
+      "business-title": "5대 핵심 축, 하나의 통합 산업 시스템",
+      "business-desc": "전기차부터 원자재 무역까지, 페이또는 지속 가능한 모빌리티와 글로벌 무역의 전 가치 사슬을 운영합니다.",
+      "biz1-title": "전기차 유통 및 A/S",
+      "biz1-desc": "순수 전기차 및 주요 부품의 수출입과 완벽한 전국 사후 관리 지원 서비스.",
+      "biz2-title": "전자제품 및 가전 무역",
+      "biz2-desc": "소비자 및 공공기관용 전자·가전 제품의 글로벌 무역 및 유통.",
+      "biz3-title": "전기차 충전 인프라",
+      "biz3-desc": "전기차 충전 인프라의 공급 및 시공을 통한 친환경 모빌리티 확장 지원.",
+      "biz4-title": "원자재 글로벌 무역",
+      "biz4-desc": "알루미늄, 구리, 석탄, 금, 원유 등 핵심 자원의 안정적이고 정밀한 수급 체계 유지.",
+      "biz5-title": "비즈니스 컨설팅",
+      "biz5-desc": "축적된 국제 무역 전문성과 인프라를 활용한 시장 조사 및 전략 컨설팅.",
+
+      "fac1-eyebrow": "전기 모빌리티 라인업",
+      "fac1-title": "상용 및 승용 전기차 글로벌 유통",
+      "fac1-desc": "글로벌 유수 OEM 제조사와의 제휴를 통해 안정적인 승용 EV, 상용 밴 및 트럭을 글로벌 시장에 공급합니다.",
+      "tag1-lbl": "승용 EV & SUV", "tag1-desc": "출퇴근 및 가정용 스마트 전기 승용차",
+      "tag2-lbl": "상용 밴 & 픽업", "tag2-desc": "도심 물류 및 상업용 특화 차량",
+      "tag3-lbl": "전기 버스", "tag3-desc": "시내버스 및 공공 대중교통 라인업",
+      "tag4-lbl": "특수목적 EV", "tag4-desc": "청소차, 소방차 등 지자체 맞춤형 차량",
+
+      "fac2-eyebrow": "전국 거점 인프라",
+      "fac2-title": "최첨단 전시장 및 물류 거점 센터",
+      "fac2-desc": "차량 검수, 정비 센터, 고객 전용 라운지가 통합된 고품격 서비스 네트워크.",
+
+      "fac3-eyebrow": "클린 에너지 솔루션",
+      "fac3-title": "고효율 전기차 충전 인프라",
+      "fac3-desc": "급속 충전소부터 가정용 충전기까지, 법인 차고지 및 공공장소에 최적화된 인증 충전 시스템 공급.",
+      "stat-c1": "2030년 10만 대 EV 보급 목표",
+      "stat-c2": "2030년 급속 충전기 보급 목표",
+      "stat-c3": "전국 총판 및 공식 지정 딜러망",
+
+      "fac4-eyebrow": "원자재 수급 리더십",
+      "fac4-title": "핵심 산업 원자재 및 원유 트레이딩",
+      "fac4-desc": "알루미늄, 구리, 석탄, 금 등 첨단 제조 및 에너지 인프라에 필수적인 핵심 자원 공급망 확보.",
+      "res1-title": "원자재 트레이딩",
+      "res1-desc": "카메룬 알루미늄, 가봉 구리를 포함하여 알루미늄 잉곳, 구리 케소드, 석탄, 금 등 최상급 원자재를 안정적으로 유통합니다.",
+      "res2-title": "배터리 리사이클링",
+      "res2-desc": "사용 후 전기차 배터리의 회수 및 재활용을 통해 원자재 수입 의존도를 낮추고 지속 가능한 자원 순환 체계를 구축합니다.",
+      "res3-title": "태양광 발전 프로젝트",
+      "res3-desc": "카자흐스탄 및 우즈베키스탄 태양광 발전소 프로젝트와 태양광 수산 양식 사업 등 100MW 규모의 친환경 에너지를 개발합니다.",
+
+      "net-eyebrow": "글로벌 파트너십",
+      "net-title": "신뢰 기반의 글로벌 네트워크",
+      "net-desc": "글로벌 완성차 제조사 및 물류 그룹과의 독점 유통 및 협력 파트너십을 보유하고 있습니다.",
+      "net1-desc": "베이징자동차그룹(BAIC) 및 베이징자동차제조창(BAW)의 한국 총판 독점 계약 체결.",
+      "net2-desc": "지리자동차(Volvo, Polestar), 일기그룹(HONGQI), 립모터와의 전략적 비즈니스 협력 체결.",
+      "net3-desc": "한진그룹 및 위동항운과의 물류 협력을 통해 한중 페리 및 글로벌 해상 유통망 구축.",
+
+      "net-eyebrow-tbl": "전국 판매 네트워크",
+      "net-title-tbl": "전국 48개 거점 딜러 네트워크",
+      "net-desc-tbl": "대한민국 전 지역을 아우르는 총판 및 공식 지정 딜러망 보유.",
+      "tbl-region": "지역구분",
+      "tbl-distributor": "총판",
+      "tbl-dealers": "딜러",
+      "tbl-total": "합계",
+      "reg-seoul": "서울",
+      "reg-incheon": "인천 · 경기도",
+      "reg-gangwon": "강원도",
+      "reg-daejeon": "대전 · 충청도",
+      "reg-gwangju": "광주 · 전라도",
+      "reg-daegu": "대구 · 경상북도",
+      "reg-busan": "부산 · 경상남도",
+      "reg-jeju": "제주특별자치도",
+      "reg-tot-lbl": "전국 총계",
+
+      "contact-eyebrow": "협력 문의",
+      "contact-title": "미래 모빌리티의 혁신을 함께 만듭니다.",
+      "contact-desc": "파트너십, 유통 제휴, 투자 문의 등 페이또 글로벌 담당자가 신속히 안내해 드립니다.",
+      "info-hq-lbl": "본사 소재지",
+      "info-hq-val": "대한민국 경기도 고양시",
+      "info-est-lbl": "설립 연도",
+      "info-scope-lbl": "사업 영역",
+      "info-scope-val": "전기자동차 · 충전 인프라 · 원자재 무역 · 배터리 리사이클링 · 태양광 발전",
+      "form-title": "협력 및 문의 신청",
+      "form-subtitle": "상세 내용을 입력해주시면 담당자가 빠른 시일 내에 연락드리겠습니다.",
+      "ph-name": "성명 / 담당자명",
+      "ph-company": "회사명",
+      "ph-email": "이메일 주소",
+      "ph-msg": "문의 상세내용",
+      "form-submit": "협력 요청서 전송",
+      "form-success": "성공적으로 접수되었습니다! 빠른 시일 내에 답변 드리겠습니다.",
+
+      "footer-desc": "2013년부터 경기도 고양시에 본사를 두고 글로벌 무역 및 친환경 산업 솔루션을 선도하는 페이또(PAYTTO)입니다.",
+      "footer-col1": "기업 정보",
+      "footer-col2": "사업 분야",
+      "footer-copy": "© 2026 PEITO / PAYTTO Co., Ltd. All rights reserved."
+    },
+    en: {
+      "doc-title": "PEITO / PAYTTO | Green Mobility, Vision for Future",
+      "nav-company": "Company",
+      "nav-business": "Business",
+      "nav-facilities": "Facilities",
+      "nav-network": "Network",
+      "nav-contact": "Contact",
+      "nav-cta": "Get in Touch",
+
+      "hero-kicker": "Est. 2013 · Goyang-si, Gyeonggi-do, South Korea",
+      "hero-title": "Green Mobility,<br><span>Vision for Future.</span>",
+      "hero-desc": "PAYTTO is a comprehensive international trading and industrial solutions provider — spanning electric vehicles, EV charging infrastructure, new energy, and global resource trade.",
+      "hero-btn-primary": "Explore Our Business",
+      "hero-btn-secondary": "Contact Us",
+      "stat1-val": "2013",
+      "stat1-lbl": "Founded",
+      "stat2-val": "48",
+      "stat2-lbl": "Dealers Nationwide",
+      "stat3-val": "5",
+      "stat3-lbl": "Core Business Lines",
+      "stat4-val": "10+",
+      "stat4-lbl": "Global OEM Partners",
+
+      "about-eyebrow": "Company Introduction",
+      "about-title": "Building a bridge for friendly trade between Korea and the world.",
+      "about-p1": "PAYTTO was established in 2013 and is headquartered in Goyang-si, Gyeonggi-do, South Korea. It is a comprehensive international trading and industrial solutions provider — importing and exporting electric vehicles and related components, delivering complete vehicle assembly plant solutions, and installing EV charging infrastructure alongside photovoltaic power and new-energy solutions.",
+      "about-p2": "Beyond mobility, PAYTTO trades electronics, cosmetics, health supplements and food products, operates cross-border e-commerce and live-streaming businesses, and conducts international trade of raw materials such as aluminum, copper, gold, coal and crude oil — while advancing used-battery recycling to build a full-circle industrial system across new energy, trade, and resource circulation.",
+      "pill1": "Electric Vehicles",
+      "pill2": "EV Charging Infrastructure",
+      "pill3": "Raw Materials Trade",
+      "pill4": "Battery Recycling",
+      "pill5": "Solar Power",
+      "pill6": "Cross-Border E-Commerce",
+
+      "ceo-quote": "“Green Mobility, <span>Vision for Future.</span>”<br>We believe clean and efficient transportation will be a key force shaping the future mobility industry.",
+      "ceo-name": "Kiwoong Yang",
+      "ceo-role": "Legal Representative & CEO, PAYTTO Co., Ltd.",
+
+      "business-eyebrow": "Main Business",
+      "business-title": "Five pillars, one integrated industrial system.",
+      "business-desc": "From electric vehicles to raw materials, PAYTTO operates across the full value chain of sustainable mobility and global trade.",
+      "biz1-title": "EV Sales & After-Service",
+      "biz1-desc": "Import and export of pure electric vehicles and components, with comprehensive after-sales support.",
+      "biz2-title": "Electronics & Appliances",
+      "biz2-desc": "International trade of electronic and home appliance products for consumers and public institutions.",
+      "biz3-title": "EV Charging Stations",
+      "biz3-desc": "Sales and installation of charging infrastructure, supporting the growth of electric mobility.",
+      "biz4-title": "Raw Materials Trade",
+      "biz4-desc": "Import and export of aluminum, copper, coal, gold and crude oil with stable, high-quality supply.",
+      "biz5-title": "Business Consulting",
+      "biz5-desc": "Market research and strategy development leveraging deep international trade expertise.",
+
+      "fac1-eyebrow": "Full Electric Vehicle Lineup",
+      "fac1-title": "Commercial & Passenger EV Distribution",
+      "fac1-desc": "Partnering with top global OEMs, PAYTTO brings reliable passenger EVs, commercial vans, and trucks to markets across Asia and beyond.",
+      "tag1-lbl": "EV Sedan & SUV", "tag1-desc": "Personal commuting and family travel",
+      "tag2-lbl": "EV Van & Pickup", "tag2-desc": "Logistics and commercial operations",
+      "tag3-lbl": "EV Bus", "tag3-desc": "Public and municipal transportation",
+      "tag4-lbl": "Special EV", "tag4-desc": "Sanitation and municipal service fleets",
+
+      "fac2-eyebrow": "Facilities",
+      "fac2-title": "State-of-the-Art Showroom & Logistics",
+      "fac2-desc": "Integrated vehicle inspection, maintenance facilities, and customer lounge — built for seamless service and delivery.",
+
+      "fac3-eyebrow": "EV Charging Infrastructure",
+      "fac3-title": "Powering the road ahead.",
+      "fac3-desc": "From fast-charging stations to residential wallboxes, we supply certified charging hardware for fleets, public spaces, and private owners.",
+      "stat-c1": "10k units, EV projection by 2030",
+      "stat-c2": "Fast-charging stations by 2030",
+      "stat-c3": "General distributors & dealers nationwide",
+
+      "fac4-eyebrow": "Resources & New Energy",
+      "fac4-title": "Trade, recycle, regenerate.",
+      "fac4-desc": "Securing stable supply chains of aluminum, copper, coal, and gold to support global manufacturing and energy infrastructure.",
+      "res1-title": "Raw Materials",
+      "res1-desc": "Aluminum ingots, copper cathodes, coal and gold — traded with efficient circulation and high quality standards, including aluminum from Cameroon and copper from Gabon.",
+      "res2-title": "Battery Recycling",
+      "res2-desc": "Recycling and reutilization of used EV batteries — reducing dependence on raw material imports and supporting a sustainable supply chain.",
+      "res3-title": "Solar Power",
+      "res3-desc": "Solar power plant projects in Kazakhstan and Uzbekistan, plus a solar-powered aquaculture project — each targeting 100 MW installations.",
+
+      "net-eyebrow": "Global Network",
+      "net-title": "Trusted partnerships, worldwide reach.",
+      "net-desc": "PAYTTO holds exclusive distribution agreements and cooperation partnerships with leading global automakers and logistics groups.",
+      "net1-desc": "Exclusive distribution agreements with Beijing Automotive Group (BAIC) and Beijing Automobile Manufacturing Factory (BAW) for Korea.",
+      "net2-desc": "Business cooperation agreements with Geely (owner of Volvo, Polestar, Lotus), FAW Group (HONGQI), and Leapmotor.",
+      "net3-desc": "Logistics partnerships enabling export hubs into the Americas, Europe, and Southeast Asia via Korea–China ferry and freight networks.",
+
+      "net-eyebrow-tbl": "Nationwide Sales Network",
+      "net-title-tbl": "48 dealers, one national network.",
+      "net-desc-tbl": "Carefully selected general distributors and authorized dealers spanning every major region of Korea.",
+      "tbl-region": "Region",
+      "tbl-distributor": "General Distributor",
+      "tbl-dealers": "Dealers",
+      "tbl-total": "Total",
+      "reg-seoul": "Seoul",
+      "reg-incheon": "Incheon, Gyeonggi-do",
+      "reg-gangwon": "Gangwon-do",
+      "reg-daejeon": "Daejeon, Chungcheong-do",
+      "reg-gwangju": "Gwangju, Jeolla-do",
+      "reg-daegu": "Daegu, Gyeongsangbuk-do",
+      "reg-busan": "Busan, Gyeongsangnam-do",
+      "reg-jeju": "Jeju Island",
+      "reg-tot-lbl": "Total",
+
+      "contact-eyebrow": "Contact",
+      "contact-title": "Let's build the future of mobility together.",
+      "contact-desc": "For partnership, distribution, or investment inquiries, reach out to the PAYTTO team.",
+      "info-hq-lbl": "Headquarters",
+      "info-hq-val": "Goyang-si, Gyeonggi-do, South Korea",
+      "info-est-lbl": "Founded",
+      "info-scope-lbl": "Business Scope",
+      "info-scope-val": "Electric Vehicles · Charging Infrastructure · Raw Materials · Battery Recycling · Solar Power",
+      "form-title": "Send an inquiry",
+      "form-subtitle": "Fill in your details and our business development team will follow up.",
+      "ph-name": "Your name",
+      "ph-company": "Company",
+      "ph-email": "Email",
+      "ph-msg": "Message",
+      "form-submit": "Submit Inquiry",
+      "form-success": "Your inquiry has been submitted successfully!",
+
+      "footer-desc": "A comprehensive international trading and industrial solutions provider based in Goyang-si, South Korea, since 2013.",
+      "footer-col1": "Company",
+      "footer-col2": "Business",
+      "footer-copy": "© 2026 PEITO / PAYTTO Co., Ltd. All rights reserved."
+    },
+    ch: {
+      "doc-title": "PEITO / PAYTTO | 绿色出行，远见未来",
+      "nav-company": "公司介绍",
+      "nav-business": "核心业务",
+      "nav-facilities": "设施与基础设施",
+      "nav-network": "销售网络",
+      "nav-contact": "联系我们",
+      "nav-cta": "立即咨询",
+
+      "hero-kicker": "成立于2013年 · 韩国京畿道高阳市总部",
+      "hero-title": "绿色出行，<br><span>远见未来</span>",
+      "hero-desc": "PAYTTO 是一家综合性国际贸易与工业解决方案提供商，涵盖电动汽车、充电基础设施、新能源与全球资源贸易。",
+      "hero-btn-primary": "探索核心业务",
+      "hero-btn-secondary": "联系我们",
+      "stat1-val": "2013",
+      "stat1-lbl": "成立年份",
+      "stat2-val": "48",
+      "stat2-lbl": "全国经销商",
+      "stat3-val": "5",
+      "stat3-lbl": "核心业务板块",
+      "stat4-val": "10+",
+      "stat4-lbl": "全球OEM合作伙伴",
+
+      "about-eyebrow": "公司简介",
+      "about-title": "搭建韩国与世界友好贸易的桥梁",
+      "about-p1": "PAYTTO 成立于2013年，总部位于韩国京畿道高阳市。公司是一家综合性国际贸易和工业解决方案提供商——进出口电动汽车及关键零部件，提供整车组装厂解决方案，并安装电动汽车充电基础设施及光伏新能源解决方案。",
+      "about-p2": "除出行领域外，PAYTTO 还开展电子产品、化妆品、保健品贸易及跨境电商直播业务，并运营铝、铜、金、煤炭和原油等大宗原材料国际贸易，推进废旧电池回收，构建覆盖新能源、贸易和资源循环的完整产业体系。",
+      "pill1": "电动汽车",
+      "pill2": "电动车充电设施",
+      "pill3": "原材料贸易",
+      "pill4": "电池回收利用",
+      "pill5": "太阳能发电",
+      "pill6": "跨境电子商务",
+
+      "ceo-quote": "“绿色出行，<span>远见未来。</span>”<br>我们坚信清洁高效的交通运输将成为塑造未来出行产业的核心力量。",
+      "ceo-name": "梁基雄",
+      "ceo-role": "PAYTTO 株式会社 代表理事",
+
+      "business-eyebrow": "核心业务",
+      "business-title": "五大核心支柱，一个集成产业体系",
+      "business-desc": "从电动汽车到原材料贸易，PAYTTO 运营着可持续出行与全球贸易的全产业链。",
+      "biz1-title": "电动车销售与售后",
+      "biz1-desc": "纯电动汽车及零部件进出口，提供全面的售后服务支持。",
+      "biz2-title": "电子产品与家电贸易",
+      "biz2-desc": "为消费者和公共机构提供电子产品与家用电器的国际贸易。",
+      "biz3-title": "电动车充电站",
+      "biz3-desc": "销售并安装充电基础设施，支持电动出行的快速普及。",
+      "biz4-title": "原材料国际贸易",
+      "biz4-desc": "铝、铜、煤炭、黄金和原油的高品质稳定进出口与大宗贸易。",
+      "biz5-title": "商业咨询",
+      "biz5-desc": "依托深厚的国际贸易专业知识，提供市场调研与战略规划。",
+
+      "fac1-eyebrow": "电动出行阵容",
+      "fac1-title": "商用与乘用电动车全球分销",
+      "fac1-desc": "与全球顶尖 OEM 合作，PAYTTO 将可靠的乘用电动车、商用货车及卡车推向亚洲及全球市场。",
+      "tag1-lbl": "乘用 EV & SUV", "tag1-desc": "通勤与家庭智能纯电动乘用车",
+      "tag2-lbl": "商用货车 & 皮卡", "tag2-desc": "城市物流与商业运输专用车",
+      "tag3-lbl": "电动公交", "tag3-desc": "城市公交与公共交通阵容",
+      "tag4-lbl": "特种电动车", "tag4-desc": "环卫车、消防车等市政定制车辆",
+
+      "fac2-eyebrow": "基础设施",
+      "fac2-title": "先进展示中心与物流基地",
+      "fac2-desc": "集车辆检验、维修设施与客户尊享休息室于一体的无缝服务与交付网络。",
+
+      "fac3-eyebrow": "清洁能源",
+      "fac3-title": "高效电动车充电基础设施",
+      "fac3-desc": "从快充站到家用充电桩，我们为车队、公共场所和私人业主提供认证充电硬件。",
+      "stat-c1": "2030年10万台电动车普及目标",
+      "stat-c2": "2030年快充桩普及目标",
+      "stat-c3": "全国总代理与授权经销商",
+
+      "fac4-eyebrow": "大宗资源贸易",
+      "fac4-title": "工业原材料与原油贸易",
+      "fac4-desc": "保障铝、铜、煤炭和黄金的稳定供应链，支持全球制造与能源基础设施建设。",
+      "res1-title": "原材料贸易",
+      "res1-desc": "稳定分销包括喀麦隆铝和加蓬铜在内的铝锭、阴极铜、煤炭及黄金等优质原材料。",
+      "res2-title": "电池回收利用",
+      "res2-desc": "回收和循环利用废旧电动车电池，降低对原材料进口依赖，构建可持续资源循环体系。",
+      "res3-title": "太阳能发电项目",
+      "res3-desc": "开发哈萨克斯坦和乌兹别克斯坦光伏电站项目及光伏水产养殖项目，目标规模各达 100 MW。",
+
+      "net-eyebrow": "全球合作",
+      "net-title": "值得信赖的全球网络",
+      "net-desc": "PAYTTO 与全球知名汽车制造商及物流集团拥有独家分销和战略合作关系。",
+      "net1-desc": "获得北汽集团 (BAIC) 及北京汽车制造厂 (BAW) 韩国独家总代理协议。",
+      "net2-desc": "与吉利汽车 (Volvo, Polestar)、一汽集团 (红旗) 和零跑汽车建立战略业务合作。",
+      "net3-desc": "与韩进集团及威东航运开展物流合作，构建韩中客滚船及全球海运网络。",
+
+      "net-eyebrow-tbl": "全国销售网络",
+      "net-title-tbl": "全国48家经销商与服务网点",
+      "net-desc-tbl": "精心挑选的总代理与授权经销商，覆盖韩国各大主要区域。",
+      "tbl-region": "区域",
+      "tbl-distributor": "总代理",
+      "tbl-dealers": "经销商",
+      "tbl-total": "总计",
+      "reg-seoul": "首尔",
+      "reg-incheon": "仁川 · 京畿道",
+      "reg-gangwon": "江原道",
+      "reg-daejeon": "大田 · 忠清道",
+      "reg-gwangju": "光州 · 全罗道",
+      "reg-daegu": "大邱 · 庆尚北道",
+      "reg-busan": "釜山 · 庆尚南道",
+      "reg-jeju": "济州特别自治道",
+      "reg-tot-lbl": "全国合计",
+
+      "contact-eyebrow": "联系我们",
+      "contact-title": "携手共建未来出行新篇章。",
+      "contact-desc": "有关合作、分销或投资咨询，请与 PAYTTO 团队联系。",
+      "info-hq-lbl": "总部地址",
+      "info-hq-val": "韩国京畿道高阳市",
+      "info-est-lbl": "成立年份",
+      "info-scope-lbl": "业务范围",
+      "info-scope-val": "电动汽车 · 充电基础设施 · 大宗原材料 · 电池回收 · 太阳能发电",
+      "form-title": "提交咨询",
+      "form-subtitle": "填写您的详细信息，我们的商务团队将尽快回复。",
+      "ph-name": "您的姓名",
+      "ph-company": "公司名称",
+      "ph-email": "电子邮箱",
+      "ph-msg": "咨询内容",
+      "form-submit": "提交申请",
+      "form-success": "您的咨询已成功提交！我们将尽快回复。",
+
+      "footer-desc": "自2013年起，总部位于韩国京畿道高阳市，引领全球贸易与绿色工业解决方案。",
+      "footer-col1": "公司",
+      "footer-col2": "业务",
+      "footer-copy": "© 2026 PEITO / PAYTTO Co., Ltd. All rights reserved."
+    }
+  };
+
+  function changeLanguage(lang) {
+    if (!i18n[lang]) return;
+    localStorage.setItem('paytto_site_lang', lang);
+
+    // Update active button state
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+
+    // Translate all elements with data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (i18n[lang][key]) {
+        el.innerHTML = i18n[lang][key];
+      }
+    });
+
+    // Translate all input placeholders with data-i18n-ph
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+      const key = el.getAttribute('data-i18n-ph');
+      if (i18n[lang][key]) {
+        el.setAttribute('placeholder', i18n[lang][key]);
+      }
+    });
+  }
+
+  function handleContact(e) {
+    e.preventDefault();
+    const alertBox = document.getElementById('contactSuccess');
+    if (alertBox) {
+      alertBox.style.display = 'block';
+      setTimeout(() => {
+        alertBox.style.display = 'none';
+      }, 5000);
+    }
+    e.target.reset();
+  }
+
+  // Restore saved language or default to 'ko'
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('paytto_site_lang') || 'ko';
+    changeLanguage(savedLang);
+  });
+</script>
+</body>
+</html>

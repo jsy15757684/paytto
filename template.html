@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title data-i18n="doc-title">PAYTTO 페이또 | Green Mobility, Vision for Future</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -52,7 +52,7 @@
       font-family:'Outfit', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     a{color:inherit;text-decoration:none;}
-    img{max-width:100%;display:block;}
+    img{max-width:100%;height:auto;display:block;}
     .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
     main { flex: 1; }
     
@@ -62,14 +62,14 @@
       color:var(--orange);margin-bottom:14px;
     }
     .eyebrow::before{content:"";width:22px;height:2px;background:var(--orange);display:inline-block;}
-    h2.title{font-size:clamp(28px,4vw,42px);font-weight:800;color:var(--ink);}
-    p.lede{color:var(--sub);font-size:17px;max-width:680px;margin-top:14px;}
+    h2.title{font-size:clamp(24px,4vw,42px);font-weight:800;color:var(--ink);line-height:1.25;}
+    p.lede{color:var(--sub);font-size:16.5px;max-width:680px;margin-top:14px;}
 
     /* BRAND LOGO FROM RESOURCE */
     .brand-logo {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       font-size: 22px;
       font-weight: 900;
       letter-spacing: 0.04em;
@@ -102,12 +102,13 @@
     /* NAV */
     header{
       position:sticky;top:0;z-index:50;
-      background:color-mix(in srgb, var(--bg) 88%, transparent);
-      backdrop-filter:blur(10px);
+      background:color-mix(in srgb, var(--bg) 90%, transparent);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
       border-bottom:1px solid var(--line);
     }
     nav{display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:0 auto;padding:14px 24px;}
-    nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;}
+    nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;}
     nav ul li a{
       font-size:14.5px;
       font-weight:600;
@@ -115,14 +116,26 @@
       transition:all .2s;
       padding:6px 14px;
       border-radius:999px;
+      white-space: nowrap;
     }
     nav ul li a:hover, nav ul li a.active{
       color:var(--orange);
       background: rgba(61, 220, 151, 0.1);
     }
-    nav .navlinks{display:flex;align-items:center;gap:16px;}
-    .navcta{background:var(--navy);color:#fff !important;padding:10px 20px;border-radius:999px;font-weight:700;font-size:13.5px;transition:opacity 0.2s;cursor:pointer;}
+    nav .navlinks{display:flex;align-items:center;gap:14px;}
+    .navcta{background:var(--navy);color:#fff !important;padding:9px 18px;border-radius:999px;font-weight:700;font-size:13.5px;transition:opacity 0.2s;cursor:pointer;white-space:nowrap;}
     .navcta:hover{opacity:0.9;}
+
+    /* MOBILE MENU TOGGLE BUTTON */
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: 0;
+      font-size: 22px;
+      color: var(--ink);
+      cursor: pointer;
+      padding: 6px;
+    }
 
     /* LANGUAGE SELECTOR */
     .lang-switcher {
@@ -140,7 +153,7 @@
       color: var(--sub);
       font-size: 12px;
       font-weight: 800;
-      padding: 5px 11px;
+      padding: 5px 10px;
       border-radius: 999px;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -149,10 +162,6 @@
       background: var(--orange);
       color: #052018;
       box-shadow: 0 2px 8px rgba(61, 220, 151, 0.3);
-    }
-
-    @media (max-width:920px){
-      nav ul{display:none;}
     }
 
     /* PAGE VIEW SECTIONS (SPA TRANSITION) */
@@ -172,7 +181,7 @@
     .page-banner {
       background: var(--navy-deep);
       color: #fff;
-      padding: 64px 0 54px;
+      padding: 50px 0 42px;
       position: relative;
       overflow: hidden;
       border-bottom: 1px solid var(--line);
@@ -185,20 +194,21 @@
       pointer-events: none;
     }
     .page-banner h1 {
-      font-size: clamp(30px, 4vw, 46px);
+      font-size: clamp(26px, 4vw, 42px);
       font-weight: 800;
       margin: 0;
+      line-height: 1.25;
     }
     .page-banner p {
       color: #b0c4b8;
-      font-size: 17px;
+      font-size: 16px;
       max-width: 680px;
       margin-top: 12px;
     }
 
     /* HERO */
     .hero{
-      position:relative;min-height:82vh;display:flex;align-items:center;
+      position:relative;min-height:76vh;display:flex;align-items:center;
       background:var(--navy-deep);
       overflow:hidden;
     }
@@ -209,50 +219,46 @@
       content:"";position:absolute;inset:0;
       background:linear-gradient(100deg, rgba(8,19,18,.96) 20%, rgba(8,19,18,.72) 55%, rgba(19,42,38,.35) 100%);
     }
-    .hero .wrap{position:relative;z-index:2;padding-top:60px;padding-bottom:60px;}
-    .hero h1{font-size:clamp(34px,5.6vw,62px);color:#fff;font-weight:800;max-width:760px;line-height:1.12;}
+    .hero .wrap{position:relative;z-index:2;padding-top:50px;padding-bottom:50px;}
+    .hero h1{font-size:clamp(30px,5vw,58px);color:#fff;font-weight:800;max-width:760px;line-height:1.15;}
     .hero h1 span{color:var(--orange);}
-    .hero p{color:#cfe0d6;font-size:18px;max-width:600px;margin-top:20px;}
-    .hero .stats{display:flex;gap:40px;margin-top:48px;flex-wrap:wrap;}
-    .hero .stat b{display:block;font-size:28px;color:#fff;font-weight:800;}
-    .hero .stat span{color:#8ea79c;font-size:13.5px;}
-    .btnrow{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;}
-    .btn{padding:14px 26px;border-radius:999px;font-weight:700;font-size:14.5px;display:inline-block;cursor:pointer;}
+    .hero p{color:#cfe0d6;font-size:17px;max-width:600px;margin-top:18px;}
+    .hero .stats{display:flex;gap:36px;margin-top:42px;flex-wrap:wrap;}
+    .hero .stat b{display:block;font-size:26px;color:#fff;font-weight:800;}
+    .hero .stat span{color:#8ea79c;font-size:13px;}
+    .btnrow{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;}
+    .btn{padding:13px 24px;border-radius:999px;font-weight:700;font-size:14px;display:inline-block;cursor:pointer;text-align:center;}
     .btn.primary{background:var(--orange);color:#052018;}
     .btn.ghost{border:1px solid rgba(255,255,255,.35);color:#fff;}
 
     /* MARQUEE */
-    .marquee-wrap{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel);padding:22px 0;overflow:hidden;white-space:nowrap;}
-    .marquee{display:inline-flex;gap:60px;animation:scroll 28s linear infinite;font-weight:700;color:var(--sub);letter-spacing:.03em;font-size:14px;}
+    .marquee-wrap{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel);padding:18px 0;overflow:hidden;white-space:nowrap;}
+    .marquee{display:inline-flex;gap:50px;animation:scroll 28s linear infinite;font-weight:700;color:var(--sub);letter-spacing:.03em;font-size:13.5px;}
     .marquee span{opacity:.85}
     @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
     /* GRID / CARDS */
-    section { padding: 76px 0; }
-    .grid{display:grid;gap:26px;}
+    section { padding: 60px 0; }
+    .grid{display:grid;gap:24px;}
     .g2{grid-template-columns:1fr 1fr;}
     .g3{grid-template-columns:repeat(3,1fr);}
     .g4{grid-template-columns:repeat(4,1fr);}
     .g5{grid-template-columns:repeat(5,1fr);}
-    @media (max-width:960px){.g5{grid-template-columns:1fr 1fr;}.g3,.g4{grid-template-columns:1fr;}}
-    @media (max-width:640px){.g2,.g5{grid-template-columns:1fr;}}
 
     .card{
       background:var(--panel);
       border:1px solid var(--line);
       border-radius:var(--radius);
-      padding:32px;
+      padding:28px;
       position:relative;
       transition:transform .25s ease, box-shadow .25s ease;
     }
     .card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.06);}
-    .card .num{font-size:32px;font-weight:800;color:var(--orange);margin-bottom:12px;}
-    .card h3{font-size:20px;font-weight:800;color:var(--ink);margin-bottom:10px;}
-    .card p{color:var(--sub);font-size:14.5px;margin:0;}
+    .card .num{font-size:28px;font-weight:800;color:var(--orange);margin-bottom:10px;}
+    .card h3{font-size:19px;font-weight:800;color:var(--ink);margin-bottom:8px;}
+    .card p{color:var(--sub);font-size:14px;margin:0;}
 
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
-    .split.rev{grid-template-columns:1fr 1fr;}
-    @media (max-width:820px){.split,.split.rev{grid-template-columns:1fr;}}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
 
     .imgcard{
       border-radius:var(--radius);
@@ -262,30 +268,29 @@
       box-shadow:0 10px 30px rgba(0,0,0,.05);
     }
     .imgcard img{width:100%;height:auto;object-fit:cover;display:block;}
-    .imgcard img.contain-fit{object-fit:contain;background:#fff;padding:12px;}
 
-    .pillrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;}
-    .pill{background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:8px 16px;border-radius:999px;font-size:13.5px;font-weight:600;}
+    .pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;}
+    .pill{background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;}
 
     .section-alt{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 
     .ceo{
-      text-align:center;max-width:820px;margin:0 auto;padding:20px 0;
+      text-align:center;max-width:820px;margin:0 auto;padding:10px 0;
     }
     .ceo blockquote{
-      font-size:clamp(20px,3vw,30px);
+      font-size:clamp(18px,2.5vw,28px);
       font-weight:700;
       color:var(--ink);
-      margin:0 0 24px;
+      margin:0 0 20px;
       line-height:1.35;
       font-style:normal;
     }
     .ceo blockquote span{color:var(--orange);}
-    .ceo .who{color:var(--sub);font-size:15px;}
-    .ceo .who b{color:var(--ink);display:block;font-size:17px;margin-bottom:2px;}
+    .ceo .who{color:var(--sub);font-size:14.5px;}
+    .ceo .who b{color:var(--ink);display:block;font-size:16.5px;margin-bottom:2px;}
 
-    .taglist{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-direction:column;gap:10px;}
-    .taglist li{font-size:14.5px;color:var(--sub);padding-left:22px;position:relative;}
+    .taglist{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:8px;}
+    .taglist li{font-size:14px;color:var(--sub);padding-left:20px;position:relative;}
     .taglist li::before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:800;}
     .taglist li b{color:var(--ink);}
 
@@ -293,32 +298,29 @@
     .timeline {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-top: 40px;
-      position: relative;
+      gap: 18px;
+      margin-top: 36px;
     }
-    @media (max-width: 820px) { .timeline { grid-template-columns: 1fr; } }
     .timeline-item {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 24px;
-      position: relative;
+      padding: 22px;
     }
     .timeline-year {
-      font-size: 26px;
+      font-size: 24px;
       font-weight: 900;
       color: var(--orange);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .timeline-title {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 800;
       color: var(--ink);
       margin-bottom: 6px;
     }
     .timeline-desc {
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--sub);
     }
 
@@ -327,76 +329,73 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
-      margin-top: 30px;
+      gap: 16px;
+      margin-top: 24px;
     }
     .org-node {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 20px 28px;
+      padding: 16px 24px;
       text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s ease;
       position: relative;
-    }
-    .org-node:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
     }
     .org-node.top-leader {
       background: var(--navy-deep);
       color: #fff;
       border-color: var(--orange);
-      padding: 24px 44px;
+      padding: 20px 36px;
     }
     .org-node.top-leader h3 {
       color: #fff;
-      font-size: 22px;
+      font-size: 20px;
       margin: 0 0 4px;
     }
     .org-node.top-leader p {
       color: var(--orange);
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       margin: 0;
     }
     .org-connector-v {
       width: 2px;
-      height: 20px;
+      height: 18px;
       background: var(--orange);
     }
     .org-advisory-row {
       display: flex;
-      gap: 16px;
+      gap: 12px;
       flex-wrap: wrap;
       justify-content: center;
     }
     .org-grid-divs {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 16px;
       width: 100%;
     }
-    @media (max-width: 920px) { .org-grid-divs { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 580px) { .org-grid-divs { grid-template-columns: 1fr; } }
 
-    table{width:100%;border-collapse:collapse;text-align:left;font-size:14px;}
-    th,td{padding:14px 20px;border-bottom:1px solid var(--line);}
+    /* TABLE MOBILE WRAPPER */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    table{width:100%;border-collapse:collapse;text-align:left;font-size:13.5px;min-width: 500px;}
+    th,td{padding:12px 16px;border-bottom:1px solid var(--line);}
     th{background:var(--bg);color:var(--ink);font-weight:800;}
     td{color:var(--sub);}
     tr:last-child td{border-bottom:0;}
 
     /* FOOTER */
-    footer{background:var(--navy-deep);color:#d1e0d7;padding:60px 0 30px;border-top:1px solid var(--line);}
-    footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;}
-    @media (max-width:700px){footer .wrap{grid-template-columns:1fr;}}
-    footer h4{color:#fff;font-size:15px;margin-bottom:14px;}
-    footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:14px;}
-    footer .bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-top:22px;font-size:12.5px;color:#7a8c81;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;max-width:1180px;margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px;}
+    footer{background:var(--navy-deep);color:#d1e0d7;padding:50px 0 24px;border-top:1px solid var(--line);}
+    footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;}
+    footer h4{color:#fff;font-size:14.5px;margin-bottom:12px;}
+    footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:13.5px;}
+    footer .bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:36px;padding-top:20px;font-size:12px;color:#7a8c81;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;max-width:1180px;margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px;}
 
-    .flexcenter{display:flex;align-items:center;gap:10px;}
-    .sectionhead{text-align:center;max-width:640px;margin:0 auto 50px;}
-    .sectionhead p.lede{margin-left:auto;margin-right:auto;}
+    .sectionhead{text-align:center;max-width:640px;margin:0 auto 40px;}
 
     .contact-success {
       display: none;
@@ -415,12 +414,88 @@
       display: inline-block;
       background: rgba(61, 220, 151, 0.12);
       color: var(--orange);
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 800;
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: 6px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       border: 1px solid rgba(61, 220, 151, 0.3);
+    }
+
+    /* Dealer Map Image Styling (Scaled to fit nicely) */
+    .dealer-map-img {
+      width: 100%;
+      max-width: 780px;
+      height: auto;
+      max-height: 480px;
+      object-fit: contain;
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* RESPONSIVE MEDIA QUERIES (MOBILE OPTIMIZATION) */
+    @media (max-width: 960px) {
+      .g5 { grid-template-columns: repeat(2, 1fr); }
+      .g3, .g4 { grid-template-columns: repeat(2, 1fr); }
+      .timeline { grid-template-columns: repeat(2, 1fr); }
+      .org-grid-divs { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 820px) {
+      nav { padding: 12px 18px; }
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--navy-deep);
+        flex-direction: column;
+        padding: 16px;
+        gap: 8px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        border-bottom: 1px solid var(--line);
+      }
+      nav ul.mobile-open {
+        display: flex;
+      }
+      nav ul li a {
+        color: #cfe0d6;
+        display: block;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 15px;
+      }
+      nav ul li a.active, nav ul li a:hover {
+        color: var(--orange);
+        background: rgba(61, 220, 151, 0.15);
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .split { grid-template-columns: 1fr; gap: 28px; }
+      footer .wrap { grid-template-columns: 1fr; gap: 28px; }
+    }
+
+    @media (max-width: 600px) {
+      .wrap { padding: 0 16px; }
+      section { padding: 44px 0; }
+      .page-banner { padding: 36px 0 30px; }
+      .hero { min-height: auto; padding: 20px 0 40px; }
+      .hero .stats { gap: 20px; margin-top: 30px; }
+      .hero .stat b { font-size: 22px; }
+      .btnrow { flex-direction: column; }
+      .btn { width: 100%; }
+
+      .g2, .g3, .g4, .g5 { grid-template-columns: 1fr; }
+      .timeline { grid-template-columns: 1fr; }
+      .org-grid-divs { grid-template-columns: 1fr; }
+      .org-advisory-row { flex-direction: column; width: 100%; }
+      .org-node { width: 100%; }
+      
+      .card { padding: 20px; }
+      .dealer-map-img { max-height: 380px; }
     }
   </style>
 </head>
@@ -433,7 +508,7 @@
       <span class="logo-text">PAYTTO</span>
     </a>
     <div class="navlinks">
-      <ul>
+      <ul id="mainNav">
         <li><a href="#about" id="nav-about" onclick="showPage('about')" data-i18n="nav-company">회사 개요</a></li>
         <li><a href="#vision" id="nav-vision" onclick="showPage('vision')" data-i18n="nav-vision">미래 비전</a></li>
         <li><a href="#business" id="nav-business" onclick="showPage('business')" data-i18n="nav-business">주요 사업</a></li>
@@ -446,6 +521,9 @@
         <button class="lang-btn" data-lang="ch" onclick="changeLanguage('ch')">CH</button>
       </div>
       <a href="#contact" onclick="showPage('contact')" class="navcta" data-i18n="nav-cta">문의하기</a>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
   </nav>
 </header>
@@ -521,7 +599,7 @@
         <div class="org-chart-wrap">
           <!-- Level 1: CEO -->
           <div class="org-node top-leader">
-            <i class="fa-solid fa-user-tie" style="font-size:28px;color:var(--orange);margin-bottom:8px;"></i>
+            <i class="fa-solid fa-user-tie" style="font-size:26px;color:var(--orange);margin-bottom:6px;"></i>
             <h3 data-i18n="role-ceo">CEO (최고경영자)</h3>
             <p>PAYTTO Co., Ltd.</p>
           </div>
@@ -532,23 +610,23 @@
           <div class="org-advisory-row">
             <div class="org-node">
               <span class="badge-box">Executive</span>
-              <h4 style="margin:0;font-size:16px;" data-i18n="role-coo">COO (최고운영책임자)</h4>
+              <h4 style="margin:0;font-size:15px;" data-i18n="role-coo">COO (최고운영책임자)</h4>
             </div>
             <div class="org-node">
               <span class="badge-box">Advisory</span>
-              <h4 style="margin:0;font-size:16px;" data-i18n="adv-tariff">관세 자문 팀장 (관세사)</h4>
+              <h4 style="margin:0;font-size:15px;" data-i18n="adv-tariff">관세 자문 팀장 (관세사)</h4>
             </div>
             <div class="org-node">
               <span class="badge-box">Advisory</span>
-              <h4 style="margin:0;font-size:16px;" data-i18n="adv-legal">법무 자문 팀장 (변호사)</h4>
+              <h4 style="margin:0;font-size:15px;" data-i18n="adv-legal">법무 자문 팀장 (변호사)</h4>
             </div>
             <div class="org-node">
               <span class="badge-box">Executive</span>
-              <h4 style="margin:0;font-size:16px;" data-i18n="role-cfo">CFO / 회계사 (자금·재무)</h4>
+              <h4 style="margin:0;font-size:15px;" data-i18n="role-cfo">CFO / 회계사 (자금·재무)</h4>
             </div>
             <div class="org-node">
               <span class="badge-box">Executive</span>
-              <h4 style="margin:0;font-size:16px;" data-i18n="role-center">Center Director (센터장)</h4>
+              <h4 style="margin:0;font-size:15px;" data-i18n="role-center">Center Director (센터장)</h4>
             </div>
           </div>
 
@@ -634,42 +712,44 @@
           <p class="lede" data-i18n="proj-mnd-desc">700만 회원 규모의 국방복지단과 독점 공급 협약을 체결하고, 초기 확정 물량 3,000대를 시작으로 군 장병, 군무원 및 가족 대상 맞춤형 친환경 모빌리티를 보급합니다.</p>
         </div>
 
-        <!-- Vehicle Lineup Table -->
+        <!-- Vehicle Lineup Table (Responsive Wrapper) -->
         <div class="card" style="padding:0;overflow:hidden;margin-bottom:30px;">
-          <table>
-            <thead>
-              <tr>
-                <th data-i18n="mnd-tbl-model">차종 (Model)</th>
-                <th data-i18n="mnd-tbl-purpose">주요 용도</th>
-                <th data-i18n="mnd-tbl-range">1회 충전 주행거리</th>
-                <th data-i18n="mnd-tbl-price">보조금 적용가</th>
-                <th data-i18n="mnd-tbl-features">주요 특징</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="font-weight:800;color:var(--ink);" data-i18n="sedan-name">전기 세단 (Electric Sedan)</td>
-                <td data-i18n="sedan-purpose">출퇴근 및 도심 주행용</td>
-                <td data-i18n="sedan-range">약 400 km</td>
-                <td data-i18n="sedan-price">USD 28,000 이하</td>
-                <td data-i18n="sedan-feat">고효율 경제성 및 실용적 디자인</td>
-              </tr>
-              <tr>
-                <td style="font-weight:800;color:var(--ink);" data-i18n="suv-name">전기 SUV (Electric SUV)</td>
-                <td data-i18n="suv-purpose">패밀리 레저 및 장거리 주행용</td>
-                <td data-i18n="suv-range">약 450 km</td>
-                <td data-i18n="suv-price">약 USD 42,000</td>
-                <td data-i18n="suv-feat">넓은 실내 공간 및 고성능 파워트레인</td>
-              </tr>
-              <tr>
-                <td style="font-weight:800;color:var(--ink);" data-i18n="van-name">전기 밴 (Electric Van)</td>
-                <td data-i18n="van-purpose">군 물류 수송 및 시설 가동용</td>
-                <td data-i18n="van-range">약 350 km</td>
-                <td data-i18n="van-price">약 USD 48,000</td>
-                <td data-i18n="van-feat">대용량 적재 및 다목적 특수 활용</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th data-i18n="mnd-tbl-model">차종 (Model)</th>
+                  <th data-i18n="mnd-tbl-purpose">주요 용도</th>
+                  <th data-i18n="mnd-tbl-range">1회 충전 주행거리</th>
+                  <th data-i18n="mnd-tbl-price">보조금 적용가</th>
+                  <th data-i18n="mnd-tbl-features">주요 특징</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight:800;color:var(--ink);" data-i18n="sedan-name">전기 세단 (Electric Sedan)</td>
+                  <td data-i18n="sedan-purpose">출퇴근 및 도심 주행용</td>
+                  <td data-i18n="sedan-range">약 400 km</td>
+                  <td data-i18n="sedan-price">USD 28,000 이하</td>
+                  <td data-i18n="sedan-feat">고효율 경제성 및 실용적 디자인</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:800;color:var(--ink);" data-i18n="suv-name">전기 SUV (Electric SUV)</td>
+                  <td data-i18n="suv-purpose">패밀리 레저 및 장거리 주행용</td>
+                  <td data-i18n="suv-range">약 450 km</td>
+                  <td data-i18n="suv-price">약 USD 42,000</td>
+                  <td data-i18n="suv-feat">넓은 실내 공간 및 고성능 파워트레인</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:800;color:var(--ink);" data-i18n="van-name">전기 밴 (Electric Van)</td>
+                  <td data-i18n="van-purpose">군 물류 수송 및 시설 가동용</td>
+                  <td data-i18n="van-range">약 350 km</td>
+                  <td data-i18n="van-price">약 USD 48,000</td>
+                  <td data-i18n="van-feat">대용량 적재 및 다목적 특수 활용</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <!-- Phased Sales Targets Cards -->
@@ -781,7 +861,7 @@
   </div>
 
 
-  <!-- ================= 3. PAGE: MAIN BUSINESS (모든 번역 i18n 연동 완벽 적용) ================= -->
+  <!-- ================= 3. PAGE: MAIN BUSINESS ================= -->
   <div id="page-business" class="page-view">
     <div class="page-banner">
       <div class="wrap">
@@ -829,7 +909,7 @@
       </div>
     </section>
 
-    <!-- 02. 전 차종 전기차 (상단 문구 제거 차량 전용 이미지) -->
+    <!-- 02. 전 차종 전기차 -->
     <section class="section-alt">
       <div class="wrap">
         <div class="sectionhead">
@@ -847,24 +927,23 @@
           <span class="pill" data-i18n="ev-m7">EV 소방차 (Fire Truck)</span>
         </div>
 
-        <!-- Clean Cars-Only Image -->
-        <div class="imgcard" style="margin-bottom:40px;background:#ffffff;padding:16px;text-align:center;">
-          <img src="__BIZ_EV_PAGE17__" alt="PAYTTO EV Full Vehicle Lineup (Cars Only)" style="width:100%;height:auto;max-height:560px;object-fit:contain;margin:0 auto;">
+        <div class="imgcard" style="margin-bottom:36px;background:#ffffff;padding:14px;text-align:center;">
+          <img src="__BIZ_EV_PAGE17__" alt="PAYTTO EV Full Vehicle Lineup (Cars Only)" style="width:100%;height:auto;max-height:520px;object-fit:contain;margin:0 auto;">
         </div>
 
         <div class="grid g2">
           <div class="imgcard">
             <img src="__BIZ_PARTS__" alt="PAYTTO Automotive Parts">
-            <div style="padding:24px;">
+            <div style="padding:22px;">
               <h3 style="margin-top:0;" data-i18n="parts-title">한국자동차부품협회 &amp; 택시·렌터카 조합 부품 공급</h3>
-              <p data-i18n="parts-desc" style="color:var(--sub);font-size:14.5px;margin:0;">한국자동차부품협회 회원사 부품 공급 및 전국 택시조합, 렌터카협회와의 상호 협력 협약 체결.</p>
+              <p data-i18n="parts-desc" style="color:var(--sub);font-size:14px;margin:0;">한국자동차부품협회 회원사 부품 공급 및 전국 택시조합, 렌터카협회와의 상호 협력 협약 체결.</p>
             </div>
           </div>
           <div class="imgcard">
             <img src="__BIZ_APPLIANCE__" alt="Public Institutions Electronics and Appliances">
-            <div style="padding:24px;">
+            <div style="padding:22px;">
               <h3 style="margin-top:0;" data-i18n="appliance-title">공공기관 전용 전자제품 및 가전 유통</h3>
-              <p data-i18n="appliance-desc" style="color:var(--sub);font-size:14.5px;margin:0;">공공기관 및 인프라 단체에 맞춘 다양한 규격의 고품질 전자·가전 제품 전용 수급 체계.</p>
+              <p data-i18n="appliance-desc" style="color:var(--sub);font-size:14px;margin:0;">공공기관 및 인프라 단체에 맞춘 다양한 규격의 고품질 전자·가전 제품 전용 수급 체계.</p>
             </div>
           </div>
         </div>
@@ -881,25 +960,25 @@
         <div class="grid g2">
           <div class="imgcard">
             <img src="__BIZ_BAIC__" alt="BAIC Group Vehicles ARCFOX & Foton">
-            <div style="padding:24px;">
+            <div style="padding:22px;">
               <span class="badge-box">BAIC Group Exclusive</span>
               <h3 style="margin-top:4px;" data-i18n="baic-title">BAIC (베이징자동차그룹) 한국 총판 독점 계약</h3>
-              <p data-i18n="baic-desc" style="color:var(--sub);font-size:14.5px;margin:0;">1958년 설립, 벤츠·현대 합작선 보유 및 ARCFOX, Foton 등 다각화 브랜드를 보유한 중국 국영 자동차 그룹.</p>
+              <p data-i18n="baic-desc" style="color:var(--sub);font-size:14px;margin:0;">1958년 설립, 벤츠·현대 합작선 보유 및 ARCFOX, Foton 등 다각화 브랜드를 보유한 중국 국영 자동차 그룹.</p>
             </div>
           </div>
           <div class="imgcard">
             <img src="__BIZ_BAW__" alt="BAW Off-road & Commercial Vehicles">
-            <div style="padding:24px;">
+            <div style="padding:22px;">
               <span class="badge-box">BAW Factory Exclusive</span>
               <h3 style="margin-top:4px;" data-i18n="baw-title">BAW (베이징자동차제조창) 한국 총판 독점 계약</h3>
-              <p data-i18n="baw-desc" style="color:var(--sub);font-size:14.5px;margin:0;">1951년 설립, 전통 군용 오프로드 및 경형 상용차 전문 제조사로 신에너지 모빌리티 라인업 확장.</p>
+              <p data-i18n="baw-desc" style="color:var(--sub);font-size:14px;margin:0;">1951년 설립, 전통 군용 오프로드 및 경형 상용차 전문 제조사로 신에너지 모빌리티 라인업 확장.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 04. 원자재 & 에너지 무역 실적 (번역 태그 전체 보완 완료) -->
+    <!-- 04. 원자재 & 에너지 무역 실적 -->
     <section class="section-alt">
       <div class="wrap">
         <div class="sectionhead">
@@ -907,7 +986,7 @@
           <h2 class="title" data-i18n="raw-trade-title">글로벌 원자재 &amp; 에너지 무역 거래량</h2>
         </div>
 
-        <div class="grid g2" style="margin-bottom:30px;">
+        <div class="grid g2" style="margin-bottom:28px;">
           <div class="imgcard"><img src="__BIZ_RAW_MATERIALS__" alt="PAYTTO Raw materials aluminum copper coal gold"></div>
           <div class="imgcard"><img src="__BIZ_COMMERCE__" alt="Global shipping crude oil soybeans commerce"></div>
         </div>
@@ -958,23 +1037,23 @@
         <div class="grid g3">
           <div class="imgcard">
             <img src="__BIZ_BATTERY__" alt="Battery Recycling Business">
-            <div style="padding:24px;">
+            <div style="padding:22px;">
               <h3 style="margin-top:0;" data-i18n="res2-title">배터리 리사이클링</h3>
-              <p data-i18n="res2-desc" style="color:var(--sub);font-size:14.5px;margin:0;">사용 후 전기차 배터리의 회수 및 재활용을 통해 원자재 수입 의존도를 낮추고 지속 가능한 자원 순환 체계를 구축합니다.</p>
+              <p data-i18n="res2-desc" style="color:var(--sub);font-size:14px;margin:0;">사용 후 전기차 배터리의 회수 및 재활용을 통해 원자재 수입 의존도를 낮추고 지속 가능한 자원 순환 체계를 구축합니다.</p>
             </div>
           </div>
           <div class="imgcard">
             <img src="__BIZ_SOLAR__" alt="Kazakhstan Solar Power Plant Project">
-            <div style="padding:24px;">
+            <div style="padding:22px;">
               <h3 style="margin-top:0;" data-i18n="res3-title">태양광 발전 프로젝트</h3>
-              <p data-i18n="res3-desc" style="color:var(--sub);font-size:14.5px;margin:0;">카자흐스탄 및 우즈베키스탄 태양광 발전소 프로젝트와 태양광 수산 양식 사업 등 100MW 규모의 친환경 에너지를 개발합니다.</p>
+              <p data-i18n="res3-desc" style="color:var(--sub);font-size:14px;margin:0;">카자흐스탄 및 우즈베키스탄 태양광 발전소 프로젝트와 태양광 수산 양식 사업 등 100MW 규모의 친환경 에너지를 개발합니다.</p>
             </div>
           </div>
           <div class="imgcard">
             <img src="__BIZ_SPECIAL__" alt="Special Mobility & Bio Products">
-            <div style="padding:24px;">
+            <div style="padding:22px;">
               <h3 style="margin-top:0;" data-i18n="special-title">특수 모빌리티 &amp; 바이오 제품</h3>
-              <p data-i18n="special-desc" style="color:var(--sub);font-size:14.5px;margin:0;">전기 오토바이, 수륙양용차, 차량용 질식 소화포, 친환경 효소 바이오 제품 유통.</p>
+              <p data-i18n="special-desc" style="color:var(--sub);font-size:14px;margin:0;">전기 오토바이, 수륙양용차, 차량용 질식 소화포, 친환경 효소 바이오 제품 유통.</p>
             </div>
           </div>
         </div>
@@ -983,7 +1062,7 @@
   </div>
 
 
-  <!-- ================= 4. PAGE: PARTNERS & NETWORK (30페이지 지도 포함) ================= -->
+  <!-- ================= 4. PAGE: PARTNERS & NETWORK (표 삭제 및 지도 이미지 콤팩트 축소) ================= -->
   <div id="page-network" class="page-view">
     <div class="page-banner">
       <div class="wrap">
@@ -1017,7 +1096,7 @@
       </div>
     </section>
 
-    <!-- Nationwide 48 Dealer Network Map Section -->
+    <!-- Nationwide 48 Dealer Network Map Section (Summary Table Removed, Scaled Map Image) -->
     <section class="section-alt">
       <div class="wrap">
         <div class="sectionhead">
@@ -1026,33 +1105,9 @@
           <p class="lede" data-i18n="net-desc-tbl">대한민국 전 지역을 아우르는 총판 및 공식 지정 딜러망 보유.</p>
         </div>
 
-        <!-- PDF Page 30 Dealer Map Image -->
-        <div class="imgcard" style="margin-bottom:30px;background:#ffffff;padding:16px;text-align:center;">
-          <img src="__NET_DEALER_MAP__" alt="PAYTTO PDF Page 30 Nationwide 48 Dealer Network Map" style="width:100%;height:auto;max-height:560px;object-fit:contain;margin:0 auto;">
-        </div>
-
-        <div class="card" style="padding:0;overflow:hidden;">
-          <table>
-            <thead>
-              <tr>
-                <th data-i18n="tbl-region">지역구분</th>
-                <th data-i18n="tbl-distributor">총판</th>
-                <th data-i18n="tbl-dealers">딜러</th>
-                <th data-i18n="tbl-total">합계</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td data-i18n="reg-seoul">서울</td><td>1</td><td>5</td><td>6</td></tr>
-              <tr><td data-i18n="reg-incheon">인천 · 경기도</td><td>2</td><td>8</td><td>10</td></tr>
-              <tr><td data-i18n="reg-gangwon">강원도</td><td>—</td><td>2</td><td>2</td></tr>
-              <tr><td data-i18n="reg-daejeon">대전 · 충청도</td><td>1</td><td>5</td><td>6</td></tr>
-              <tr><td data-i18n="reg-gwangju">광주 · 전라도</td><td>1</td><td>5</td><td>6</td></tr>
-              <tr><td data-i18n="reg-daegu">대구 · 경상북도</td><td>1</td><td>5</td><td>6</td></tr>
-              <tr><td data-i18n="reg-busan">부산 · 경상남도</td><td>2</td><td>8</td><td>10</td></tr>
-              <tr><td data-i18n="reg-jeju">제주특별자치도</td><td>—</td><td>2</td><td>2</td></tr>
-              <tr style="font-weight:800;"><td data-i18n="reg-tot-lbl">전국 총계</td><td>8</td><td>40</td><td>48</td></tr>
-            </tbody>
-          </table>
+        <!-- PDF Page 30 Dealer Map Image (Scaled nicely so all text shows completely) -->
+        <div class="imgcard" style="background:#ffffff;padding:20px;text-align:center;">
+          <img class="dealer-map-img" src="__NET_DEALER_MAP__" alt="PAYTTO PDF Page 30 Nationwide 48 Dealer Network Map">
         </div>
       </div>
     </section>
@@ -1075,7 +1130,7 @@
           <div class="eyebrow" data-i18n="contact-eyebrow">Global Desk</div>
           <h2 class="title" data-i18n="contact-title">PAYTTO 비즈니스 협력 및 문의</h2>
           <p class="lede" data-i18n="contact-desc">원자재 구매, 전기차 유통 제휴, 투자 유치 등 페이또의 전담 분야 전문가가 친절하게 응대해 드립니다.</p>
-          <ul class="taglist" style="margin-top:30px;">
+          <ul class="taglist" style="margin-top:24px;">
             <li><b data-i18n="info-hq-lbl">본사 소재지</b> — <span data-i18n="info-hq-val">대한민국 경기도 고양시</span></li>
             <li><b data-i18n="info-est-lbl">설립 연도</b> — <span>2013</span></li>
             <li><b data-i18n="info-scope-lbl">사업 영역</b> — <span data-i18n="info-scope-val">전기자동차 · 충전 인프라 · 원자재 무역 · 배터리 리사이클링 · 태양광 발전</span></li>
@@ -1083,7 +1138,7 @@
         </div>
         <div class="card">
           <h3 style="margin-top:0;" data-i18n="form-title">협력 및 문의 신청</h3>
-          <p style="margin-bottom:20px;" data-i18n="form-subtitle">상세 내용을 입력해주시면 담당자가 빠른 시일 내에 연락드리겠습니다.</p>
+          <p style="margin-bottom:18px;" data-i18n="form-subtitle">상세 내용을 입력해주시면 담당자가 빠른 시일 내에 연락드리겠습니다.</p>
           <form onsubmit="handleContact(event)">
             <div style="display:flex;flex-direction:column;gap:12px;">
               <input required data-i18n-ph="ph-name" placeholder="성명 / 담당자명" style="padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:14px;">
@@ -1110,7 +1165,7 @@
         <i class="fa-solid fa-gem logo-icon"></i>
         <span class="logo-text">PAYTTO</span>
       </a>
-      <p style="max-width:340px;color:#8a9c92;font-size:14px;" data-i18n="footer-desc">2013년부터 경기도 고양시에 본사를 두고 글로벌 무역 및 친환경 산업 솔루션을 선도하는 페이또(PAYTTO)입니다.</p>
+      <p style="max-width:340px;color:#8a9c92;font-size:13.5px;" data-i18n="footer-desc">2013년부터 경기도 고양시에 본사를 두고 글로벌 무역 및 친환경 산업 솔루션을 선도하는 페이또(PAYTTO)입니다.</p>
     </div>
     <div>
       <h4 data-i18n="footer-col1">기업 정보</h4>
@@ -1325,19 +1380,6 @@
       "net-eyebrow-tbl": "전국 판매 네트워크",
       "net-title-tbl": "전국 48개 거점 딜러 네트워크",
       "net-desc-tbl": "대한민국 전 지역을 아우르는 총판 및 공식 지정 딜러망 보유.",
-      "tbl-region": "지역구분",
-      "tbl-distributor": "총판",
-      "tbl-dealers": "딜러",
-      "tbl-total": "합계",
-      "reg-seoul": "서울",
-      "reg-incheon": "인천 · 경기도",
-      "reg-gangwon": "강원도",
-      "reg-daejeon": "대전 · 충청도",
-      "reg-gwangju": "광주 · 전라도",
-      "reg-daegu": "대구 · 경상북도",
-      "reg-busan": "부산 · 경상남도",
-      "reg-jeju": "제주특별자치도",
-      "reg-tot-lbl": "전국 총계",
 
       "contact-eyebrow": "협력 문의",
       "contact-title": "미래 모빌리티의 혁신을 함께 만듭니다.",
@@ -1547,19 +1589,6 @@
       "net-eyebrow-tbl": "Nationwide Sales Network",
       "net-title-tbl": "48 dealers, one national network.",
       "net-desc-tbl": "Carefully selected general distributors and authorized dealers spanning every major region of Korea.",
-      "tbl-region": "Region",
-      "tbl-distributor": "General Distributor",
-      "tbl-dealers": "Dealers",
-      "tbl-total": "Total",
-      "reg-seoul": "Seoul",
-      "reg-incheon": "Incheon, Gyeonggi-do",
-      "reg-gangwon": "Gangwon-do",
-      "reg-daejeon": "Daejeon, Chungcheong-do",
-      "reg-gwangju": "Gwangju, Jeolla-do",
-      "reg-daegu": "Daegu, Gyeongsangbuk-do",
-      "reg-busan": "Busan, Gyeongsangnam-do",
-      "reg-jeju": "Jeju Island",
-      "reg-tot-lbl": "Total",
 
       "contact-eyebrow": "Contact",
       "contact-title": "Let's build the future of mobility together.",
@@ -1769,19 +1798,6 @@
       "net-eyebrow-tbl": "全国销售网络",
       "net-title-tbl": "全国48家经销商与服务网点",
       "net-desc-tbl": "精心挑选的总代理与授权经销商，覆盖韩国各大主要区域。",
-      "tbl-region": "区域",
-      "tbl-distributor": "总代理",
-      "tbl-dealers": "经销商",
-      "tbl-total": "总计",
-      "reg-seoul": "首尔",
-      "reg-incheon": "仁川 · 京畿道",
-      "reg-gangwon": "江原道",
-      "reg-daejeon": "大田 · 忠清道",
-      "reg-gwangju": "光州 · 全罗道",
-      "reg-daegu": "大邱 · 庆尚北道",
-      "reg-busan": "釜山 · 庆尚남道",
-      "reg-jeju": "济州特别自治道",
-      "reg-tot-lbl": "全国合计",
 
       "contact-eyebrow": "联系我们",
       "contact-title": "携手共建未来出行新篇章。",
@@ -1811,6 +1827,10 @@
     const validPages = ['about', 'vision', 'business', 'network', 'contact'];
     if (!validPages.includes(pageId)) pageId = 'about';
 
+    // Close mobile menu if open
+    const navUl = document.getElementById('mainNav');
+    if (navUl) navUl.classList.remove('mobile-open');
+
     // Update active page view
     document.querySelectorAll('.page-view').forEach(view => {
       view.classList.remove('active');
@@ -1829,6 +1849,13 @@
 
     // Update URL hash without scrolling jump
     history.pushState(null, null, '#' + pageId);
+  }
+
+  function toggleMobileMenu() {
+    const navUl = document.getElementById('mainNav');
+    if (navUl) {
+      navUl.classList.toggle('mobile-open');
+    }
   }
 
   function changeLanguage(lang) {

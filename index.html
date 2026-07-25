@@ -352,6 +352,18 @@
       margin-top: 10px;
       text-align: center;
     }
+
+    .badge-box {
+      display: inline-block;
+      background: rgba(61, 220, 151, 0.12);
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(61, 220, 151, 0.3);
+    }
   </style>
 </head>
 <body>
@@ -442,16 +454,17 @@
   </div>
 
 
-  <!-- ================= 2. PAGE: FUTURE VISION (미래 비전) ================= -->
+  <!-- ================= 2. PAGE: FUTURE VISION & PROJECT PLAN (미래 비전 & 프로젝트 플랜) ================= -->
   <div id="page-vision" class="page-view">
     <div class="page-banner">
       <div class="wrap">
-        <div class="eyebrow" data-i18n="vis-eyebrow">Future Vision</div>
-        <h1 data-i18n="vis-banner-title">지속 가능한 미래를 위한 페이또의 비전</h1>
-        <p data-i18n="vis-desc">페이또는 단순한 무역을 넘어 2030 탄소중립과 미래 모빌리티 생태계를 조화롭게 융합하는 혁신 가치를 창출합니다.</p>
+        <div class="eyebrow" data-i18n="vis-eyebrow">Future Vision &amp; Project Plan</div>
+        <h1 data-i18n="vis-banner-title">지속 가능한 미래를 위한 페이또의 비전 &amp; 프로젝트 플랜</h1>
+        <p data-i18n="vis-desc">페이또는 2030 탄소중립 모빌리티부터 국방복지단 전기차 공급, 특수 드론 및 트레이너 합작 생산, 중앙아시아 태양광 프로젝트까지 미래 산업의 실행 전략을 추진합니다.</p>
       </div>
     </div>
 
+    <!-- 3 Core Vision Pillars -->
     <section>
       <div class="wrap">
         <div class="sectionhead">
@@ -478,7 +491,130 @@
       </div>
     </section>
 
+    <!-- Project Plan Section 1: MND EV Supply Plan -->
     <section class="section-alt">
+      <div class="wrap">
+        <div class="sectionhead">
+          <div class="eyebrow" style="justify-content:center;" data-i18n="proj-mnd-tag">Project Plan 01 — 국방복지단 협력 사업</div>
+          <h2 class="title" data-i18n="proj-mnd-title">국방복지단 친환경 전기차 공급 프로젝트</h2>
+          <p class="lede" data-i18n="proj-mnd-desc">700만 회원 규모의 국방복지단과 독점 공급 협약을 체결하고, 초기 확정 물량 3,000대를 시작으로 군 장병, 군무원 및 가족 대상 맞춤형 친환경 모빌리티를 보급합니다.</p>
+        </div>
+
+        <!-- Vehicle Lineup Table -->
+        <div class="card" style="padding:0;overflow:hidden;margin-bottom:30px;">
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="mnd-tbl-model">차종 (Model)</th>
+                <th data-i18n="mnd-tbl-purpose">주요 용도</th>
+                <th data-i18n="mnd-tbl-range">1회 충전 주행거리</th>
+                <th data-i18n="mnd-tbl-price">보조금 적용가</th>
+                <th data-i18n="mnd-tbl-features">주요 특징</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:800;color:var(--ink);" data-i18n="sedan-name">전기 세단 (Electric Sedan)</td>
+                <td data-i18n="sedan-purpose">출퇴근 및 도심 주행용</td>
+                <td data-i18n="sedan-range">약 400 km</td>
+                <td data-i18n="sedan-price">USD 28,000 이하</td>
+                <td data-i18n="sedan-feat">고효율 경제성 및 실용적 디자인</td>
+              </tr>
+              <tr>
+                <td style="font-weight:800;color:var(--ink);" data-i18n="suv-name">전기 SUV (Electric SUV)</td>
+                <td data-i18n="suv-purpose">패밀리 레저 및 장거리 주행용</td>
+                <td data-i18n="suv-range">약 450 km</td>
+                <td data-i18n="suv-price">약 USD 42,000</td>
+                <td data-i18n="suv-feat">넓은 실내 공간 및 고성능 파워트레인</td>
+              </tr>
+              <tr>
+                <td style="font-weight:800;color:var(--ink);" data-i18n="van-name">전기 밴 (Electric Van)</td>
+                <td data-i18n="van-purpose">군 물류 수송 및 시설 가동용</td>
+                <td data-i18n="van-range">약 350 km</td>
+                <td data-i18n="van-price">약 USD 48,000</td>
+                <td data-i18n="van-feat">대용량 적재 및 다목적 특수 활용</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Phased Sales Targets Cards -->
+        <div class="grid g3">
+          <div class="card">
+            <span class="badge-box">Phase 1 (2026)</span>
+            <h3>5,000대 공급 목표</h3>
+            <p data-i18n="target-phase1">2026년 (초기 협력 단계) — 세단 2,500대 / SUV 1,500대 / 밴 1,000대 공급 및 맞춤형 금융 할부/리스 지원.</p>
+          </div>
+          <div class="card">
+            <span class="badge-box">Phase 2 (2027)</span>
+            <h3>15,000대 확장 목표</h3>
+            <p data-i18n="target-phase2">2027년 (확장 단계) — 세단 7,000대 / SUV 5,000대 / 밴 3,000대 교체 보급 및 군 공동구매 캠페인 진행.</p>
+          </div>
+          <div class="card">
+            <span class="badge-box">Phase 3 (2028)</span>
+            <h3>30,000대 안착 목표</h3>
+            <p data-i18n="target-phase3">2028년 (안정화 단계) — 세단 15,000대 / SUV 10,000대 / 밴 5,000대 보급 및 국방부 친환경 공용차 전면 전환.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Plan Section 2: Specialized Cooperative Factories -->
+    <section>
+      <div class="wrap">
+        <div class="sectionhead">
+          <div class="eyebrow" style="justify-content:center;" data-i18n="proj-fac-tag">Project Plan 02 — 첨단 합작 제조 공장 사업</div>
+          <h2 class="title" data-i18n="proj-fac-title">특수 모빌리티 &amp; 드론 &amp; 스페이스 캡슐 합작 생산</h2>
+        </div>
+        <div class="grid g3">
+          <div class="card">
+            <div class="num"><i class="fa-solid fa-helicopter"></i></div>
+            <h3 data-i18n="proj-drone-title">초속 수난 구조 드론 합작 공장</h3>
+            <p data-i18n="proj-drone-desc">골든타임(5분) 내 신속 구조가 가능한 콤팩트 초경량 수난 구조 전용 드론 제작 및 비상 응급구조 시스템 구축.</p>
+          </div>
+          <div class="card">
+            <div class="num"><i class="fa-solid fa-truck-ramp-box"></i></div>
+            <h3 data-i18n="proj-trailer-title">맞춤형 특수 트레일러 합작 공장</h3>
+            <p data-i18n="proj-trailer-desc">자동차, 드론, 스페이스 캡슐, 미래 모빌리티 기기 수송용 초고강도 맞춤형 트레일러 원스톱 생산.</p>
+          </div>
+          <div class="card">
+            <div class="num"><i class="fa-solid fa-house-laptop"></i></div>
+            <h3 data-i18n="proj-capsule-title">스마트 모듈러 스페이스 캡슐 합작 공장</h3>
+            <p data-i18n="proj-capsule-desc">관광 리조트, 친환경 캠핑장, 모바일 오피스에 적용 가능한 친환경 스마트 모듈러 스페이스 캡슐 턴키 제조.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Plan Section 3: Global Solar & Overseas Expansion -->
+    <section class="section-alt">
+      <div class="wrap">
+        <div class="sectionhead">
+          <div class="eyebrow" style="justify-content:center;" data-i18n="proj-solar-tag">Project Plan 03 — 글로벌 해외 에너지 프로젝트</div>
+          <h2 class="title" data-i18n="proj-solar-title">글로벌 태양광 발전 &amp; 해외 생산 거점 구축</h2>
+        </div>
+        <div class="grid g3">
+          <div class="card">
+            <span class="badge-box">Uzbekistan</span>
+            <h3>우즈베키스탄 프로젝트</h3>
+            <p data-i18n="proj-solar-uzb">우즈베키스탄 — 100 MW급 대규모 태양광 발전소 설치 및 그린 에너지 인프라 구축 추진</p>
+          </div>
+          <div class="card">
+            <span class="badge-box">Kazakhstan</span>
+            <h3>카자흐스탄 프로젝트</h3>
+            <p data-i18n="proj-solar-kaz">카자흐스탄 — 100 MW급 태양광 발전소 및 태양광 수산 양식 사업 개발</p>
+          </div>
+          <div class="card">
+            <span class="badge-box">Vietnam</span>
+            <h3>베트남 프로젝트</h3>
+            <p data-i18n="proj-solar-vnm">베트남 — 100 MW 태양광 발전소 &amp; EV 완성차 제조 공장 설립 추진</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section>
       <div class="wrap">
         <div class="sectionhead">
           <div class="eyebrow" style="justify-content:center;" data-i18n="vis-eyebrow">Growth Roadmap</div>
@@ -842,10 +978,10 @@
       "ceo-name": "양기웅",
       "ceo-role": "페이또 주식회사 대표이사",
 
-      "vis-eyebrow": "Future Vision",
-      "vis-banner-title": "지속 가능한 미래를 위한 페이또의 비전",
+      "vis-eyebrow": "Future Vision & Project Plan",
+      "vis-banner-title": "지속 가능한 미래를 위한 페이또의 비전 &amp; 프로젝트 플랜",
       "vis-title": "친환경 모빌리티와 자원 순환이 그리는 지속 가능한 미래",
-      "vis-desc": "페이또는 단순한 무역을 넘어 2030 탄소중립과 미래 모빌리티 생태계를 조화롭게 융합하는 혁신 가치를 창출합니다.",
+      "vis-desc": "페이또는 2030 탄소중립 모빌리티부터 국방복지단 전기차 공급, 특수 드론 및 트레이너 합작 생산, 중앙아시아 태양광 프로젝트까지 미래 산업의 실행 전략을 추진합니다.",
       "vis1-title": "2030 탄소중립 모빌리티",
       "vis1-desc": "2030년까지 10만 대의 친환경 전기차 보급 및 2만 대 고효율 충전 인프라를 구축하여 도심 탄소 배출 저감에 앞장섭니다.",
       "vis2-title": "배터리 선순환 생태계",
@@ -857,6 +993,48 @@
       "rm2-year": "2020", "rm2-title": "글로벌 파트너십 확장", "rm2-desc": "BAIC, BAW 한국 총판 및 완성차 딜러 네트워크 확충",
       "rm3-year": "2026", "rm3-title": "모빌리티 & 원자재 수직계열화", "rm3-desc": "전기차, 충전 인프라, 핵심 원자재 트레이딩 수직계열화 구축",
       "rm4-year": "2030", "rm4-title": "글로벌 넷제로 선도 기업", "rm4-desc": "10만 대 EV 보급, 2만 대 충전기, 100MW 태양광 발전 완성",
+
+      "proj-mnd-tag": "Project Plan 01 — 국방복지단 협력 사업",
+      "proj-mnd-title": "국방복지단 친환경 전기차 공급 프로젝트",
+      "proj-mnd-desc": "700만 회원 규모의 국방복지단과 독점 공급 협약을 체결하고, 초기 확정 물량 3,000대를 시작으로 군 장병, 군무원 및 가족 대상 맞춤형 친환경 모빌리티를 보급합니다.",
+      "mnd-tbl-model": "차종 (Model)",
+      "mnd-tbl-purpose": "주요 용도",
+      "mnd-tbl-range": "1회 충전 주행거리",
+      "mnd-tbl-price": "보조금 적용가",
+      "mnd-tbl-features": "주요 특징",
+      "sedan-name": "전기 세단 (Electric Sedan)",
+      "sedan-purpose": "출퇴근 및 도심 주행용",
+      "sedan-range": "약 400 km",
+      "sedan-price": "USD 28,000 이하",
+      "sedan-feat": "고효율 경제성 및 실용적 디자인",
+      "suv-name": "전기 SUV (Electric SUV)",
+      "suv-purpose": "패밀리 레저 및 장거리 주행용",
+      "suv-range": "약 450 km",
+      "suv-price": "약 USD 42,000",
+      "suv-feat": "넓은 실내 공간 및 고성능 파워트레인",
+      "van-name": "전기 밴 (Electric Van)",
+      "van-purpose": "군 물류 수송 및 시설 가동용",
+      "van-range": "약 350 km",
+      "van-price": "약 USD 48,000",
+      "van-feat": "대용량 적재 및 다목적 특수 활용",
+      "target-phase1": "2026년 (초기 협력 단계) — 세단 2,500대 / SUV 1,500대 / 밴 1,000대 공급 및 맞춤형 금융 할부/리스 지원.",
+      "target-phase2": "2027년 (확장 단계) — 세단 7,000대 / SUV 5,000대 / 밴 3,000대 교체 보급 및 군 공동구매 캠페인 진행.",
+      "target-phase3": "2028년 (안정화 단계) — 세단 15,000대 / SUV 10,000대 / 밴 5,000대 보급 및 국방부 친환경 공용차 전면 전환.",
+
+      "proj-fac-tag": "Project Plan 02 — 첨단 합작 제조 공장 사업",
+      "proj-fac-title": "특수 모빌리티 & 드론 & 스페이스 캡슐 합작 생산",
+      "proj-drone-title": "초속 수난 구조 드론 합작 공장",
+      "proj-drone-desc": "골든타임(5분) 내 신속 구조가 가능한 콤팩트 초경량 수난 구조 전용 드론 제작 및 비상 응급구조 시스템 구축.",
+      "proj-trailer-title": "맞춤형 특수 트레일러 합작 공장",
+      "proj-trailer-desc": "자동차, 드론, 스페이스 캡슐, 미래 모빌리티 기기 수송용 초고강도 맞춤형 트레일러 원스톱 생산.",
+      "proj-capsule-title": "스마트 모듈러 스페이스 캡슐 합작 공장",
+      "proj-capsule-desc": "관광 리조트, 친환경 캠핑장, 모바일 오피스에 적용 가능한 친환경 스마트 모듈러 스페이스 캡슐 턴키 제조.",
+
+      "proj-solar-tag": "Project Plan 03 — 글로벌 해외 에너지 프로젝트",
+      "proj-solar-title": "글로벌 태양광 발전 & 해외 생산 거점 구축",
+      "proj-solar-uzb": "우즈베키스탄 — 100 MW급 대규모 태양광 발전소 설치 및 그린 에너지 인프라 구축 추진",
+      "proj-solar-kaz": "카자흐스탄 — 100 MW급 태양광 발전소 및 태양광 수산 양식 사업 개발",
+      "proj-solar-vnm": "베트남 — 100 MW 태양광 발전소 & EV 완성차 제조 공장 설립 추진",
 
       "business-eyebrow": "주요 사업 분야",
       "business-title": "5대 핵심 축, 하나의 통합 산업 시스템",
@@ -986,10 +1164,10 @@
       "ceo-name": "Kiwoong Yang",
       "ceo-role": "Legal Representative & CEO, PAYTTO Co., Ltd.",
 
-      "vis-eyebrow": "Future Vision",
-      "vis-banner-title": "PAYTTO's Vision for a Sustainable Future",
-      "vis-title": "A Sustainable Future Driven by Green Mobility & Resource Circulation",
-      "vis-desc": "Beyond international trade, PAYTTO creates innovative value by harmonizing 2030 Net-Zero goals with the future mobility ecosystem.",
+      "vis-eyebrow": "Future Vision & Project Plan",
+      "vis-banner-title": "PAYTTO's Vision &amp; Project Plan for a Sustainable Future",
+      "vis-title": "A Sustainable Future Driven by Green Mobility &amp; Resource Circulation",
+      "vis-desc": "Beyond international trade, PAYTTO executes strategic project plans from 2030 Net-Zero mobility to MND welfare EV supply, rescue drones, and global solar installations.",
       "vis1-title": "2030 Net-Zero Mobility",
       "vis1-desc": "Deploying 100,000 green EVs and installing 20,000 high-efficiency charging stations by 2030 to lead urban carbon reduction.",
       "vis2-title": "Battery Circular Economy",
@@ -1001,6 +1179,48 @@
       "rm2-year": "2020", "rm2-title": "Global Partnership Expansion", "rm2-desc": "Secured BAIC & BAW exclusive distribution and built national dealer network.",
       "rm3-year": "2026", "rm3-title": "Mobility & Raw Materials Integration", "rm3-desc": "Vertical integration across EVs, charging infrastructure, and raw materials.",
       "rm4-year": "2030", "rm4-title": "Global Net-Zero Leader", "rm4-desc": "100k EVs deployed, 20k chargers installed, 100MW solar power operating.",
+
+      "proj-mnd-tag": "Project Plan 01 — MND Welfare Group Partnership",
+      "proj-mnd-title": "Eco-Friendly EV Supply Project for Military Welfare Group",
+      "proj-mnd-desc": "Signed an exclusive supply agreement with the 7-million-member Military Welfare Group platform (initial order of 3,000 units confirmed) to supply EVs to military personnel, civilian staff, and families.",
+      "mnd-tbl-model": "Model",
+      "mnd-tbl-purpose": "Main Purpose",
+      "mnd-tbl-range": "Driving Range",
+      "mnd-tbl-price": "Price (After Subsidy)",
+      "mnd-tbl-features": "Key Features",
+      "sedan-name": "Electric Sedan",
+      "sedan-purpose": "Personal commuting and urban driving",
+      "sedan-range": "Approx. 400 km",
+      "sedan-price": "Below USD 28,000",
+      "sedan-feat": "Economical & practical design",
+      "suv-name": "Electric SUV",
+      "suv-purpose": "Family travel and leisure use",
+      "suv-range": "Approx. 450 km",
+      "suv-price": "Approx. USD 42,000",
+      "suv-feat": "Spacious interior, high performance",
+      "van-name": "Electric Van",
+      "van-purpose": "Logistics and military operational use",
+      "van-range": "Approx. 350 km",
+      "van-price": "Approx. USD 48,000",
+      "van-feat": "Large cargo capacity, multi-purpose",
+      "target-phase1": "2026 (Initial Phase) — 5,000 units (Sedan 2,500 / SUV 1,500 / Van 1,000) with tailored financing/leasing.",
+      "target-phase2": "2027 (Expansion Phase) — 15,000 units (Sedan 7,000 / SUV 5,000 / Van 3,000) with military group-purchase campaigns.",
+      "target-phase3": "2028 (Stabilization Phase) — 30,000 units (Sedan 15,000 / SUV 10,000 / Van 5,000) with full conversion of official vehicles.",
+
+      "proj-fac-tag": "Project Plan 02 — Specialized Cooperative Factories",
+      "proj-fac-title": "Special Mobility, Drones & Space Capsule Cooperative Production",
+      "proj-drone-title": "Rapid Water Rescue Drone Factory",
+      "proj-drone-desc": "Manufacturing compact, lightweight rescue drones designed for water rescue within the 5-minute golden time.",
+      "proj-trailer-title": "Customized Special Trailer Factory",
+      "proj-trailer-desc": "One-stop research and mass production of customized special trailers for automobiles, drones, space capsules, and heavy gear.",
+      "proj-capsule-title": "Smart Modular Space Capsule Factory",
+      "proj-capsule-desc": "Turnkey manufacturing of smart modular space capsules for tourism resorts, eco-camping, mobile offices, and commercial spaces.",
+
+      "proj-solar-tag": "Project Plan 03 — Global Overseas Energy Projects",
+      "proj-solar-title": "Global Solar Installation & Overseas Manufacturing Plant",
+      "proj-solar-uzb": "Uzbekistan — Promotion of 100 MW solar power plant installation",
+      "proj-solar-kaz": "Kazakhstan — 100 MW solar power plant project",
+      "proj-solar-vnm": "Vietnam — 100 MW solar power plant & EV manufacturing plant setup",
 
       "business-eyebrow": "Main Business",
       "business-title": "Five pillars, one integrated industrial system.",
@@ -1130,10 +1350,10 @@
       "ceo-name": "梁基雄",
       "ceo-role": "PAYTTO 株式会社 代表理事",
 
-      "vis-eyebrow": "Future Vision",
-      "vis-banner-title": "PAYTTO 实现可持续未来的宏伟愿景",
+      "vis-eyebrow": "Future Vision & Project Plan",
+      "vis-banner-title": "PAYTTO 实现可持续未来的宏伟愿景与项目规划",
       "vis-title": "绿色出行与资源循环画出的可持续未来",
-      "vis-desc": "超越单纯贸易，PAYTTO 创新的价值将 2030 净零碳排放目标与未来出行生态系统完美融为一体。",
+      "vis-desc": "超越单纯贸易，PAYTTO 推进从 2030 净零碳排放出行到国防福利团电动车供应、特种无人机及中亚光伏项目的具体项目规划。",
       "vis1-title": "2030 净零碳排放出行",
       "vis1-desc": "到 2030 年推广 10 万辆绿色电动车并建设 2 万台高效充电设施，引领城市碳减排。",
       "vis2-title": "电池循环生态系统",
@@ -1145,6 +1365,48 @@
       "rm2-year": "2020", "rm2-title": "全球合作伙伴拓展", "rm2-desc": "获得 BAIC 和 BAW 韩国独家代理权并扩充全国经销商网络。",
       "rm3-year": "2026", "rm3-title": "出行与原材料垂直整合", "rm3-desc": "实现电动车、充电设施和大宗原材料贸易的垂直一体化。",
       "rm4-year": "2030", "rm4-title": "全球净零碳排放领军企业", "rm4-desc": "推广 10 万辆电动车、安装 2 万台充电桩、运营 100MW 光伏电站。",
+
+      "proj-mnd-tag": "Project Plan 01 — 国防福利团合作项目",
+      "proj-mnd-title": "国防福利团绿色电动车供应项目",
+      "proj-mnd-desc": "与拥有700万会员的国防福利团签订独家供应协议（首批已确认3,000台），为军人、文职人员及家属提供定制化绿色出行。",
+      "mnd-tbl-model": "车型",
+      "mnd-tbl-purpose": "主要用途",
+      "mnd-tbl-range": "单次充电续航",
+      "mnd-tbl-price": "补贴后价格",
+      "mnd-tbl-features": "主要特点",
+      "sedan-name": "电动轿车",
+      "sedan-purpose": "个人通勤与城市驾驶",
+      "sedan-range": "约 400 km",
+      "sedan-price": "28,000 美元以下",
+      "sedan-feat": "高性价比与实用设计",
+      "suv-name": "电动 SUV",
+      "suv-purpose": "家庭出行与长途驾驶",
+      "suv-range": "约 450 km",
+      "suv-price": "约 42,000 美元",
+      "suv-feat": "宽敞空间与高性能",
+      "van-name": "电动货车",
+      "van-purpose": "后勤运输与军事设施作业",
+      "van-range": "约 350 km",
+      "van-price": "约 48,000 美元",
+      "van-feat": "超大载货量与多用途",
+      "target-phase1": "2026年 (初期合作阶段) — 5,000台 (轿车 2,500 / SUV 1,500 / 货车 1,000)，提供定制分期与租赁。",
+      "target-phase2": "2027年 (拓展阶段) — 15,000台 (轿车 7,000 / SUV 5,000 / 货车 3,000)，开展军内团购活动。",
+      "target-phase3": "2028年 (稳定阶段) — 30,000台 (轿车 15,000 / SUV 10,000 / 货车 5,000)，全面替换国防部公务车。",
+
+      "proj-fac-tag": "Project Plan 02 — 特种装备合资工厂项目",
+      "proj-fac-title": "特种出行、救援无人机与太空舱合资生产",
+      "proj-drone-title": "急速水上救援无人机合资工厂",
+      "proj-drone-desc": "制造紧凑轻量水上救援无人机，确保在 5 分钟黄金时间内实施高效救援。",
+      "proj-trailer-title": "定制化特种拖车合资工厂",
+      "proj-trailer-desc": "一站式研发与量产用于汽车、无人机、太空舱及重型装备的定制特种拖车。",
+      "proj-capsule-title": "智能太空舱合资工厂",
+      "proj-capsule-desc": "一站式制造适用于文旅度假区、生态营地和移动办公的智能模块化太空舱。",
+
+      "proj-solar-tag": "Project Plan 03 — 全球海外能源项目",
+      "proj-solar-title": "全球光伏发电与海外生产基地",
+      "proj-solar-uzb": "乌兹别克斯坦 — 推进 100 MW 光伏电站建设",
+      "proj-solar-kaz": "哈萨克斯坦 — 100 MW 光伏电站与水产养殖项目",
+      "proj-solar-vnm": "越南 — 推进 100 MW 光伏电站与电动车整车制造厂建设",
 
       "business-eyebrow": "核心业务",
       "business-title": "五大核心支柱，一个集成产业体系",
@@ -1209,7 +1471,7 @@
       "reg-daejeon": "大田 · 忠清道",
       "reg-gwangju": "光州 · 全罗道",
       "reg-daegu": "大邱 · 庆尚北道",
-      "reg-busan": "釜山 · 庆尚南道",
+      "reg-busan": "釜山 · 庆尚남道",
       "reg-jeju": "济州特别自治道",
       "reg-tot-lbl": "全国合计",
 

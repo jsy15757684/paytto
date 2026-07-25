@@ -1371,36 +1371,44 @@
 </main>
 
 <footer>
-  <div class="wrap">
-    <div>
-      <a href="#home" onclick="showPage('home')" class="brand-logo" style="margin-bottom:16px;">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:20px;padding-top:24px;padding-bottom:24px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+      <a href="#home" onclick="showPage('home')" class="brand-logo">
         <i class="fa-solid fa-gem logo-icon"></i>
         <span class="logo-text">PAYTTO</span>
       </a>
+      <div style="display:flex;gap:14px 22px;flex-wrap:wrap;font-size:13.5px;font-weight:600;color:#a0b4a8;">
+        <a onclick="showPage('home')" style="transition:color 0.2s;" data-i18n="nav-home">홈</a>
+        <span>·</span>
+        <a onclick="showPage('about')" style="transition:color 0.2s;" data-i18n="nav-company">회사 개요</a>
+        <span>·</span>
+        <a onclick="showPage('vision')" style="transition:color 0.2s;" data-i18n="nav-vision">미래 비전</a>
+        <span>·</span>
+        <a onclick="showPage('business')" style="transition:color 0.2s;" data-i18n="nav-business">주요 사업</a>
+        <span>·</span>
+        <a onclick="showPage('network')" style="transition:color 0.2s;" data-i18n="nav-network">파트너/네트워크</a>
+        <span>·</span>
+        <a onclick="showPage('contact')" style="transition:color 0.2s;" data-i18n="nav-contact">협력 문의</a>
+      </div>
     </div>
-    <div>
-      <h4 data-i18n="footer-col1">기업 정보</h4>
-      <ul>
-        <li><a onclick="showPage('home')" data-i18n="nav-home">홈</a></li>
-        <li><a onclick="showPage('about')" data-i18n="nav-company">회사 개요</a></li>
-        <li><a onclick="showPage('vision')" data-i18n="nav-vision">미래 비전</a></li>
-        <li><a onclick="showPage('business')" data-i18n="nav-business">주요 사업</a></li>
-        <li><a onclick="showPage('network')" data-i18n="nav-network">파트너/네트워크</a></li>
-      </ul>
+    
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:12.5px;color:#7a8c81;border-top:1px solid rgba(255,255,255,0.08);padding-top:16px;">
+      <span style="font-weight:700;color:#9fb0a6;" data-i18n="footer-col2">사업 분야:</span>
+      <span data-i18n="pill1">전기자동차</span>
+      <span>|</span>
+      <span data-i18n="pill2">EV 충전 인프라</span>
+      <span>|</span>
+      <span data-i18n="pill3">원자재 무역</span>
+      <span>|</span>
+      <span data-i18n="pill4">배터리 리사이클링</span>
+      <span>|</span>
+      <span data-i18n="pill5">태양광 발전</span>
     </div>
-    <div>
-      <h4 data-i18n="footer-col2">사업 분야</h4>
-      <ul>
-        <li><a onclick="showPage('business')" data-i18n="pill1">전기자동차</a></li>
-        <li><a onclick="showPage('business')" data-i18n="pill2">EV 충전 인프라</a></li>
-        <li><a onclick="showPage('business')" data-i18n="pill3">원자재 무역</a></li>
-        <li><a onclick="showPage('business')" data-i18n="pill4">배터리 리사이클링</a></li>
-        <li><a onclick="showPage('business')" data-i18n="pill5">태양광 발전</a></li>
-      </ul>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:#5c6e64;border-top:1px solid rgba(255,255,255,0.06);padding-top:14px;">
+      <span data-i18n="footer-copy">© 2026 PAYTTO Co., Ltd. All rights reserved.</span>
+      <span data-i18n="info-hq-val">대한민국 경기도 고양시</span>
     </div>
-  </div>
-  <div class="bottom">
-    <span data-i18n="footer-copy">© 2026 PAYTTO Co., Ltd. All rights reserved.</span>
   </div>
 </footer>
 

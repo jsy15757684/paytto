@@ -42,14 +42,18 @@
       font-family:'Outfit', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background:var(--bg);
       color:var(--ink);
-      line-height:1.6;
+      line-height:1.55;
       overflow-x:hidden;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }
-    h1,h2,h3,.navcta,.btn,nav ul li a,.eyebrow,footer h4,.card .num{
+    h1,h2,h3,.navcta,.btn,nav ul li a,.eyebrow,footer h4,.card .num,p,.lede{
       font-family:'Outfit', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }
     a{color:inherit;text-decoration:none;}
     img{max-width:100%;height:auto;display:block;}
@@ -59,11 +63,11 @@
     .eyebrow{
       display:inline-flex;align-items:center;gap:8px;
       font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-      color:var(--orange);margin-bottom:14px;
+      color:var(--orange);margin-bottom:12px;
     }
-    .eyebrow::before{content:"";width:22px;height:2px;background:var(--orange);display:inline-block;}
-    h2.title{font-size:clamp(24px,4vw,42px);font-weight:800;color:var(--ink);line-height:1.25;}
-    p.lede{color:var(--sub);font-size:16.5px;max-width:680px;margin-top:14px;}
+    .eyebrow::before{content:"";width:20px;height:2px;background:var(--orange);display:inline-block;}
+    h2.title{font-size:clamp(24px,3.8vw,40px);font-weight:800;color:var(--ink);line-height:1.22;}
+    p.lede{color:var(--sub);font-size:16px;max-width:680px;margin-top:12px;line-height:1.5;}
 
     /* BRAND LOGO FROM RESOURCE */
     .brand-logo {
@@ -181,7 +185,7 @@
     .page-banner {
       background: var(--navy-deep);
       color: #fff;
-      padding: 50px 0 42px;
+      padding: 46px 0 38px;
       position: relative;
       overflow: hidden;
       border-bottom: 1px solid var(--line);
@@ -194,21 +198,22 @@
       pointer-events: none;
     }
     .page-banner h1 {
-      font-size: clamp(26px, 4vw, 42px);
+      font-size: clamp(26px, 3.8vw, 40px);
       font-weight: 800;
       margin: 0;
-      line-height: 1.25;
+      line-height: 1.22;
     }
     .page-banner p {
       color: #b0c4b8;
-      font-size: 16px;
+      font-size: 15.5px;
       max-width: 680px;
-      margin-top: 12px;
+      margin-top: 10px;
+      line-height: 1.45;
     }
 
     /* HERO */
     .hero{
-      position:relative;min-height:76vh;display:flex;align-items:center;
+      position:relative;min-height:74vh;display:flex;align-items:center;
       background:var(--navy-deep);
       overflow:hidden;
     }
@@ -219,14 +224,14 @@
       content:"";position:absolute;inset:0;
       background:linear-gradient(100deg, rgba(8,19,18,.96) 20%, rgba(8,19,18,.72) 55%, rgba(19,42,38,.35) 100%);
     }
-    .hero .wrap{position:relative;z-index:2;padding-top:50px;padding-bottom:50px;}
-    .hero h1{font-size:clamp(30px,5vw,58px);color:#fff;font-weight:800;max-width:760px;line-height:1.15;}
+    .hero .wrap{position:relative;z-index:2;padding-top:46px;padding-bottom:46px;}
+    .hero h1{font-size:clamp(30px,5vw,56px);color:#fff;font-weight:800;max-width:760px;line-height:1.15;}
     .hero h1 span{color:var(--orange);}
-    .hero p{color:#cfe0d6;font-size:17px;max-width:600px;margin-top:18px;}
-    .hero .stats{display:flex;gap:36px;margin-top:42px;flex-wrap:wrap;}
+    .hero p{color:#cfe0d6;font-size:16.5px;max-width:600px;margin-top:16px;line-height:1.5;}
+    .hero .stats{display:flex;gap:36px;margin-top:38px;flex-wrap:wrap;}
     .hero .stat b{display:block;font-size:26px;color:#fff;font-weight:800;}
     .hero .stat span{color:#8ea79c;font-size:13px;}
-    .btnrow{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;}
+    .btnrow{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap;}
     .btn{padding:13px 24px;border-radius:999px;font-weight:700;font-size:14px;display:inline-block;cursor:pointer;text-align:center;}
     .btn.primary{background:var(--orange);color:#052018;}
     .btn.ghost{border:1px solid rgba(255,255,255,.35);color:#fff;}
@@ -238,8 +243,8 @@
     @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
     /* GRID / CARDS */
-    section { padding: 60px 0; }
-    .grid{display:grid;gap:24px;}
+    section { padding: 56px 0; }
+    .grid{display:grid;gap:22px;}
     .g2{grid-template-columns:1fr 1fr;}
     .g3{grid-template-columns:repeat(3,1fr);}
     .g4{grid-template-columns:repeat(4,1fr);}
@@ -249,14 +254,14 @@
       background:var(--panel);
       border:1px solid var(--line);
       border-radius:var(--radius);
-      padding:28px;
+      padding:26px;
       position:relative;
       transition:transform .25s ease, box-shadow .25s ease;
     }
     .card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.06);}
-    .card .num{font-size:28px;font-weight:800;color:var(--orange);margin-bottom:10px;}
-    .card h3{font-size:19px;font-weight:800;color:var(--ink);margin-bottom:8px;}
-    .card p{color:var(--sub);font-size:14px;margin:0;}
+    .card .num{font-size:26px;font-weight:800;color:var(--orange);margin-bottom:10px;}
+    .card h3{font-size:18.5px;font-weight:800;color:var(--ink);margin-bottom:8px;line-height:1.3;}
+    .card p{color:var(--sub);font-size:13.8px;margin:0;line-height:1.48;}
 
     .split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
 
@@ -269,8 +274,8 @@
     }
     .imgcard img{width:100%;height:auto;object-fit:cover;display:block;}
 
-    .pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;}
-    .pill{background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;}
+    .pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;}
+    .pill{background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:6px 13px;border-radius:999px;font-size:13px;font-weight:600;}
 
     .section-alt{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 
@@ -278,10 +283,10 @@
       text-align:center;max-width:820px;margin:0 auto;padding:10px 0;
     }
     .ceo blockquote{
-      font-size:clamp(18px,2.5vw,28px);
+      font-size:clamp(18px,2.4vw,26px);
       font-weight:700;
       color:var(--ink);
-      margin:0 0 20px;
+      margin:0 0 18px;
       line-height:1.35;
       font-style:normal;
     }
@@ -299,13 +304,13 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
-      margin-top: 36px;
+      margin-top: 32px;
     }
     .timeline-item {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 22px;
+      padding: 20px;
     }
     .timeline-year {
       font-size: 24px;
@@ -322,6 +327,7 @@
     .timeline-desc {
       font-size: 13px;
       color: var(--sub);
+      line-height: 1.45;
     }
 
     /* ORGANIZATIONAL CHART (조직도) */
@@ -389,13 +395,13 @@
     tr:last-child td{border-bottom:0;}
 
     /* FOOTER */
-    footer{background:var(--navy-deep);color:#d1e0d7;padding:50px 0 24px;border-top:1px solid var(--line);}
+    footer{background:var(--navy-deep);color:#d1e0d7;padding:46px 0 24px;border-top:1px solid var(--line);}
     footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;}
     footer h4{color:#fff;font-size:14.5px;margin-bottom:12px;}
     footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:13.5px;}
-    footer .bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:36px;padding-top:20px;font-size:12px;color:#7a8c81;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;max-width:1180px;margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px;}
+    footer .bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:32px;padding-top:18px;font-size:12px;color:#7a8c81;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;max-width:1180px;margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px;}
 
-    .sectionhead{text-align:center;max-width:640px;margin:0 auto 40px;}
+    .sectionhead{text-align:center;max-width:640px;margin:0 auto 36px;}
 
     .contact-success {
       display: none;
@@ -422,7 +428,7 @@
       border: 1px solid rgba(61, 220, 151, 0.3);
     }
 
-    /* Dealer Map Image Styling (Fully visible left-to-right, scaled for legibility) */
+    /* Dealer Map Image Styling */
     .dealer-map-img {
       width: 100%;
       max-width: 960px;
@@ -479,10 +485,10 @@
 
     @media (max-width: 600px) {
       .wrap { padding: 0 16px; }
-      section { padding: 44px 0; }
-      .page-banner { padding: 36px 0 30px; }
-      .hero { min-height: auto; padding: 20px 0 40px; }
-      .hero .stats { gap: 20px; margin-top: 30px; }
+      section { padding: 40px 0; }
+      .page-banner { padding: 32px 0 26px; }
+      .hero { min-height: auto; padding: 20px 0 36px; }
+      .hero .stats { gap: 18px; margin-top: 26px; }
       .hero .stat b { font-size: 22px; }
       .btnrow { flex-direction: column; }
       .btn { width: 100%; }
@@ -493,7 +499,7 @@
       .org-advisory-row { flex-direction: column; width: 100%; }
       .org-node { width: 100%; }
       
-      .card { padding: 20px; }
+      .card { padding: 18px; }
       .dealer-map-img { max-height: 380px; }
     }
   </style>
@@ -534,8 +540,8 @@
     <section class="hero" style="padding:0;">
       <img class="bg" src="__HERO__" alt="PAYTTO EV Showroom">
       <div class="wrap">
-        <h1 data-i18n="hero-title">친환경 모빌리티,<br><span>미래를 향한 비전</span></h1>
-        <p data-i18n="hero-desc">페이또(PAYTTO)는 전기차, EV 충전 인프라, 신재생 에너지, 글로벌 원자재 무역을 아우르는 종합 국제 무역 및 산업 솔루션 전문 기업입니다.</p>
+        <h1 data-i18n="hero-title">친환경 모빌리티와<br><span>글로벌 무역의 미래</span></h1>
+        <p data-i18n="hero-desc">전기차, 충전 인프라, 신재생 에너지, 원자재 무역을 선도하는 글로벌 종합 산업 솔루션 기업 페이또(PAYTTO)입니다.</p>
         <div class="btnrow">
           <a onclick="showPage('business')" class="btn primary" data-i18n="hero-btn-primary">주요 사업 알아보기</a>
           <a onclick="showPage('contact')" class="btn ghost" data-i18n="hero-btn-secondary">협력 문의하기</a>
@@ -560,9 +566,9 @@
       <div class="wrap split">
         <div>
           <div class="eyebrow" data-i18n="about-eyebrow">기업 개요</div>
-          <h2 class="title" data-i18n="about-title">한국과 세계를 잇는 친선 무역의 교량</h2>
-          <p class="lede" style="margin-top:20px;" data-i18n="about-p1">페이또(PAYTTO)는 2013년 설립되어 대한민국 경기도 고양시에 본사를 두고 있습니다. 전기차 및 핵심 부품의 수출입, 완제차 조립 공장 솔루션 제공, EV 충전 인프라 및 태양광/신에너지 솔루션을 구축하는 종합 무역 기업입니다.</p>
-          <p class="lede" style="margin-top:14px;" data-i18n="about-p2">모빌리티 영역을 넘어 전자제품, 화장품, 건강식품 무역 및 크로스보더 이커머스를 운영하며, 알루미늄·구리·금·석탄·원유 등 핵심 원자재 국제 무역과 폐배터리 리사이클링까지 전 주기 산업 생태계를 구축하고 있습니다.</p>
+          <h2 class="title" data-i18n="about-title">글로벌 무역과 친환경 산업의 교량</h2>
+          <p class="lede" style="margin-top:16px;" data-i18n="about-p1">페이또는 2013년 설립 이후 전기차·부품 수출입, EV 충전 인프라 구축, 태양광 및 신재생 에너지 프로젝트를 전개하는 글로벌 종합 무역 기업입니다.</p>
+          <p class="lede" style="margin-top:12px;" data-i18n="about-p2">알루미늄·구리·금·석탄·원유 등 핵심 원자재 국제 무역, 전자·가전 유통, 폐배터리 리사이클링까지 포함하는 친환경 순환 산업 생태계를 구축합니다.</p>
           <div class="pillrow">
             <span class="pill" data-i18n="pill1">전기자동차</span>
             <span class="pill" data-i18n="pill2">EV 충전 인프라</span>
@@ -580,19 +586,19 @@
     <section class="section-alt">
       <div class="wrap">
         <div class="ceo">
-          <blockquote data-i18n="ceo-quote">“친환경 모빌리티, <span>미래를 향한 비전.</span>”<br>깨끗하고 효율적인 수송 기술이 미래 모빌리티 산업을 이끄는 핵심 동력이 될 것임을 믿습니다.</blockquote>
+          <blockquote data-i18n="ceo-quote">“혁신적인 친환경 기술로 <span>지속 가능한 미래</span>를 선도합니다.”</blockquote>
           <div class="who"><b data-i18n="ceo-name">양기웅</b><span data-i18n="ceo-role">페이또 주식회사 대표이사</span></div>
         </div>
       </div>
     </section>
 
-    <!-- ORGANIZATIONAL CHART SECTION (PDF Page 15) -->
+    <!-- ORGANIZATIONAL CHART SECTION -->
     <section>
       <div class="wrap">
         <div class="sectionhead">
           <div class="eyebrow" style="justify-content:center;" data-i18n="org-eyebrow">조직 구조</div>
-          <h2 class="title" data-i18n="org-title">체계적인 글로벌 전문 조직망</h2>
-          <p class="lede" data-i18n="org-desc">경영진을 비롯하여 기술팀, 교육팀, A/S 전담팀, 해외사업부, 관세 및 법무 자문단이 유기적으로 협력하는 종합 조직 체계를 갖추고 있습니다.</p>
+          <h2 class="title" data-i18n="org-title">글로벌 전문 조직 체계</h2>
+          <p class="lede" data-i18n="org-desc">기술, 해외사업, 영업, 관세 및 법무 자문단이 유기적으로 협력하는 통합 전문 조직망을 운영합니다.</p>
         </div>
 
         <div class="org-chart-wrap">
@@ -670,8 +676,8 @@
     <div class="page-banner">
       <div class="wrap">
         <div class="eyebrow" data-i18n="vis-eyebrow">Future Vision &amp; Project Plan</div>
-        <h1 data-i18n="vis-banner-title">지속 가능한 미래를 위한 페이또의 비전 &amp; 프로젝트 플랜</h1>
-        <p data-i18n="vis-desc">페이또는 2030 탄소중립 모빌리티부터 국방복지단 전기차 공급, 특수 드론 및 트레이너 합작 생산, 중앙아시아 태양광 프로젝트까지 미래 산업의 실행 전략을 추진합니다.</p>
+        <h1 data-i18n="vis-banner-title">지속 가능한 미래 비전 &amp; 프로젝트 플랜</h1>
+        <p data-i18n="vis-desc">2030 탄소중립 모빌리티, 국방복지단 EV 공급, 특수 드론 및 글로벌 태양광 프로젝트를 추진합니다.</p>
       </div>
     </div>
 
@@ -680,23 +686,23 @@
       <div class="wrap">
         <div class="sectionhead">
           <div class="eyebrow" style="justify-content:center;" data-i18n="vis-eyebrow">Core Vision Pillars</div>
-          <h2 class="title" data-i18n="vis-title">친환경 모빌리티와 자원 순환이 그리는 지속 가능한 미래</h2>
+          <h2 class="title" data-i18n="vis-title">친환경 모빌리티와 자원 순환의 미래</h2>
         </div>
         <div class="grid g3">
           <div class="card">
             <div class="num"><i class="fa-solid fa-leaf"></i></div>
             <h3 data-i18n="vis1-title">2030 탄소중립 모빌리티</h3>
-            <p data-i18n="vis1-desc">2030년까지 10만 대의 친환경 전기차 보급 및 2만 대 고효율 충전 인프라를 구축하여 도심 탄소 배출 저감에 앞장섭니다.</p>
+            <p data-i18n="vis1-desc">2030년까지 친환경 전기차 10만 대 보급 및 고효율 충전 인프라 2만 대 구축</p>
           </div>
           <div class="card">
             <div class="num"><i class="fa-solid fa-recycle"></i></div>
             <h3 data-i18n="vis2-title">배터리 선순환 생태계</h3>
-            <p data-i18n="vis2-desc">사용 후 EV 배터리의 재활용 및 정밀 재제조 체계를 구축하여 원자재 희귀 자원의 지속 가능한 자원 선순환을 완성합니다.</p>
+            <p data-i18n="vis2-desc">사용 후 EV 배터리 리사이클링을 통한 자원 선순환 생태계 완성</p>
           </div>
           <div class="card">
             <div class="num"><i class="fa-solid fa-solar-panel"></i></div>
             <h3 data-i18n="vis3-title">글로벌 신재생 그린 에너지</h3>
-            <p data-i18n="vis3-desc">카자흐스탄 및 중앙아시아 100MW급 태양광 발전소 및 친환경 양식 인프라를 확장하여 차세대 클린 에너지를 공급합니다.</p>
+            <p data-i18n="vis3-desc">중앙아시아 100MW급 태양광 발전소 및 그린 에너지 인프라 확장</p>
           </div>
         </div>
       </div>
@@ -708,11 +714,11 @@
         <div class="sectionhead">
           <div class="eyebrow" style="justify-content:center;" data-i18n="proj-mnd-tag">Project Plan 01 — 국방복지단 협력 사업</div>
           <h2 class="title" data-i18n="proj-mnd-title">국방복지단 친환경 전기차 공급 프로젝트</h2>
-          <p class="lede" data-i18n="proj-mnd-desc">700만 회원 규모의 국방복지단과 독점 공급 협약을 체결하고, 초기 확정 물량 3,000대를 시작으로 군 장병, 군무원 및 가족 대상 맞춤형 친환경 모빌리티를 보급합니다.</p>
+          <p class="lede" data-i18n="proj-mnd-desc">국방복지단 700만 회원 대상 독점 공급 협약을 체결하고, 초기 확정 3,000대를 시작으로 맞춤형 친환경 EV를 보급합니다.</p>
         </div>
 
         <!-- Vehicle Lineup Table (Responsive Wrapper) -->
-        <div class="card" style="padding:0;overflow:hidden;margin-bottom:30px;">
+        <div class="card" style="padding:0;overflow:hidden;margin-bottom:28px;">
           <div class="table-responsive">
             <table>
               <thead>
@@ -756,17 +762,17 @@
           <div class="card">
             <span class="badge-box">Phase 1 (2026)</span>
             <h3>5,000대 공급 목표</h3>
-            <p data-i18n="target-phase1">2026년 (초기 협력 단계) — 세단 2,500대 / SUV 1,500대 / 밴 1,000대 공급 및 맞춤형 금융 할부/리스 지원.</p>
+            <p data-i18n="target-phase1">2026년 — 세단 2,500대 / SUV 1,500대 / 밴 1,000대 공급 및 금융 할부/리스 지원</p>
           </div>
           <div class="card">
             <span class="badge-box">Phase 2 (2027)</span>
             <h3>15,000대 확장 목표</h3>
-            <p data-i18n="target-phase2">2027년 (확장 단계) — 세단 7,000대 / SUV 5,000대 / 밴 3,000대 교체 보급 및 군 공동구매 캠페인 진행.</p>
+            <p data-i18n="target-phase2">2027년 — 세단 7,000대 / SUV 5,000대 / 밴 3,000대 교체 보급 및 군 공동구매 캠페인</p>
           </div>
           <div class="card">
             <span class="badge-box">Phase 3 (2028)</span>
             <h3>30,000대 안착 목표</h3>
-            <p data-i18n="target-phase3">2028년 (안정화 단계) — 세단 15,000대 / SUV 10,000대 / 밴 5,000대 보급 및 국방부 친환경 공용차 전면 전환.</p>
+            <p data-i18n="target-phase3">2028년 — 세단 15,000대 / SUV 10,000대 / 밴 5,000대 보급 및 공용차 친환경 전면 전환</p>
           </div>
         </div>
       </div>
@@ -783,17 +789,17 @@
           <div class="card">
             <div class="num"><i class="fa-solid fa-helicopter"></i></div>
             <h3 data-i18n="proj-drone-title">초속 수난 구조 드론 합작 공장</h3>
-            <p data-i18n="proj-drone-desc">골든타임(5분) 내 신속 구조가 가능한 콤팩트 초경량 수난 구조 전용 드론 제작 및 비상 응급구조 시스템 구축.</p>
+            <p data-i18n="proj-drone-desc">골든타임 5분 내 신속 구조가 가능한 초경량 수난 구조 전용 드론 제작 및 비상 응급구조 시스템 구축</p>
           </div>
           <div class="card">
             <div class="num"><i class="fa-solid fa-truck-ramp-box"></i></div>
             <h3 data-i18n="proj-trailer-title">맞춤형 특수 트레일러 합작 공장</h3>
-            <p data-i18n="proj-trailer-desc">자동차, 드론, 스페이스 캡슐, 미래 모빌리티 기기 수송용 초고강도 맞춤형 트레일러 원스톱 생산.</p>
+            <p data-i18n="proj-trailer-desc">모빌리티·드론·스페이스 캡슐 수송용 초고강도 맞춤형 특수 트레일러 원스톱 생산</p>
           </div>
           <div class="card">
             <div class="num"><i class="fa-solid fa-house-laptop"></i></div>
             <h3 data-i18n="proj-capsule-title">스마트 모듈러 스페이스 캡슐 합작 공장</h3>
-            <p data-i18n="proj-capsule-desc">관광 리조트, 친환경 캠핑장, 모바일 오피스에 적용 가능한 친환경 스마트 모듈러 스페이스 캡슐 턴키 제조.</p>
+            <p data-i18n="proj-capsule-desc">리조트·친환경 캠핑장·모바일 오피스용 친환경 스마트 모듈러 스페이스 캡슐 턴키 제조</p>
           </div>
         </div>
       </div>
@@ -810,17 +816,17 @@
           <div class="card">
             <span class="badge-box">Uzbekistan</span>
             <h3>우즈베키스탄 프로젝트</h3>
-            <p data-i18n="proj-solar-uzb">우즈베키스탄 — 100 MW급 대규모 태양광 발전소 설치 및 그린 에너지 인프라 구축 추진</p>
+            <p data-i18n="proj-solar-uzb">우즈베키스탄 100 MW급 태양광 발전소 설치 및 그린 에너지 인프라 구축</p>
           </div>
           <div class="card">
             <span class="badge-box">Kazakhstan</span>
             <h3>카자흐스탄 프로젝트</h3>
-            <p data-i18n="proj-solar-kaz">카자흐스탄 — 100 MW급 태양광 발전소 및 태양광 수산 양식 사업 개발</p>
+            <p data-i18n="proj-solar-kaz">카자흐스탄 100 MW급 태양광 발전소 및 태양광 수산 양식 사업 개발</p>
           </div>
           <div class="card">
             <span class="badge-box">Vietnam</span>
             <h3>베트남 프로젝트</h3>
-            <p data-i18n="proj-solar-vnm">베트남 — 100 MW 태양광 발전소 &amp; EV 완성차 제조 공장 설립 추진</p>
+            <p data-i18n="proj-solar-vnm">베트남 100 MW 태양광 발전소 및 EV 완성차 제조 공장 설립 추진</p>
           </div>
         </div>
       </div>
@@ -831,28 +837,28 @@
       <div class="wrap">
         <div class="sectionhead">
           <div class="eyebrow" style="justify-content:center;" data-i18n="vis-eyebrow">Growth Roadmap</div>
-          <h2 class="title" data-i18n="roadmap-title">PAYTTO 성장의 여정과 2030 비전 로드맵</h2>
+          <h2 class="title" data-i18n="roadmap-title">PAYTTO 성장의 여정과 2030 로드맵</h2>
         </div>
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-year" data-i18n="rm1-year">2013</div>
             <div class="timeline-title" data-i18n="rm1-title">페이또 설립</div>
-            <div class="timeline-desc" data-i18n="rm1-desc">경기도 고양시 본사 설립 및 국제 무역 사업 개시</div>
+            <div class="timeline-desc" data-i18n="rm1-desc">본사 설립 및 국제 무역 사업 개시</div>
           </div>
           <div class="timeline-item">
             <div class="timeline-year" data-i18n="rm2-year">2020</div>
             <div class="timeline-title" data-i18n="rm2-title">글로벌 파트너십 확장</div>
-            <div class="timeline-desc" data-i18n="rm2-desc">BAIC, BAW 한국 총판 및 완성차 딜러 네트워크 확충</div>
+            <div class="timeline-desc" data-i18n="rm2-desc">BAIC, BAW 한국 총판 및 딜러망 확충</div>
           </div>
           <div class="timeline-item">
             <div class="timeline-year" data-i18n="rm3-year">2026</div>
             <div class="timeline-title" data-i18n="rm3-title">모빌리티 &amp; 원자재 수직계열화</div>
-            <div class="timeline-desc" data-i18n="rm3-desc">전기차, 충전 인프라, 핵심 원자재 트레이딩 수직계열화 구축</div>
+            <div class="timeline-desc" data-i18n="rm3-desc">전기차·충전기·원자재 수직계열화 구축</div>
           </div>
           <div class="timeline-item">
             <div class="timeline-year" data-i18n="rm4-year">2030</div>
             <div class="timeline-title" data-i18n="rm4-title">글로벌 넷제로 선도 기업</div>
-            <div class="timeline-desc" data-i18n="rm4-desc">10만 대 EV 보급, 2만 대 충전기, 100MW 태양광 발전 완성</div>
+            <div class="timeline-desc" data-i18n="rm4-desc">EV 10만 대, 충전기 2만 대, 100MW 태양광 달성</div>
           </div>
         </div>
       </div>
@@ -865,8 +871,8 @@
     <div class="page-banner">
       <div class="wrap">
         <div class="eyebrow" data-i18n="business-eyebrow">Main Business</div>
-        <h1 data-i18n="biz-banner-title">5대 핵심 축, 하나의 통합 산업 시스템</h1>
-        <p data-i18n="biz-banner-desc">전기차 라인업부터 자동차 부품, 공공 가전, 원자재 무역, 배터리 리사이클링, 태양광 발전까지 페이또의 주요 비즈니스 포트폴리오입니다.</p>
+        <h1 data-i18n="biz-banner-title">5대 핵심 사업 포트폴리오</h1>
+        <p data-i18n="biz-banner-desc">전기차, 가전, 충전 인프라, 원자재 무역, 신재생 에너지를 아우르는 통합 산업 솔루션입니다.</p>
       </div>
     </div>
 
@@ -876,33 +882,33 @@
         <div class="sectionhead">
           <div class="eyebrow" style="justify-content:center;" data-i18n="biz-sec1-tag">01. 5대 핵심 사업 분야</div>
           <h2 class="title" data-i18n="business-title">5대 핵심 축, 하나의 통합 산업 시스템</h2>
-          <p class="lede" data-i18n="business-desc">전기차부터 원자재 무역까지, 페이또는 지속 가능한 모빌리티와 글로벌 무역의 전 가치 사슬을 운영합니다.</p>
+          <p class="lede" data-i18n="business-desc">지속 가능한 모빌리티와 글로벌 무역의 전 가치 사슬을 운영합니다.</p>
         </div>
         <div class="grid g5">
           <div class="card">
             <div class="num">01</div>
             <h3 data-i18n="biz1-title">전기차 유통 및 A/S</h3>
-            <p data-i18n="biz1-desc">순수 전기차 및 주요 부품의 수출입과 완벽한 전국 사후 관리 지원 서비스.</p>
+            <p data-i18n="biz1-desc">순수 전기차 및 주요 부품의 수출입과 완벽한 전국 사후 관리 지원 서비스</p>
           </div>
           <div class="card">
             <div class="num">02</div>
             <h3 data-i18n="biz2-title">전자제품 및 가전 무역</h3>
-            <p data-i18n="biz2-desc">소비자 및 공공기관용 전자·가전 제품의 글로벌 무역 및 유통.</p>
+            <p data-i18n="biz2-desc">소비자 및 공공기관용 전자·가전 제품의 글로벌 무역 및 유통</p>
           </div>
           <div class="card">
             <div class="num">03</div>
             <h3 data-i18n="biz3-title">전기차 충전 인프라</h3>
-            <p data-i18n="biz3-desc">전기차 충전 인프라의 공급 및 시공을 통한 친환경 모빌리티 확장 지원.</p>
+            <p data-i18n="biz3-desc">전기차 충전 인프라의 공급 및 시공을 통한 친환경 모빌리티 확장 지원</p>
           </div>
           <div class="card">
             <div class="num">04</div>
             <h3 data-i18n="biz4-title">원자재 글로벌 무역</h3>
-            <p data-i18n="biz4-desc">알루미늄, 구리, 석탄, 금, 원유 등 핵심 자원의 안정적이고 정밀한 수급 체계 유지.</p>
+            <p data-i18n="biz4-desc">알루미늄, 구리, 석탄, 금, 원유 등 핵심 자원의 안정적 수급 체계 유지</p>
           </div>
           <div class="card">
             <div class="num">05</div>
             <h3 data-i18n="biz5-title">비즈니스 컨설팅</h3>
-            <p data-i18n="biz5-desc">축적된 국제 무역 전문성과 인프라를 활용한 시장 조사 및 전략 컨설팅.</p>
+            <p data-i18n="biz5-desc">국제 무역 전문성을 활용한 시장 조사 및 글로벌 전략 컨설팅</p>
           </div>
         </div>
       </div>
@@ -913,10 +919,10 @@
       <div class="wrap">
         <div class="sectionhead">
           <div class="eyebrow" style="justify-content:center;" data-i18n="biz-sec2-tag">02. 전기차 유통 및 가전 무역</div>
-          <h2 class="title" data-i18n="ev-models-title">지자체 &amp; 공공기관 전용 전기차 라인업 (EV 7대 시리즈)</h2>
+          <h2 class="title" data-i18n="ev-models-title">공공·지자체 전용 전기차 라인업 (EV 7대 시리즈)</h2>
         </div>
         
-        <div class="pillrow" style="justify-content:center;margin-bottom:30px;">
+        <div class="pillrow" style="justify-content:center;margin-bottom:28px;">
           <span class="pill" data-i18n="ev-m1">EV 세단 (Sedan)</span>
           <span class="pill" data-i18n="ev-m2">EV SUV</span>
           <span class="pill" data-i18n="ev-m3">EV 픽업트럭 (Pickup)</span>
@@ -926,39 +932,39 @@
           <span class="pill" data-i18n="ev-m7">EV 소방차 (Fire Truck)</span>
         </div>
 
-        <div class="imgcard" style="margin-bottom:36px;background:#ffffff;padding:14px;text-align:center;">
-          <img src="__BIZ_EV_PAGE17__" alt="PAYTTO EV Full Vehicle Lineup (Cars Only)" style="width:100%;height:auto;max-height:520px;object-fit:contain;margin:0 auto;">
+        <div class="imgcard" style="margin-bottom:32px;background:#ffffff;padding:14px;text-align:center;">
+          <img src="__BIZ_EV_PAGE17__" alt="PAYTTO EV Full Vehicle Lineup" style="width:100%;height:auto;max-height:520px;object-fit:contain;margin:0 auto;">
         </div>
 
         <div class="grid g2">
           <div class="imgcard">
             <img src="__BIZ_PARTS__" alt="PAYTTO Automotive Parts">
             <div style="padding:22px;">
-              <h3 style="margin-top:0;" data-i18n="parts-title">한국자동차부품협회 &amp; 택시·렌터카 조합 부품 공급</h3>
-              <p data-i18n="parts-desc" style="color:var(--sub);font-size:14px;margin:0;">한국자동차부품협회 회원사 부품 공급 및 전국 택시조합, 렌터카협회와의 상호 협력 협약 체결.</p>
+              <h3 style="margin-top:0;" data-i18n="parts-title">자동차 부품 및 택시·렌터카 조합 공급</h3>
+              <p data-i18n="parts-desc" style="color:var(--sub);font-size:14px;margin:0;">한국자동차부품협회 회원사 부품 공급 및 전국 택시·렌터카 조합 상호 협력 체결</p>
             </div>
           </div>
           <div class="imgcard">
             <img src="__BIZ_APPLIANCE__" alt="Public Institutions Electronics and Appliances">
             <div style="padding:22px;">
               <h3 style="margin-top:0;" data-i18n="appliance-title">공공기관 전용 전자제품 및 가전 유통</h3>
-              <p data-i18n="appliance-desc" style="color:var(--sub);font-size:14px;margin:0;">공공기관 및 인프라 단체에 맞춘 다양한 규격의 고품질 전자·가전 제품 전용 수급 체계.</p>
+              <p data-i18n="appliance-desc" style="color:var(--sub);font-size:14px;margin:0;">공공기관 및 인프라 단체에 맞춘 다양한 규격의 고품질 전자·가전 수급 체계</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 03. 전기차 충전 인프라 (주요 사업에 추가) -->
+    <!-- 03. 전기차 충전 인프라 -->
     <section>
       <div class="wrap">
         <div class="sectionhead">
           <div class="eyebrow" style="justify-content:center;" data-i18n="biz-sec3-charging-tag">03. 전기차 충전 인프라</div>
-          <h2 class="title" data-i18n="charging-sec-title">초급속 &amp; 완속 전기차 충전 인프라 구축 솔루션</h2>
-          <p class="lede" data-i18n="charging-sec-desc">공공기관, 지자체 거점, 아파트 및 대형 빌딩에 최적화된 고효율 전기차 충전 인프라의 공급, 시공 및 통합 관제 솔루션을 제공합니다.</p>
+          <h2 class="title" data-i18n="charging-sec-title">초급속 &amp; 완속 전기차 충전 솔루션</h2>
+          <p class="lede" data-i18n="charging-sec-desc">공공기관, 지자체 거점, 아파트 전용 고효율 EV 충전 인프라 공급, 시공 및 관제 솔루션을 제공합니다.</p>
         </div>
 
-        <div class="imgcard" style="margin-bottom:30px;">
+        <div class="imgcard" style="margin-bottom:28px;">
           <img src="__CHARGING__" alt="PAYTTO EV Charging Infrastructure" style="width:100%;height:auto;max-height:480px;object-fit:cover;display:block;">
         </div>
 
@@ -966,17 +972,17 @@
           <div class="card">
             <div class="num"><i class="fa-solid fa-bolt" style="color:#00e5ff;"></i></div>
             <h3 data-i18n="charger-fast-title">초급속 EV 충전 인프라</h3>
-            <p data-i18n="charger-fast-desc">공공기관, 휴게소, 지자체 거점 전용 100kW~350kW 초급속 고효율 충전기 보급 및 급속 시공 네트워크 구축.</p>
+            <p data-i18n="charger-fast-desc">공공기관 및 지자체 거점 전용 100kW~350kW 초급속 고효율 충전기 보급</p>
           </div>
           <div class="card">
             <div class="num"><i class="fa-solid fa-charging-station" style="color:#3ddc97;"></i></div>
             <h3 data-i18n="charger-slow-title">완속 &amp; 모듈형 충전 시스템</h3>
-            <p data-i18n="charger-slow-desc">아파트 단지, 공용 주차장, 모바일 오피스 및 사업장에 최적화된 스마트 완속/모듈형 충전 솔루션.</p>
+            <p data-i18n="charger-slow-desc">아파트 단지, 공용 주차장 및 오피스 맞춤형 스마트 완속/모듈형 충전 솔루션</p>
           </div>
           <div class="card">
             <div class="num"><i class="fa-solid fa-server" style="color:#ff7f50;"></i></div>
             <h3 data-i18n="charger-cms-title">통합 관제 &amp; 스마트 결제</h3>
-            <p data-i18n="charger-cms-desc">24시간 모니터링, 실시간 원격 진단, 간편 모바일 결제 관제 시스템을 통한 원스톱 운영 인프라.</p>
+            <p data-i18n="charger-cms-desc">24시간 모니터링, 실시간 원격 진단 및 모바일 결제 통합 운영 시스템</p>
           </div>
         </div>
       </div>
@@ -991,7 +997,7 @@
         </div>
 
         <div class="imgcard" style="margin-bottom:28px;">
-          <img src="__BIZ_RAW_MATERIALS__" alt="PAYTTO Raw materials aluminum copper coal gold" style="width:100%;height:auto;max-height:480px;object-fit:cover;display:block;">
+          <img src="__BIZ_RAW_MATERIALS__" alt="PAYTTO Raw materials" style="width:100%;height:auto;max-height:480px;object-fit:cover;display:block;">
         </div>
 
         <div class="grid g3">
@@ -1029,7 +1035,7 @@
       </div>
     </section>
 
-    <!-- 05. 비즈니스 컨설팅 -->
+    <!-- 05. 신재생 에너지 & 특수 제품 -->
     <section>
       <div class="wrap">
         <div class="sectionhead">
@@ -1042,21 +1048,21 @@
             <img src="__BIZ_BATTERY__" alt="Battery Recycling Business">
             <div style="padding:22px;">
               <h3 style="margin-top:0;" data-i18n="res2-title">배터리 리사이클링</h3>
-              <p data-i18n="res2-desc" style="color:var(--sub);font-size:14px;margin:0;">사용 후 전기차 배터리의 회수 및 재활용을 통해 원자재 수입 의존도를 낮추고 지속 가능한 자원 순환 체계를 구축합니다.</p>
+              <p data-i18n="res2-desc" style="color:var(--sub);font-size:14px;margin:0;">사용 후 EV 배터리의 회수 및 재활용을 통해 원자재 수입 의존도를 낮추고 자원 순환 체계를 구축합니다.</p>
             </div>
           </div>
           <div class="imgcard">
             <img src="__BIZ_SOLAR__" alt="Kazakhstan Solar Power Plant Project">
             <div style="padding:22px;">
               <h3 style="margin-top:0;" data-i18n="res3-title">태양광 발전 프로젝트</h3>
-              <p data-i18n="res3-desc" style="color:var(--sub);font-size:14px;margin:0;">카자흐스탄 및 우즈베키스탄 태양광 발전소 프로젝트와 태양광 수산 양식 사업 등 100MW 규모의 친환경 에너지를 개발합니다.</p>
+              <p data-i18n="res3-desc" style="color:var(--sub);font-size:14px;margin:0;">카자흐스탄 및 우즈베키스탄 태양광 발전소 및 수산 양식 사업 등 100MW 규모의 에너지를 개발합니다.</p>
             </div>
           </div>
           <div class="imgcard">
             <img src="__BIZ_SPECIAL__" alt="Special Mobility & Bio Products">
             <div style="padding:22px;">
               <h3 style="margin-top:0;" data-i18n="special-title">특수 모빌리티 &amp; 바이오 제품</h3>
-              <p data-i18n="special-desc" style="color:var(--sub);font-size:14px;margin:0;">전기 오토바이, 수륙양용차, 차량용 질식 소화포, 친환경 효소 바이오 제품 유통.</p>
+              <p data-i18n="special-desc" style="color:var(--sub);font-size:14px;margin:0;">전기 오토바이, 수륙양용차, 차량용 질식 소화포, 친환경 효소 바이오 제품 유통</p>
             </div>
           </div>
         </div>
@@ -1065,13 +1071,13 @@
   </div>
 
 
-  <!-- ================= 4. PAGE: PARTNERS & NETWORK (BAIC & BAW 독점 총판 섹션 파트너/네트워크 메뉴로 이동) ================= -->
+  <!-- ================= 4. PAGE: PARTNERS & NETWORK ================= -->
   <div id="page-network" class="page-view">
     <div class="page-banner">
       <div class="wrap">
         <div class="eyebrow" data-i18n="net-eyebrow">Partners &amp; Network</div>
-        <h1 data-i18n="net-title">신뢰 기반의 글로벌 네트워크 &amp; 전국 딜러망</h1>
-        <p data-i18n="net-desc">글로벌 완성차 제조사 및 물류 그룹과의 독점 유통 파트너십과 전국 48개 거점 총판/딜러 네트워크.</p>
+        <h1 data-i18n="net-title">글로벌 파트너십 &amp; 전국 딜러 네트워크</h1>
+        <p data-i18n="net-desc">글로벌 완성차·물류 제휴 및 전국 48개 거점 딜러 네트워크를 보유하고 있습니다.</p>
       </div>
     </div>
 
@@ -1085,21 +1091,21 @@
         <div class="grid g3">
           <div class="card">
             <h3>BAIC · BAW</h3>
-            <p data-i18n="net1-desc">베이징자동차그룹(BAIC) 및 베이징자동차제조창(BAW)의 한국 총판 독점 계약 체결.</p>
+            <p data-i18n="net1-desc">베이징자동차(BAIC) 및 베이징자동차제조창(BAW) 한국 총판 독점 계약 체결</p>
           </div>
           <div class="card">
             <h3>Geely · FAW · Leapmotor</h3>
-            <p data-i18n="net2-desc">지리자동차(Volvo, Polestar), 일기그룹(HONGQI), 립모터와의 전략적 비즈니스 협력 체결.</p>
+            <p data-i18n="net2-desc">지리자동차(Volvo/Polestar), 일기그룹(HONGQI), 립모터 전략 비즈니스 협력 체결</p>
           </div>
           <div class="card">
             <h3>Hanjin · Weidong Ferry</h3>
-            <p data-i18n="net3-desc">한진그룹 및 위동항운과의 물류 협력을 통해 한중 페리 및 글로벌 해상 유통망 구축.</p>
+            <p data-i18n="net3-desc">한진그룹 및 위동항운 물류 제휴를 통한 한중 페리 및 글로벌 해상 유통망 구축</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Exclusive Distribution Partnership Section (MOVED FROM MAIN BUSINESS) -->
+    <!-- Exclusive Distribution Partnership Section -->
     <section class="section-alt">
       <div class="wrap">
         <div class="sectionhead">
@@ -1112,7 +1118,7 @@
             <div style="padding:22px;">
               <span class="badge-box">BAIC Group Exclusive</span>
               <h3 style="margin-top:4px;" data-i18n="baic-title">BAIC (베이징자동차그룹) 한국 총판 독점 계약</h3>
-              <p data-i18n="baic-desc" style="color:var(--sub);font-size:14px;margin:0;">1958년 설립, 벤츠·현대 합작선 보유 및 ARCFOX, Foton 등 다각화 브랜드를 보유한 중국 국영 자동차 그룹.</p>
+              <p data-i18n="baic-desc" style="color:var(--sub);font-size:14px;margin:0;">1958년 설립, 벤츠·현대 합작선 보유 및 ARCFOX, Foton 브랜드를 보유한 중국 국영 자동차 그룹</p>
             </div>
           </div>
           <div class="imgcard">
@@ -1120,7 +1126,7 @@
             <div style="padding:22px;">
               <span class="badge-box">BAW Factory Exclusive</span>
               <h3 style="margin-top:4px;" data-i18n="baw-title">BAW (베이징자동차제조창) 한국 총판 독점 계약</h3>
-              <p data-i18n="baw-desc" style="color:var(--sub);font-size:14px;margin:0;">1951년 설립, 전통 군용 오프로드 및 경형 상용차 전문 제조사로 신에너지 모빌리티 라인업 확장.</p>
+              <p data-i18n="baw-desc" style="color:var(--sub);font-size:14px;margin:0;">1951년 설립, 군용 오프로드 및 경형 상용차 전문 제조사로 신에너지 모빌리티 라인업 확장</p>
             </div>
           </div>
         </div>
@@ -1133,7 +1139,7 @@
         <div class="sectionhead">
           <div class="eyebrow" style="justify-content:center;" data-i18n="net-eyebrow-tbl">전국 판매 네트워크</div>
           <h2 class="title" data-i18n="net-title-tbl">전국 48개 거점 딜러 네트워크</h2>
-          <p class="lede" data-i18n="net-desc-tbl">대한민국 전 지역을 아우르는 총판 및 공식 지정 딜러망 보유.</p>
+          <p class="lede" data-i18n="net-desc-tbl">대한민국 전 지역을 아우르는 총판 및 공식 지정 딜러망 보유</p>
         </div>
 
         <div class="imgcard" style="background:#ffffff;padding:20px;text-align:center;">
@@ -1149,8 +1155,8 @@
     <div class="page-banner">
       <div class="wrap">
         <div class="eyebrow" data-i18n="contact-eyebrow">Contact</div>
-        <h1 data-i18n="contact-title">미래 모빌리티의 혁신을 함께 만듭니다.</h1>
-        <p data-i18n="contact-desc">파트너십, 유통 제휴, 투자 문의 등 페이또 글로벌 담당자가 신속히 안내해 드립니다.</p>
+        <h1 data-i18n="contact-title">PAYTTO 비즈니스 파트너십 문의</h1>
+        <p data-i18n="contact-desc">글로벌 원자재 무역, 전기차 유통 제휴, 투자 문의 등 전담 전문가가 신속히 안내해 드립니다.</p>
       </div>
     </div>
 
@@ -1233,8 +1239,8 @@
       "nav-contact": "협력 문의",
       "nav-cta": "문의하기",
 
-      "hero-title": "친환경 모빌리티,<br><span>미래를 향한 비전</span>",
-      "hero-desc": "페이또(PAYTTO)는 전기차, EV 충전 인프라, 신재생 에너지, 글로벌 원자재 무역을 아우르는 종합 국제 무역 및 산업 솔루션 전문 기업입니다.",
+      "hero-title": "친환경 모빌리티와<br><span>글로벌 무역의 미래</span>",
+      "hero-desc": "전기차, 충전 인프라, 신재생 에너지, 원자재 무역을 선도하는 글로벌 종합 산업 솔루션 기업 페이또(PAYTTO)입니다.",
       "hero-btn-primary": "주요 사업 알아보기",
       "hero-btn-secondary": "협력 문의하기",
       "stat1-val": "2013",
@@ -1247,9 +1253,9 @@
       "stat4-lbl": "글로벌 OEM 파트너",
 
       "about-eyebrow": "기업 개요",
-      "about-title": "한국과 세계를 잇는 친선 무역의 교량",
-      "about-p1": "페이또(PAYTTO)는 2013년 설립되어 대한민국 경기도 고양시에 본사를 두고 있습니다. 전기차 및 핵심 부품의 수출입, 완제차 조립 공장 솔루션 제공, EV 충전 인프라 및 태양광/신에너지 솔루션을 구축하는 종합 무역 기업입니다.",
-      "about-p2": "모빌리티 영역을 넘어 전자제품, 화장품, 건강식품 무역 및 크로스보더 이커머스를 운영하며, 알루미늄·구리·금·석탄·원유 등 핵심 원자재 국제 무역과 폐배터리 리사이클링까지 전 주기 산업 생태계를 구축하고 있습니다.",
+      "about-title": "글로벌 무역과 친환경 산업의 교량",
+      "about-p1": "페이또는 2013년 설립 이후 전기차·부품 수출입, EV 충전 인프라 구축, 태양광 및 신재생 에너지 프로젝트를 전개하는 글로벌 종합 무역 기업입니다.",
+      "about-p2": "알루미늄·구리·금·석탄·원유 등 핵심 원자재 국제 무역, 전자·가전 유통, 폐배터리 리사이클링까지 포함하는 친환경 순환 산업 생태계를 구축합니다.",
       "pill1": "전기자동차",
       "pill2": "EV 충전 인프라",
       "pill3": "원자재 무역",
@@ -1257,13 +1263,13 @@
       "pill5": "태양광 발전",
       "pill6": "크로스보더 이커머스",
 
-      "ceo-quote": "“친환경 모빌리티, <span>미래를 향한 비전.</span>”<br>깨끗하고 효율적인 수송 기술이 미래 모빌리티 산업을 이끄는 핵심 동력이 될 것임을 믿습니다.",
+      "ceo-quote": "“혁신적인 친환경 기술로 <span>지속 가능한 미래</span>를 선도합니다.”",
       "ceo-name": "양기웅",
       "ceo-role": "페이또 주식회사 대표이사",
 
       "org-eyebrow": "조직 구조",
-      "org-title": "체계적인 글로벌 전문 조직망",
-      "org-desc": "경영진을 비롯하여 기술팀, 교육팀, A/S 전담팀, 해외사업부, 관세 및 법무 자문단이 유기적으로 협력하는 종합 조직 체계를 갖추고 있습니다.",
+      "org-title": "글로벌 전문 조직 체계",
+      "org-desc": "기술, 해외사업, 영업, 관세 및 법무 자문단이 유기적으로 협력하는 통합 전문 조직망을 운영합니다.",
       "role-ceo": "CEO (최고경영자)",
       "role-coo": "COO (최고운영책임자)",
       "role-cfo": "CFO / 회계사 (자금·재무)",
@@ -1284,24 +1290,24 @@
       "div4-team": "교육 팀장 &amp; A/S 전담 엔지니어 팀",
 
       "vis-eyebrow": "Future Vision & Project Plan",
-      "vis-banner-title": "지속 가능한 미래를 위한 페이또의 비전 &amp; 프로젝트 플랜",
-      "vis-title": "친환경 모빌리티와 자원 순환이 그리는 지속 가능한 미래",
-      "vis-desc": "페이또는 2030 탄소중립 모빌리티부터 국방복지단 전기차 공급, 특수 드론 및 트레이너 합작 생산, 중앙아시아 태양광 프로젝트까지 미래 산업의 실행 전략을 추진합니다.",
+      "vis-banner-title": "지속 가능한 미래 비전 &amp; 프로젝트 플랜",
+      "vis-title": "친환경 모빌리티와 자원 순환의 미래",
+      "vis-desc": "2030 탄소중립 모빌리티, 국방복지단 EV 공급, 특수 드론 및 글로벌 태양광 프로젝트를 추진합니다.",
       "vis1-title": "2030 탄소중립 모빌리티",
-      "vis1-desc": "2030년까지 10만 대의 친환경 전기차 보급 및 2만 대 고효율 충전 인프라를 구축하여 도심 탄소 배출 저감에 앞장섭니다.",
+      "vis1-desc": "2030년까지 친환경 전기차 10만 대 보급 및 고효율 충전 인프라 2만 대 구축",
       "vis2-title": "배터리 선순환 생태계",
-      "vis2-desc": "사용 후 EV 배터리의 재활용 및 정밀 재제조 체계를 구축하여 원자재 희귀 자원의 지속 가능한 자원 선순환을 완성합니다.",
+      "vis2-desc": "사용 후 EV 배터리 리사이클링을 통한 자원 선순환 생태계 완성",
       "vis3-title": "글로벌 신재생 그린 에너지",
-      "vis3-desc": "카자흐스탄 및 중앙아시아 100MW급 태양광 발전소 및 친환경 양식 인프라를 확장하여 차세대 클린 에너지를 공급합니다.",
-      "roadmap-title": "PAYTTO 성장의 여정과 2030 비전 로드맵",
-      "rm1-year": "2013", "rm1-title": "페이또 설립", "rm1-desc": "경기도 고양시 본사 설립 및 국제 무역 사업 개시",
-      "rm2-year": "2020", "rm2-title": "글로벌 파트너십 확장", "rm2-desc": "BAIC, BAW 한국 총판 및 완성차 딜러 네트워크 확충",
-      "rm3-year": "2026", "rm3-title": "모빌리티 & 원자재 수직계열화", "rm3-desc": "전기차, 충전 인프라, 핵심 원자재 트레이딩 수직계열화 구축",
-      "rm4-year": "2030", "rm4-title": "글로벌 넷제로 선도 기업", "rm4-desc": "10만 대 EV 보급, 2만 대 충전기, 100MW 태양광 발전 완성",
+      "vis3-desc": "중앙아시아 100MW급 태양광 발전소 및 그린 에너지 인프라 확장",
+      "roadmap-title": "PAYTTO 성장의 여정과 2030 로드맵",
+      "rm1-year": "2013", "rm1-title": "페이또 설립", "rm1-desc": "본사 설립 및 국제 무역 사업 개시",
+      "rm2-year": "2020", "rm2-title": "글로벌 파트너십 확장", "rm2-desc": "BAIC, BAW 한국 총판 및 딜러망 확충",
+      "rm3-year": "2026", "rm3-title": "모빌리티 & 원자재 수직계열화", "rm3-desc": "전기차·충전기·원자재 수직계열화 구축",
+      "rm4-year": "2030", "rm4-title": "글로벌 넷제로 선도 기업", "rm4-desc": "EV 10만 대, 충전기 2만 대, 100MW 태양광 달성",
 
       "proj-mnd-tag": "Project Plan 01 — 국방복지단 협력 사업",
       "proj-mnd-title": "국방복지단 친환경 전기차 공급 프로젝트",
-      "proj-mnd-desc": "700만 회원 규모의 국방복지단과 독점 공급 협약을 체결하고, 초기 확정 물량 3,000대를 시작으로 군 장병, 군무원 및 가족 대상 맞춤형 친환경 모빌리티를 보급합니다.",
+      "proj-mnd-desc": "국방복지단 700만 회원 대상 독점 공급 협약을 체결하고, 초기 확정 3,000대를 시작으로 맞춤형 친환경 EV를 보급합니다.",
       "mnd-tbl-model": "차종 (Model)",
       "mnd-tbl-purpose": "주요 용도",
       "mnd-tbl-range": "1회 충전 주행거리",
@@ -1322,28 +1328,28 @@
       "van-range": "약 350 km",
       "van-price": "약 USD 48,000",
       "van-feat": "대용량 적재 및 다목적 특수 활용",
-      "target-phase1": "2026년 (초기 협력 단계) — 세단 2,500대 / SUV 1,500대 / 밴 1,000대 공급 및 맞춤형 금융 할부/리스 지원.",
-      "target-phase2": "2027년 (확장 단계) — 세단 7,000대 / SUV 5,000대 / 밴 3,000대 교체 보급 및 군 공동구매 캠페인 진행.",
-      "target-phase3": "2028년 (안정화 단계) — 세단 15,000대 / SUV 10,000대 / 밴 5,000대 보급 및 국방부 친환경 공용차 전면 전환.",
+      "target-phase1": "2026년 — 세단 2,500대 / SUV 1,500대 / 밴 1,000대 공급 및 금융 할부/리스 지원",
+      "target-phase2": "2027년 — 세단 7,000대 / SUV 5,000대 / 밴 3,000대 교체 보급 및 군 공동구매 캠페인",
+      "target-phase3": "2028년 — 세단 15,000대 / SUV 10,000대 / 밴 5,000대 보급 및 공용차 친환경 전면 전환",
 
       "proj-fac-tag": "Project Plan 02 — 첨단 합작 제조 공장 사업",
       "proj-fac-title": "특수 모빌리티 & 드론 & 스페이스 캡슐 합작 생산",
       "proj-drone-title": "초속 수난 구조 드론 합작 공장",
-      "proj-drone-desc": "골든타임(5분) 내 신속 구조가 가능한 콤팩트 초경량 수난 구조 전용 드론 제작 및 비상 응급구조 시스템 구축.",
+      "proj-drone-desc": "골든타임 5분 내 신속 구조가 가능한 초경량 수난 구조 전용 드론 제작 및 비상 응급구조 시스템 구축",
       "proj-trailer-title": "맞춤형 특수 트레일러 합작 공장",
-      "proj-trailer-desc": "자동차, 드론, 스페이스 캡슐, 미래 모빌리티 기기 수송용 초고강도 맞춤형 트레일러 원스톱 생산.",
+      "proj-trailer-desc": "모빌리티·드론·스페이스 캡슐 수송용 초고강도 맞춤형 특수 트레일러 원스톱 생산",
       "proj-capsule-title": "스마트 모듈러 스페이스 캡슐 합작 공장",
-      "proj-capsule-desc": "관광 리조트, 친환경 캠핑장, 모바일 오피스에 적용 가능한 친환경 스마트 모듈러 스페이스 캡슐 턴키 제조.",
+      "proj-capsule-desc": "리조트·친환경 캠핑장·모바일 오피스용 친환경 스마트 모듈러 스페이스 캡슐 턴키 제조",
 
       "proj-solar-tag": "Project Plan 03 — 글로벌 해외 에너지 프로젝트",
       "proj-solar-title": "글로벌 태양광 발전 & 해외 생산 거점 구축",
-      "proj-solar-uzb": "우즈베키스탄 — 100 MW급 대규모 태양광 발전소 설치 및 그린 에너지 인프라 구축 추진",
-      "proj-solar-kaz": "카자흐스탄 — 100 MW급 태양광 발전소 및 태양광 수산 양식 사업 개발",
-      "proj-solar-vnm": "베트남 — 100 MW 태양광 발전소 & EV 완성차 제조 공장 설립 추진",
+      "proj-solar-uzb": "우즈베키스탄 100 MW급 태양광 발전소 설치 및 그린 에너지 인프라 구축",
+      "proj-solar-kaz": "카자흐스탄 100 MW급 태양광 발전소 및 태양광 수산 양식 사업 개발",
+      "proj-solar-vnm": "베트남 100 MW 태양광 발전소 및 EV 완성차 제조 공장 설립 추진",
 
       "business-eyebrow": "Main Business",
-      "biz-banner-title": "5대 핵심 축, 하나의 통합 산업 시스템",
-      "biz-banner-desc": "전기차 라인업부터 자동차 부품, 공공 가전, 원자재 무역, 배터리 리사이클링, 태양광 발전까지 페이또의 주요 비즈니스 포트폴리오입니다.",
+      "biz-banner-title": "5대 핵심 사업 포트폴리오",
+      "biz-banner-desc": "전기차, 가전, 충전 인프라, 원자재 무역, 신재생 에너지를 아우르는 통합 산업 솔루션입니다.",
       "biz-sec1-tag": "01. 5대 핵심 사업 분야",
       "biz-sec2-tag": "02. 전기차 유통 및 가전 무역",
       "biz-sec3-charging-tag": "03. 전기차 충전 인프라",
@@ -1351,42 +1357,42 @@
       "biz-sec4-tag": "05. 비즈니스 컨설팅",
       "biz-sec5-tag": "독점 총판 파트너십",
 
-      "charging-sec-title": "초급속 &amp; 완속 전기차 충전 인프라 구축 솔루션",
-      "charging-sec-desc": "공공기관, 지자체 거점, 아파트 및 대형 빌딩에 최적화된 고효율 전기차 충전 인프라의 공급, 시공 및 통합 관제 솔루션을 제공합니다.",
+      "charging-sec-title": "초급속 &amp; 완속 전기차 충전 솔루션",
+      "charging-sec-desc": "공공기관, 지자체 거점, 아파트 전용 고효율 EV 충전 인프라 공급, 시공 및 관제 솔루션을 제공합니다.",
       "charger-fast-title": "초급속 EV 충전 인프라",
-      "charger-fast-desc": "공공기관, 휴게소, 지자체 거점 전용 100kW~350kW 초급속 고효율 충전기 보급 및 급속 시공 네트워크 구축.",
+      "charger-fast-desc": "공공기관 및 지자체 거점 전용 100kW~350kW 초급속 고효율 충전기 보급",
       "charger-slow-title": "완속 &amp; 모듈형 충전 시스템",
-      "charger-slow-desc": "아파트 단지, 공용 주차장, 모바일 오피스 및 사업장에 최적화된 스마트 완속/모듈형 충전 솔루션.",
+      "charger-slow-desc": "아파트 단지, 공용 주차장 및 오피스 맞춤형 스마트 완속/모듈형 충전 솔루션",
       "charger-cms-title": "통합 관제 &amp; 스마트 결제",
-      "charger-cms-desc": "24시간 모니터링, 실시간 원격 진단, 간편 모바일 결제 관제 시스템을 통한 원스톱 운영 인프라.",
+      "charger-cms-desc": "24시간 모니터링, 실시간 원격 진단 및 모바일 결제 통합 운영 시스템",
 
       "business-title": "5대 핵심 축, 하나의 통합 산업 시스템",
-      "business-desc": "전기차부터 원자재 무역까지, 페이또는 지속 가능한 모빌리티와 글로벌 무역의 전 가치 사슬을 운영합니다.",
+      "business-desc": "지속 가능한 모빌리티와 글로벌 무역의 전 가치 사슬을 운영합니다.",
       "biz1-title": "전기차 유통 및 A/S",
-      "biz1-desc": "순수 전기차 및 주요 부품의 수출입과 완벽한 전국 사후 관리 지원 서비스.",
+      "biz1-desc": "순수 전기차 및 주요 부품의 수출입과 완벽한 전국 사후 관리 지원 서비스",
       "biz2-title": "전자제품 및 가전 무역",
-      "biz2-desc": "소비자 및 공공기관용 전자·가전 제품의 글로벌 무역 및 유통.",
+      "biz2-desc": "소비자 및 공공기관용 전자·가전 제품의 글로벌 무역 및 유통",
       "biz3-title": "전기차 충전 인프라",
-      "biz3-desc": "전기차 충전 인프라의 공급 및 시공을 통한 친환경 모빌리티 확장 지원.",
+      "biz3-desc": "전기차 충전 인프라의 공급 및 시공을 통한 친환경 모빌리티 확장 지원",
       "biz4-title": "원자재 글로벌 무역",
-      "biz4-desc": "알루미늄, 구리, 석탄, 금, 원유 등 핵심 자원의 안정적이고 정밀한 수급 체계 유지.",
+      "biz4-desc": "알루미늄, 구리, 석탄, 금, 원유 등 핵심 자원의 안정적 수급 체계 유지",
       "biz5-title": "비즈니스 컨설팅",
-      "biz5-desc": "축적된 국제 무역 전문성과 인프라를 활용한 시장 조사 및 전략 컨설팅.",
+      "biz5-desc": "국제 무역 전문성을 활용한 시장 조사 및 글로벌 전략 컨설팅",
 
-      "ev-models-title": "지자체 &amp; 공공기관 전용 전기차 라인업 (EV 7대 시리즈)",
+      "ev-models-title": "공공·지자체 전용 전기차 라인업 (EV 7대 시리즈)",
       "ev-m1": "EV 세단 (Sedan)", "ev-m2": "EV SUV", "ev-m3": "EV 픽업트럭 (Pickup)",
       "ev-m4": "EV 밴 (VAN)", "ev-m5": "EV 버스 (BUS)", "ev-m6": "EV 청소차 (Sanitation)", "ev-m7": "EV 소방차 (Fire Truck)",
 
-      "parts-title": "한국자동차부품협회 &amp; 택시·렌터카 조합 부품 공급",
-      "parts-desc": "한국자동차부품협회 회원사 부품 공급 및 전국 택시조합, 렌터카협회와의 상호 협력 협약 체결.",
+      "parts-title": "자동차 부품 및 택시·렌터카 조합 공급",
+      "parts-desc": "한국자동차부품협회 회원사 부품 공급 및 전국 택시·렌터카 조합 상호 협력 체결",
       "appliance-title": "공공기관 전용 전자제품 및 가전 유통",
-      "appliance-desc": "공공기관 및 인프라 단체에 맞춘 다양한 규격의 고품질 전자·가전 제품 전용 수급 체계.",
+      "appliance-desc": "공공기관 및 인프라 단체에 맞춘 다양한 규격의 고품질 전자·가전 수급 체계",
 
       "baic-baw-title": "BAIC &amp; BAW 한국 총판 독점 유통 파트너십",
       "baic-title": "BAIC (베이징자동차그룹) 한국 총판 독점 계약",
-      "baic-desc": "1958년 설립, 벤츠·현대 합작선 보유 및 ARCFOX, Foton 등 다각화 브랜드를 보유한 중국 국영 자동차 그룹.",
+      "baic-desc": "1958년 설립, 벤츠·현대 합작선 보유 및 ARCFOX, Foton 브랜드를 보유한 중국 국영 자동차 그룹",
       "baw-title": "BAW (베이징자동차제조창) 한국 총판 독점 계약",
-      "baw-desc": "1951년 설립, 전통 군용 오프로드 및 경형 상용차 전문 제조사로 신에너지 모빌리티 라인업 확장.",
+      "baw-desc": "1951년 설립, 군용 오프로드 및 경형 상용차 전문 제조사로 신에너지 모빌리티 라인업 확장",
 
       "raw-trade-title": "글로벌 원자재 무역",
       "item-aluminum-title": "알루미늄 잉곳",
@@ -1404,26 +1410,26 @@
 
       "sec5-main-title": "배터리 리사이클링 &amp; 태양광 발전 &amp; 특수 무역",
       "res2-title": "배터리 리사이클링",
-      "res2-desc": "사용 후 전기차 배터리의 회수 및 재활용을 통해 원자재 수입 의존도를 낮추고 지속 가능한 자원 순환 체계를 구축합니다.",
+      "res2-desc": "사용 후 EV 배터리의 회수 및 재활용을 통해 원자재 수입 의존도를 낮추고 자원 순환 체계를 구축합니다.",
       "res3-title": "태양광 발전 프로젝트",
-      "res3-desc": "카자흐스탄 및 우즈베키스탄 태양광 발전소 프로젝트와 태양광 수산 양식 사업 등 100MW 규모의 친환경 에너지를 개발합니다.",
-      "special-title": "특수 모빌리티 &amp; 친환경 바이오/안전 제품",
-      "special-desc": "전기 오토바이, 수륙양용차, 차량용 질식 소화포, 친환경 효소 바이오 제품 유통.",
+      "res3-desc": "카자흐스탄 및 우즈베키스탄 태양광 발전소 및 수산 양식 사업 등 100MW 규모의 에너지를 개발합니다.",
+      "special-title": "특수 모빌리티 &amp; 바이오 제품",
+      "special-desc": "전기 오토바이, 수륙양용차, 차량용 질식 소화포, 친환경 효소 바이오 제품 유통",
 
       "net-eyebrow": "글로벌 파트너십",
-      "net-title": "신뢰 기반의 글로벌 네트워크 &amp; 전국 딜러망",
-      "net-desc": "글로벌 완성차 제조사 및 물류 그룹과의 독점 유통 파트너십과 전국 48개 거점 총판/딜러 네트워크.",
-      "net1-desc": "베이징자동차그룹(BAIC) 및 베이징자동차제조창(BAW)의 한국 총판 독점 계약 체결.",
-      "net2-desc": "지리자동차(Volvo, Polestar), 일기그룹(HONGQI), 립모터와의 전략적 비즈니스 협력 체결.",
-      "net3-desc": "한진그룹 및 위동항운과의 물류 협력을 통해 한중 페리 및 글로벌 해상 유통망 구축.",
+      "net-title": "글로벌 완성차 &amp; 물류 제휴",
+      "net-desc": "글로벌 완성차·물류 제휴 및 전국 48개 거점 딜러 네트워크를 보유하고 있습니다.",
+      "net1-desc": "베이징자동차(BAIC) 및 베이징자동차제조창(BAW) 한국 총판 독점 계약 체결",
+      "net2-desc": "지리자동차(Volvo/Polestar), 일기그룹(HONGQI), 립모터 전략 비즈니스 협력 체결",
+      "net3-desc": "한진그룹 및 위동항운 물류 제휴를 통한 한중 페리 및 글로벌 해상 유통망 구축",
 
       "net-eyebrow-tbl": "전국 판매 네트워크",
       "net-title-tbl": "전국 48개 거점 딜러 네트워크",
-      "net-desc-tbl": "대한민국 전 지역을 아우르는 총판 및 공식 지정 딜러망 보유.",
+      "net-desc-tbl": "대한민국 전 지역을 아우르는 총판 및 공식 지정 딜러망 보유",
 
       "contact-eyebrow": "협력 문의",
-      "contact-title": "미래 모빌리티의 혁신을 함께 만듭니다.",
-      "contact-desc": "파트너십, 유통 제휴, 투자 문의 등 페이또 글로벌 담당자가 신속히 안내해 드립니다.",
+      "contact-title": "PAYTTO 비즈니스 파트너십 문의",
+      "contact-desc": "글로벌 원자재 무역, 전기차 유통 제휴, 투자 문의 등 전담 전문가가 신속히 안내해 드립니다.",
       "info-hq-lbl": "본사 소재지",
       "info-hq-val": "대한민국 경기도 고양시",
       "info-est-lbl": "설립 연도",
@@ -1438,7 +1444,6 @@
       "form-submit": "협력 요청서 전송",
       "form-success": "성공적으로 접수되었습니다! 빠른 시일 내에 답변 드리겠습니다.",
 
-      "footer-desc": "2013년부터 경기도 고양시에 본사를 두고 글로벌 무역 및 친환경 산업 솔루션을 선도하는 페이또(PAYTTO)입니다.",
       "footer-col1": "기업 정보",
       "footer-col2": "사업 분야",
       "footer-copy": "© 2026 PAYTTO Co., Ltd. All rights reserved."
@@ -1452,8 +1457,8 @@
       "nav-contact": "Contact",
       "nav-cta": "Get in Touch",
 
-      "hero-title": "Green Mobility,<br><span>Vision for Future.</span>",
-      "hero-desc": "PAYTTO is a comprehensive international trading and industrial solutions provider — spanning electric vehicles, EV charging infrastructure, new energy, and global resource trade.",
+      "hero-title": "Green Mobility &<br><span>Global Trade Future</span>",
+      "hero-desc": "PAYTTO is a global industrial solutions provider leading electric vehicles, charging infrastructure, renewable energy, and raw materials trade.",
       "hero-btn-primary": "Explore Our Business",
       "hero-btn-secondary": "Contact Us",
       "stat1-val": "2013",
@@ -1466,9 +1471,9 @@
       "stat4-lbl": "Global OEM Partners",
 
       "about-eyebrow": "Company Introduction",
-      "about-title": "Building a bridge for friendly trade between Korea and the world.",
-      "about-p1": "PAYTTO was established in 2013 and is headquartered in Goyang-si, Gyeonggi-do, South Korea. It is a comprehensive international trading and industrial solutions provider — importing and exporting electric vehicles and related components, delivering complete vehicle assembly plant solutions, and installing EV charging infrastructure alongside photovoltaic power and new-energy solutions.",
-      "about-p2": "Beyond mobility, PAYTTO trades electronics, cosmetics, health supplements and food products, operates cross-border e-commerce and live-streaming businesses, and conducts international trade of raw materials such as aluminum, copper, gold, coal and crude oil — while advancing used-battery recycling to build a full-circle industrial system across new energy, trade, and resource circulation.",
+      "about-title": "Bridge for Global Trade & Green Industry",
+      "about-p1": "Established in 2013, PAYTTO is a global trading enterprise delivering electric vehicles, auto parts, EV charging infrastructure, and solar energy solutions.",
+      "about-p2": "We build a circular industrial ecosystem spanning international trade of aluminum, copper, gold, coal, crude oil, electronics, and battery recycling.",
       "pill1": "Electric Vehicles",
       "pill2": "EV Charging Infrastructure",
       "pill3": "Raw Materials Trade",
@@ -1476,13 +1481,13 @@
       "pill5": "Solar Power",
       "pill6": "Cross-Border E-Commerce",
 
-      "ceo-quote": "“Green Mobility, <span>Vision for Future.</span>”<br>We believe clean and efficient transportation will be a key force shaping the future mobility industry.",
+      "ceo-quote": "“Leading a <span>sustainable future</span> through innovative green technology.”",
       "ceo-name": "Kiwoong Yang",
       "ceo-role": "Legal Representative & CEO, PAYTTO Co., Ltd.",
 
       "org-eyebrow": "Organizational Structure",
-      "org-title": "Systematic & Professional Organizational Structure",
-      "org-desc": "Comprehensive organizational structure featuring technical, training, after-sales service, corporate finance, and legal/tariff advisory teams.",
+      "org-title": "Professional Global Organizational Structure",
+      "org-desc": "Operates an integrated structure uniting technical, sales, overseas business, tariff, and legal advisory teams.",
       "role-ceo": "CEO (Chief Executive Officer)",
       "role-coo": "COO (Chief Operating Officer)",
       "role-cfo": "CFO / Accountant",
@@ -1503,24 +1508,24 @@
       "div4-team": "Training Leader &amp; After-Sales Team",
 
       "vis-eyebrow": "Future Vision & Project Plan",
-      "vis-banner-title": "PAYTTO's Vision &amp; Project Plan for a Sustainable Future",
-      "vis-title": "A Sustainable Future Driven by Green Mobility &amp; Resource Circulation",
-      "vis-desc": "Beyond international trade, PAYTTO executes strategic project plans from 2030 Net-Zero mobility to MND welfare EV supply, rescue drones, and global solar installations.",
+      "vis-banner-title": "Sustainable Vision &amp; Project Plan",
+      "vis-title": "Future of Green Mobility & Resource Circulation",
+      "vis-desc": "Executing 2030 Net-Zero mobility, military EV supply, rescue drones, and global solar installations.",
       "vis1-title": "2030 Net-Zero Mobility",
-      "vis1-desc": "Deploying 100,000 green EVs and installing 20,000 high-efficiency charging stations by 2030 to lead urban carbon reduction.",
+      "vis1-desc": "Deploying 100,000 EVs and installing 20,000 chargers by 2030",
       "vis2-title": "Battery Circular Economy",
-      "vis2-desc": "Building a recycling and remanufacturing system for spent EV batteries to achieve a sustainable supply chain for rare critical metals.",
+      "vis2-desc": "Building a circular ecosystem through spent EV battery recycling",
       "vis3-title": "Global Renewable Energy",
-      "vis3-desc": "Expanding 100MW solar power plants and eco-friendly aquaculture infrastructure in Central Asia to deliver next-generation clean energy.",
-      "roadmap-title": "PAYTTO Growth Journey & 2030 Vision Roadmap",
-      "rm1-year": "2013", "rm1-title": "PAYTTO Founded", "rm1-desc": "Established headquarters in Goyang-si and launched international trade.",
-      "rm2-year": "2020", "rm2-title": "Global Partnership Expansion", "rm2-desc": "Secured BAIC & BAW exclusive distribution and built national dealer network.",
-      "rm3-year": "2026", "rm3-title": "Mobility & Raw Materials Integration", "rm3-desc": "Vertical integration across EVs, charging infrastructure, and raw materials.",
-      "rm4-year": "2030", "rm4-title": "Global Net-Zero Leader", "rm4-desc": "100k EVs deployed, 20k chargers installed, 100MW solar power operating.",
+      "vis3-desc": "Expanding 100MW solar power plants across Central Asia",
+      "roadmap-title": "PAYTTO Growth Journey & 2030 Roadmap",
+      "rm1-year": "2013", "rm1-title": "PAYTTO Founded", "rm1-desc": "Established headquarters and launched international trade.",
+      "rm2-year": "2020", "rm2-title": "Global Expansion", "rm2-desc": "Secured BAIC & BAW distribution and built national dealer network.",
+      "rm3-year": "2026", "rm3-title": "Vertical Integration", "rm3-desc": "Vertical integration across EVs, charging, and raw materials.",
+      "rm4-year": "2030", "rm4-title": "Net-Zero Leader", "rm4-desc": "100k EVs, 20k chargers, 100MW solar operating.",
 
-      "proj-mnd-tag": "Project Plan 01 — MND Welfare Group Partnership",
-      "proj-mnd-title": "Eco-Friendly EV Supply Project for Military Welfare Group",
-      "proj-mnd-desc": "Signed an exclusive supply agreement with the 7-million-member Military Welfare Group platform (initial order of 3,000 units confirmed) to supply EVs to military personnel, civilian staff, and families.",
+      "proj-mnd-tag": "Project Plan 01 — MND Welfare Partnership",
+      "proj-mnd-title": "Military Welfare EV Supply Project",
+      "proj-mnd-desc": "Exclusive supply agreement with 7M-member platform (initial 3,000 units confirmed).",
       "mnd-tbl-model": "Model",
       "mnd-tbl-purpose": "Main Purpose",
       "mnd-tbl-range": "Driving Range",
@@ -1541,71 +1546,71 @@
       "van-range": "Approx. 350 km",
       "van-price": "Approx. USD 48,000",
       "van-feat": "Large cargo capacity, multi-purpose",
-      "target-phase1": "2026 (Initial Phase) — 5,000 units (Sedan 2,500 / SUV 1,500 / Van 1,000) with tailored financing/leasing.",
-      "target-phase2": "2027 (Expansion Phase) — 15,000 units (Sedan 7,000 / SUV 5,000 / Van 3,000) with military group-purchase campaigns.",
-      "target-phase3": "2028 (Stabilization Phase) — 30,000 units (Sedan 15,000 / SUV 10,000 / Van 5,000) with full conversion of official vehicles.",
+      "target-phase1": "2026 — 5,000 units (Sedan 2,500 / SUV 1,500 / Van 1,000) with financing.",
+      "target-phase2": "2027 — 15,000 units (Sedan 7,000 / SUV 5,000 / Van 3,000) expansion.",
+      "target-phase3": "2028 — 30,000 units (Sedan 15,000 / SUV 10,000 / Van 5,000) full conversion.",
 
-      "proj-fac-tag": "Project Plan 02 — Specialized Cooperative Factories",
-      "proj-fac-title": "Special Mobility, Drones & Space Capsule Cooperative Production",
+      "proj-fac-tag": "Project Plan 02 — Cooperative Factories",
+      "proj-fac-title": "Special Mobility, Drones & Space Capsule Production",
       "proj-drone-title": "Rapid Water Rescue Drone Factory",
-      "proj-drone-desc": "Manufacturing compact, lightweight rescue drones designed for water rescue within the 5-minute golden time.",
+      "proj-drone-desc": "Manufacturing lightweight rescue drones designed for 5-minute golden time rescue",
       "proj-trailer-title": "Customized Special Trailer Factory",
-      "proj-trailer-desc": "One-stop research and mass production of customized special trailers for automobiles, drones, space capsules, and heavy gear.",
-      "proj-capsule-title": "Smart Modular Space Capsule Factory",
-      "proj-capsule-desc": "Turnkey manufacturing of smart modular space capsules for tourism resorts, eco-camping, mobile offices, and commercial spaces.",
+      "proj-trailer-desc": "One-stop production of high-strength trailers for mobility, drones, and space capsules",
+      "proj-capsule-title": "Smart Space Capsule Factory",
+      "proj-capsule-desc": "Turnkey manufacturing of smart modular space capsules for resorts, camping, and offices",
 
-      "proj-solar-tag": "Project Plan 03 — Global Overseas Energy Projects",
-      "proj-solar-title": "Global Solar Installation & Overseas Manufacturing Plant",
-      "proj-solar-uzb": "Uzbekistan — Promotion of 100 MW solar power plant installation",
-      "proj-solar-kaz": "Kazakhstan — 100 MW solar power plant project",
-      "proj-solar-vnm": "Vietnam — 100 MW solar power plant & EV manufacturing plant setup",
+      "proj-solar-tag": "Project Plan 03 — Overseas Energy Projects",
+      "proj-solar-title": "Global Solar Installation & Overseas Plants",
+      "proj-solar-uzb": "Uzbekistan 100 MW solar power plant installation",
+      "proj-solar-kaz": "Kazakhstan 100 MW solar power plant project",
+      "proj-solar-vnm": "Vietnam 100 MW solar power plant & EV plant setup",
 
       "business-eyebrow": "Main Business",
-      "biz-banner-title": "Five Pillars, One Integrated Industrial System",
-      "biz-banner-desc": "PAYTTO's business portfolio spanning EVs, auto parts, appliances, raw materials, battery recycling, and solar power.",
+      "biz-banner-title": "Five Core Business Pillars",
+      "biz-banner-desc": "Integrated solutions spanning EVs, electronics, charging, raw materials, and solar energy.",
       "biz-sec1-tag": "01. Five Core Business Pillars",
       "biz-sec2-tag": "02. EV Distribution &amp; Electronics Trade",
       "biz-sec3-charging-tag": "03. EV Charging Infrastructure",
       "biz-sec3-tag": "04. Global Raw Materials Trade",
-      "biz-sec4-tag": "05. Renewable Energy &amp; Special Products",
-      "biz-sec5-tag": "03. Exclusive Automaker Distribution",
+      "biz-sec4-tag": "05. Business Consulting",
+      "biz-sec5-tag": "Exclusive Distribution Partnership",
 
-      "charging-sec-title": "Ultra-Fast &amp; Standard EV Charging Infrastructure Solutions",
-      "charging-sec-desc": "Providing supply, installation, and integrated management solutions for high-efficiency EV charging infrastructure for public institutions, municipalities, apartments, and commercial buildings.",
+      "charging-sec-title": "Ultra-Fast &amp; Standard EV Charging Solutions",
+      "charging-sec-desc": "Providing supply, installation, and management solutions for EV charging infrastructure.",
       "charger-fast-title": "Ultra-Fast EV Chargers",
-      "charger-fast-desc": "Deploying 100kW~350kW ultra-fast high-efficiency chargers for public institutions, highway stops, and city hubs.",
+      "charger-fast-desc": "Deploying 100kW~350kW chargers for public institutions and city hubs",
       "charger-slow-title": "Standard &amp; Modular Systems",
-      "charger-slow-desc": "Smart standard and modular charging solutions optimized for residential complexes, commercial parking, and offices.",
-      "charger-cms-title": "Integrated CMS &amp; Mobile Payment",
-      "charger-cms-desc": "One-stop operation infrastructure featuring 24/7 monitoring, real-time remote diagnostics, and easy mobile payment.",
+      "charger-slow-desc": "Smart standard charging solutions for residential and commercial parking",
+      "charger-cms-title": "Integrated CMS &amp; Payment",
+      "charger-cms-desc": "24/7 monitoring, remote diagnostics, and mobile payment management",
 
       "business-title": "Five Pillars, One Integrated Industrial System",
-      "business-desc": "From electric vehicles to raw materials, PAYTTO operates across the full value chain of sustainable mobility and global trade.",
+      "business-desc": "Operating across the full value chain of sustainable mobility and trade.",
       "biz1-title": "EV Sales & After-Service",
-      "biz1-desc": "Import and export of pure electric vehicles and components, with comprehensive after-sales support.",
+      "biz1-desc": "Import and export of pure electric vehicles and components with A/S support",
       "biz2-title": "Electronics & Appliances",
-      "biz2-desc": "International trade of electronic and home appliance products for consumers and public institutions.",
+      "biz2-desc": "International trade of electronics and home appliances for consumers and public sector",
       "biz3-title": "EV Charging Stations",
-      "biz3-desc": "Sales and installation of charging infrastructure, supporting the growth of electric mobility.",
+      "biz3-desc": "Sales and installation of charging infrastructure for electric mobility",
       "biz4-title": "Raw Materials Trade",
-      "biz4-desc": "Import and export of aluminum, copper, coal, gold and crude oil with stable, high-quality supply.",
+      "biz4-desc": "Trade of aluminum, copper, coal, gold and crude oil with stable supply",
       "biz5-title": "Business Consulting",
-      "biz5-desc": "Market research and strategy development leveraging deep international trade expertise.",
+      "biz5-desc": "Market research and strategy development leveraging trade expertise",
 
-      "ev-models-title": "Full EV Model Lineup for Public &amp; Municipal Fleets",
+      "ev-models-title": "Full EV Lineup for Public Fleet",
       "ev-m1": "EV Sedan", "ev-m2": "EV SUV", "ev-m3": "EV Pickup Truck",
       "ev-m4": "EV VAN", "ev-m5": "EV BUS", "ev-m6": "EV Sanitation Vehicle", "ev-m7": "EV Fire Truck",
 
-      "parts-title": "Auto Parts Supply for Automotive Parts Association &amp; Taxi/Rent Alliances",
-      "parts-desc": "Supplying automotive parts to Korea Automotive Parts Association members and taxi/rental car alliances.",
-      "appliance-title": "Supply of Electronic &amp; Home Appliance Products to Public Institutions",
-      "appliance-desc": "Supplying high-quality electronics and home appliances tailored for public organizations.",
+      "parts-title": "Auto Parts & Alliance Supply",
+      "parts-desc": "Supplying automotive parts to KAPA members and taxi/rental alliances",
+      "appliance-title": "Electronics & Appliances for Public Sector",
+      "appliance-desc": "Supplying high-quality electronics tailored for public organizations",
 
       "baic-baw-title": "BAIC &amp; BAW Korea Exclusive Distribution Partnership",
-      "baic-title": "BAIC Group Exclusive Distribution for Korea",
-      "baic-desc": "Founded in 1958, state-owned group with Mercedes-Benz and Hyundai JVs, owner of ARCFOX & Foton.",
-      "baw-title": "BAW Factory Exclusive Distribution for Korea",
-      "baw-desc": "Founded in 1951, specialized manufacturer of off-road & light commercial EVs.",
+      "baic-title": "BAIC Group Exclusive Distribution",
+      "baic-desc": "State-owned group founded in 1958 with Mercedes-Benz and Hyundai JVs, owner of ARCFOX & Foton",
+      "baw-title": "BAW Factory Exclusive Distribution",
+      "baw-desc": "Specialized manufacturer founded in 1951, producing off-road & light commercial EVs",
 
       "raw-trade-title": "Global Raw Materials Trade",
       "item-aluminum-title": "Aluminum Ingots",
@@ -1623,33 +1628,33 @@
 
       "sec5-main-title": "Battery Recycling, Solar Power &amp; Special Trade",
       "res2-title": "Battery Recycling",
-      "res2-desc": "Building a recycling and remanufacturing system for spent EV batteries to lower raw material import dependence.",
+      "res2-desc": "Recycling spent EV batteries to lower raw material import dependence.",
       "res3-title": "Solar Power Projects",
-      "res3-desc": "Developing 100MW scale solar power plants and eco-aquaculture projects in Kazakhstan and Uzbekistan.",
-      "special-title": "Special Mobility &amp; Bio/Safety Products",
-      "special-desc": "Distribution of electric motorcycles, amphibious vehicles, vehicle fire blankets, and bio enzymes.",
+      "res3-desc": "Developing 100MW scale solar power projects in Kazakhstan and Uzbekistan.",
+      "special-title": "Special Mobility &amp; Bio Products",
+      "special-desc": "Distribution of electric motorcycles, amphibious vehicles, and bio products",
 
       "net-eyebrow": "Partners & Network",
-      "net-title": "Trusted Global Network & Nationwide Dealers",
-      "net-desc": "Exclusive distribution partnerships with global automakers and 48 dealer networks nationwide.",
-      "net1-desc": "Exclusive distribution agreements with Beijing Automotive Group (BAIC) and Beijing Automobile Manufacturing Factory (BAW) for Korea.",
-      "net2-desc": "Business cooperation agreements with Geely (owner of Volvo, Polestar, Lotus), FAW Group (HONGQI), and Leapmotor.",
-      "net3-desc": "Logistics partnerships enabling export hubs into the Americas, Europe, and Southeast Asia via Korea–China ferry and freight networks.",
+      "net-title": "Global Partnerships & Nationwide Network",
+      "net-desc": "Exclusive OEM partnerships and 48 dealer networks nationwide.",
+      "net1-desc": "Exclusive distribution agreements with BAIC and BAW for Korea",
+      "net2-desc": "Strategic business cooperation with Geely, FAW Group, and Leapmotor",
+      "net3-desc": "Logistics partnerships with Hanjin Group and Weidong Ferry",
 
       "net-eyebrow-tbl": "Nationwide Sales Network",
-      "net-title-tbl": "48 dealers, one national network.",
-      "net-desc-tbl": "Carefully selected general distributors and authorized dealers spanning every major region of Korea.",
+      "net-title-tbl": "48 Dealers Nationwide Network",
+      "net-desc-tbl": "Distributors and authorized dealers spanning Korea.",
 
       "contact-eyebrow": "Contact",
-      "contact-title": "Let's build the future of mobility together.",
-      "contact-desc": "For partnership, distribution, or investment inquiries, reach out to the PAYTTO team.",
+      "contact-title": "PAYTTO Business Inquiries",
+      "contact-desc": "Contact our experts for raw materials trade, EV distribution, and investments.",
       "info-hq-lbl": "Headquarters",
       "info-hq-val": "Goyang-si, Gyeonggi-do, South Korea",
       "info-est-lbl": "Founded",
       "info-scope-lbl": "Business Scope",
       "info-scope-val": "Electric Vehicles · Charging Infrastructure · Raw Materials · Battery Recycling · Solar Power",
       "form-title": "Send an inquiry",
-      "form-subtitle": "Fill in your details and our business development team will follow up.",
+      "form-subtitle": "Fill in your details and our team will follow up.",
       "ph-name": "Your name",
       "ph-company": "Company",
       "ph-email": "Email",
@@ -1657,7 +1662,6 @@
       "form-submit": "Submit Inquiry",
       "form-success": "Your inquiry has been submitted successfully!",
 
-      "footer-desc": "A comprehensive international trading and industrial solutions provider based in Goyang-si, South Korea, since 2013.",
       "footer-col1": "Company",
       "footer-col2": "Business",
       "footer-copy": "© 2026 PAYTTO Co., Ltd. All rights reserved."
@@ -1671,8 +1675,8 @@
       "nav-contact": "联系我们",
       "nav-cta": "立即咨询",
 
-      "hero-title": "绿色出行，<br><span>远见未来</span>",
-      "hero-desc": "PAYTTO 是一家综合性国际贸易与工业解决方案提供商，涵盖电动汽车、充电基础设施、新能源与全球资源贸易。",
+      "hero-title": "绿色出行与<br><span>全球贸易的未来</span>",
+      "hero-desc": "PAYTTO 是一家引领电动汽车、充电设施、新能源与大宗原材料贸易的全球综合工业解决方案企业。",
       "hero-btn-primary": "探索核心业务",
       "hero-btn-secondary": "联系我们",
       "stat1-val": "2013",
@@ -1685,9 +1689,9 @@
       "stat4-lbl": "全球OEM合作伙伴",
 
       "about-eyebrow": "公司简介",
-      "about-title": "搭建韩国与世界友好贸易的桥梁",
-      "about-p1": "PAYTTO 成立于2013年，总部位于韩国京畿道高阳市。公司是一家综合性国际贸易和工业解决方案提供商——进出口电动汽车及关键零部件，提供整车组装厂解决方案，并安装电动汽车充电基础设施及光伏新能源解决方案。",
-      "about-p2": "除出行领域外，PAYTTO 还开展电子产品、化妆品、保健品贸易及跨境电商直播业务，并运营铝、铜、金、煤炭和原油等大宗原材料国际贸易，推进废旧电池回收，构建覆盖新能源、贸易和资源循环的完整产业体系。",
+      "about-title": "搭建全球贸易与绿色产业的桥梁",
+      "about-p1": "PAYTTO 成立于2013年，是一家开展电动汽车及零部件进出口、充电设施建设、光伏与新能源项目的全球综合贸易企业。",
+      "about-p2": "构建涵盖铝、铜、金、煤炭、原油等大宗原材料国际贸易、电子家电分销及废旧电池回收的绿色循环产业生态。",
       "pill1": "电动汽车",
       "pill2": "电动车充电设施",
       "pill3": "原材料贸易",
@@ -1695,13 +1699,13 @@
       "pill5": "太阳能发电",
       "pill6": "跨境电子商务",
 
-      "ceo-quote": "“绿色出行，<span>远见未来。</span>”<br>我们坚信清洁高效的交通运输将成为塑造未来出行产业的核心力量。",
+      "ceo-quote": "“依托创新绿色技术，<span>引领可持续未来</span>。”",
       "ceo-name": "梁基雄",
       "ceo-role": "PAYTTO 株式会社 代表理事",
 
       "org-eyebrow": "组织结构",
-      "org-title": "系统化与专业化的组织架构",
-      "org-desc": "拥有包括技术团队、培训团队、售后服务团队、财务团队以及关税与法律顾问团在内的完善组织架构。",
+      "org-title": "全球专业组织架构",
+      "org-desc": "运营由技术、海外事业、销售、关税及法务顾问团紧密协作的专业组织网络。",
       "role-ceo": "CEO (首席执行官)",
       "role-coo": "COO (首席运营官)",
       "role-cfo": "CFO / 会计师",
@@ -1722,24 +1726,24 @@
       "div4-team": "培训主管与售后工程师团队",
 
       "vis-eyebrow": "Future Vision & Project Plan",
-      "vis-banner-title": "PAYTTO 实现可持续未来的宏伟愿景与项目规划",
-      "vis-title": "绿色出行与资源循环画出的可持续未来",
-      "vis-desc": "超越单纯贸易，PAYTTO 推进从 2030 净零碳排放出行到国防福利团电动车供应、特种无人机及中亚光伏项目的具体项目规划。",
+      "vis-banner-title": "可持续未来愿景与项目规划",
+      "vis-title": "绿色出行与资源循环的未来",
+      "vis-desc": "推进 2030 净零碳出行、国防福利团电动车供应、特种无人机及全球光伏项目。",
       "vis1-title": "2030 净零碳排放出行",
-      "vis1-desc": "到 2030 年推广 10 万辆绿色电动车并建设 2 万台高效充电设施，引领城市碳减排。",
+      "vis1-desc": "到 2030 年推广 10 万辆绿色电动车并建设 2 万台高效充电设施",
       "vis2-title": "电池循环生态系统",
-      "vis2-desc": "构建废旧电动车电池回收与精细再制造体系，实现稀有关键金属资源的闭环循环。",
+      "vis2-desc": "通过废旧电动车电池回收构建资源循环生态系统",
       "vis3-title": "全球可再生绿色能源",
-      "vis3-desc": "在中亚地区拓展 100MW 级光伏电站及生态养殖基础设施，提供下一代清洁能源。",
-      "roadmap-title": "PAYTTO 发展历程与 2030 愿景路线图",
-      "rm1-year": "2013", "rm1-title": "PAYTTO 成立", "rm1-desc": "在京畿道高阳市设立总部并启动国际贸易业务。",
-      "rm2-year": "2020", "rm2-title": "全球合作伙伴拓展", "rm2-desc": "获得 BAIC 和 BAW 韩国独家代理权并扩充全国经销商网络。",
-      "rm3-year": "2026", "rm3-title": "出行与原材料垂直整合", "rm3-desc": "实现电动车、充电设施和大宗原材料贸易的垂直一体化。",
-      "rm4-year": "2030", "rm4-title": "全球净零碳排放领军企业", "rm4-desc": "推广 10 万辆电动车、安装 2 万台充电桩、运营 100MW 光伏电站。",
+      "vis3-desc": "在中亚拓展 100MW 级光伏电站与绿色能源基础设施",
+      "roadmap-title": "PAYTTO 发展历程与 2030 路线图",
+      "rm1-year": "2013", "rm1-title": "PAYTTO 成立", "rm1-desc": "设立总部并启动国际贸易业务。",
+      "rm2-year": "2020", "rm2-title": "全球合作拓展", "rm2-desc": "获得 BAIC 和 BAW 韩国总代理权并扩充经销商网络。",
+      "rm3-year": "2026", "rm3-title": "垂直一体化", "rm3-desc": "实现电动车、充电桩和大宗原材料贸易垂直一体化。",
+      "rm4-year": "2030", "rm4-title": "净零碳领军企业", "rm4-desc": "10 万辆电动车、2 万台充电桩、100MW 光伏达产。",
 
       "proj-mnd-tag": "Project Plan 01 — 国防福利团合作项目",
       "proj-mnd-title": "国防福利团绿色电动车供应项目",
-      "proj-mnd-desc": "与拥有700万会员的国防福利团签订独家供应协议（首批已确认3,000台），为军人、文职人员及家属提供定制化绿色出行。",
+      "proj-mnd-desc": "与700万会员国防福利团签订独家供应协议（首批已确认 3,000 台）。",
       "mnd-tbl-model": "车型",
       "mnd-tbl-purpose": "主要用途",
       "mnd-tbl-range": "单次充电续航",
@@ -1760,71 +1764,71 @@
       "van-range": "约 350 km",
       "van-price": "约 48,000 美元",
       "van-feat": "超大载货量与多用途",
-      "target-phase1": "2026年 (初期合作阶段) — 5,000台 (轿车 2,500 / SUV 1,500 / 货车 1,000)，提供定制分期与租赁。",
-      "target-phase2": "2027年 (拓展阶段) — 15,000台 (轿车 7,000 / SUV 5,000 / 货车 3,000)，开展军内团购活动。",
-      "target-phase3": "2028年 (稳定阶段) — 30,000台 (轿车 15,000 / SUV 10,000 / 货车 5,000)，全面替换国防部公务车。",
+      "target-phase1": "2026年 — 5,000台 (轿车 2,500 / SUV 1,500 / 货车 1,000) 供应及金融支持",
+      "target-phase2": "2027年 — 15,000台 (轿车 7,000 / SUV 5,000 / 货车 3,000) 替换",
+      "target-phase3": "2028年 — 30,000台 (轿车 15,000 / SUV 10,000 / 货车 5,000) 全面替换",
 
       "proj-fac-tag": "Project Plan 02 — 特种装备合资工厂项目",
       "proj-fac-title": "特种出行、救援无人机与太空舱合资生产",
       "proj-drone-title": "急速水上救援无人机合资工厂",
-      "proj-drone-desc": "制造紧凑轻量水上救援无人机，确保在 5 分钟黄金时间内实施高效救援。",
+      "proj-drone-desc": "制造可在 5 分钟黄金时间内救援的轻量水上救援无人机",
       "proj-trailer-title": "定制化特种拖车合资工厂",
-      "proj-trailer-desc": "一站式研发与量产用于汽车、无人机、太空舱及重型装备的定制特种拖车。",
+      "proj-trailer-desc": "一站式生产用于出行、无人机及太空舱的定制高强度拖车",
       "proj-capsule-title": "智能太空舱合资工厂",
-      "proj-capsule-desc": "一站式制造适用于文旅度假区、生态营地和移动办公的智能模块化太空舱。",
+      "proj-capsule-desc": "一站式制造适用于度假区、营地及办公的智能模块化太空舱",
 
       "proj-solar-tag": "Project Plan 03 — 全球海外能源项目",
       "proj-solar-title": "全球光伏发电与海外生产基地",
-      "proj-solar-uzb": "乌兹别克斯坦 — 推进 100 MW 光伏电站建设",
-      "proj-solar-kaz": "哈萨克斯坦 — 100 MW 光伏电站与水产养殖项目",
-      "proj-solar-vnm": "越南 — 推进 100 MW 光伏电站与电动车整车制造厂建设",
+      "proj-solar-uzb": "乌兹别克斯坦 100 MW 光伏电站建设",
+      "proj-solar-kaz": "哈萨克斯坦 100 MW 光伏电站与水产养殖项目",
+      "proj-solar-vnm": "越南 100 MW 光伏电站与电动车整车制造厂建设",
 
       "business-eyebrow": "Main Business",
-      "biz-banner-title": "五大核心支柱，一个集成产业体系",
-      "biz-banner-desc": "从电动车到汽车零部件、公共家电、원자재 무역, 배터리 리사이클링, 태양광 발전까지 페이또의 주요 비즈니스 포트폴리오입니다.",
+      "biz-banner-title": "五大核心业务组合",
+      "biz-banner-desc": "涵盖电动车、家电、充电设施、大宗原材料及光伏发电的集成产业解决方案。",
       "biz-sec1-tag": "01. 五大核心业务领域",
       "biz-sec2-tag": "02. 电动汽车分销与家电贸易",
       "biz-sec3-charging-tag": "03. 电动汽车充电基础设施",
       "biz-sec3-tag": "04. 全球大宗原材料贸易",
-      "biz-sec4-tag": "05. 可再生能源与特种产品",
-      "biz-sec5-tag": "03. 独家总代理合作",
+      "biz-sec4-tag": "05. 商业咨询",
+      "biz-sec5-tag": "独家总代理合作",
 
-      "charging-sec-title": "超快充与慢充电动汽车充电基础设施解决方案",
-      "charging-sec-desc": "为公共机构、地方政府节点、公寓及大型建筑提供高效率电动汽车充电设施的供应、施工及一体化管控解决方案。",
+      "charging-sec-title": "超快充与慢充电动汽车充电解决方案",
+      "charging-sec-desc": "为公共机构、地方节点、公寓提供高效率电动汽车充电设施的供应、施工及管控方案。",
       "charger-fast-title": "超快充电动车充电设施",
-      "charger-fast-desc": "推广适用于公共机构、高速服务区及城市节点的 100kW~350kW 超快充高效充电桩。",
+      "charger-fast-desc": "推广适用于公共机构及城市节点的 100kW~350kW 超快充高效充电桩",
       "charger-slow-title": "慢充与模块化系统",
-      "charger-slow-desc": "适用于住宅小区、公共停车场及办公区域的智能慢充与模块化系统。",
+      "charger-slow-desc": "适用于住宅小区、公共停车场及办公区域的智能慢充系统",
       "charger-cms-title": "一体化管控与智能支付",
-      "charger-cms-desc": "通过 24 小时监控、实时远程诊断和便捷移动支付，打造一站式运营基础设施。",
+      "charger-cms-desc": "通过 24 小时监控、实时诊断和移动支付打造一体化运营系统",
 
       "business-title": "五大核心支柱，一个集成产业体系",
-      "business-desc": "从电动汽车到原材料贸易，PAYTTO 运营着可持续出行与全球贸易的全产业链。",
+      "business-desc": "运营可持续出行与全球贸易的全产业链。",
       "biz1-title": "电动车销售与售后",
-      "biz1-desc": "纯电动汽车及零部件进出口，提供全面的售后服务支持。",
+      "biz1-desc": "纯电动汽车及零部件进出口，提供全面的售后服务支持",
       "biz2-title": "电子产品与家电贸易",
-      "biz2-desc": "为消费者和公共机构提供电子产品与家用电器的国际贸易。",
+      "biz2-desc": "为消费者和公共机构提供电子产品与家用电器的国际贸易",
       "biz3-title": "电动车充电站",
-      "biz3-desc": "销售并安装充电基础设施，支持电动出行的快速普及。",
+      "biz3-desc": "销售并安装充电基础设施，支持电动出行的普及",
       "biz4-title": "原材料国际贸易",
-      "biz4-desc": "铝、铜、煤炭和黄金的高品质稳定进出口与大宗贸易。",
+      "biz4-desc": "铝、铜、煤炭、黄金、原油的高品质稳定进出口与大宗贸易",
       "biz5-title": "商业咨询",
-      "biz5-desc": "依托深厚的国际贸易专业知识，提供市场调研与战略规划。",
+      "biz5-desc": "依托国际贸易专业知识，提供市场调研与战略规划",
 
-      "ev-models-title": "面向地方政府与公共机构的全系电动车阵容",
+      "ev-models-title": "面向公共机构的全系电动车阵容",
       "ev-m1": "电动轿车", "ev-m2": "电动 SUV", "ev-m3": "电动皮卡",
       "ev-m4": "电动货车", "ev-m5": "电动公交", "ev-m6": "电动环卫车", "ev-m7": "电动消防车",
 
-      "parts-title": "韩国汽车零部件协会与出租车/租车联合会零部件供应",
-      "parts-desc": "为韩国汽车零部件协会会员企业及全国出租车、租车联合会提供零部件供应。",
-      "appliance-title": "公共机构专用电子产品与家电分销",
-      "appliance-desc": "为公共机构及基础设施团体提供多规格高质量电子与家电设备。",
+      "parts-title": "汽车零部件与联合会供应",
+      "parts-desc": "为韩国汽车零部件协会会员及出租车/租车联合会提供零部件",
+      "appliance-title": "公共机构专用电子产品与家电",
+      "appliance-desc": "为公共机构提供多规格高质量电子与家电设备",
 
       "baic-baw-title": "BAIC 与 BAW 韩国总代理独家分销合作",
       "baic-title": "BAIC (北京汽车集团) 韩国独家总代理",
-      "baic-desc": "成立于1958年，拥有奔驰、现代合资公司，旗下拥有 ARCFOX、福田等品牌的中国国有汽车集团。",
+      "baic-desc": "成立于1958年，拥有奔驰、现代合资公司及 ARCFOX、福田品牌的国有车企",
       "baw-title": "BAW (北京汽车制造厂) 韩国独家总代理",
-      "baw-desc": "成立于1951年，专注于越野及轻型商用电动车的传统车企。",
+      "baw-desc": "成立于1951年，专注于越野及轻型商用电动车的车企",
 
       "raw-trade-title": "全球大宗原材料贸易",
       "item-aluminum-title": "铝锭 (Aluminum Ingots)",
@@ -1842,26 +1846,26 @@
 
       "sec5-main-title": "电池回收、光伏发电与特种贸易",
       "res2-title": "电池回收利用",
-      "res2-desc": "通过回收并再利用废旧电动车电池，降低原材料进口依赖度，构建可持续资源循环体系。",
+      "res2-desc": "通过回收利用废旧电动车电池，降低原材料进口依赖度。",
       "res3-title": "太阳能发电项目",
-      "res3-desc": "开发哈萨克斯坦和乌兹别克斯坦光伏电站及光伏水产养殖等 100MW 规模的绿色能源。",
-      "special-title": "特种出行与环保生物/安全产品",
-      "special-desc": "分销电动摩托车、水陆两栖车、车载灭火毯及环保酶生物产品。",
+      "res3-desc": "开发哈萨克斯坦和乌兹别克斯坦 100MW 规模的光伏电站项目。",
+      "special-title": "特种出行与生物产品",
+      "special-desc": "分销电动摩托车、水陆两栖车及环保生物产品",
 
       "net-eyebrow": "合作伙伴与网络",
-      "net-title": "值得信赖的全球网络与全国经销商",
-      "net-desc": "拥有全球车企独家分销合作与全国 48 家经销商网络。",
-      "net1-desc": "获得北汽集团 (BAIC) 及北京汽车制造厂 (BAW) 韩国独家总代理协议。",
-      "net2-desc": "与吉利汽车 (Volvo, Polestar)、一汽集团 (红旗) 和零跑汽车建立战略业务合作。",
-      "net3-desc": "与韩进集团及威东航运开展物流合作，构建韩中客滚船及全球海运网络。",
+      "net-title": "全球合作伙伴与全国网络",
+      "net-desc": "拥有全球车企独家合作与全国 48 家经销商网络。",
+      "net1-desc": "获得北汽集团 (BAIC) 及北京汽车制造厂 (BAW) 韩国独家总代理",
+      "net2-desc": "与吉利汽车、一汽集团和零跑汽车建立战略业务合作",
+      "net3-desc": "与韩进集团及威东航运开展物流合作",
 
       "net-eyebrow-tbl": "全国销售网络",
-      "net-title-tbl": "全国48家经销商与服务网点",
-      "net-desc-tbl": "精心挑选的总代理与授权经销商，覆盖韩国各大主要区域。",
+      "net-title-tbl": "全国48家经销商网络",
+      "net-desc-tbl": "精心挑选的总代理与授权经销商，覆盖韩国各大区域。",
 
       "contact-eyebrow": "联系我们",
-      "contact-title": "携手共建未来出行新篇章。",
-      "contact-desc": "有关合作、分销或投资咨询，请与 PAYTTO 团队联系。",
+      "contact-title": "PAYTTO 商务合作咨询",
+      "contact-desc": "有关原材料贸易、电动车分销及投资咨询，请与我们联系。",
       "info-hq-lbl": "总部地址",
       "info-hq-val": "韩国京畿道高阳市",
       "info-est-lbl": "成立年份",
@@ -1876,7 +1880,6 @@
       "form-submit": "提交申请",
       "form-success": "您的咨询已成功提交！我们将尽快回复。",
 
-      "footer-desc": "自2013年起，总部位于韩国京畿道高阳市，引领全球贸易与绿色工业解决方案。",
       "footer-col1": "公司",
       "footer-col2": "业务",
       "footer-copy": "© 2026 PAYTTO Co., Ltd. All rights reserved."

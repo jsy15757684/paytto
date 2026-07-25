@@ -107,13 +107,13 @@
       border-bottom:1px solid var(--line);
     }
     nav{display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:0 auto;padding:14px 24px;}
-    nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;}
+    nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;}
     nav ul li a{
       font-size:14.5px;
       font-weight:600;
       color:var(--sub);
       transition:all .2s;
-      padding:6px 12px;
+      padding:6px 14px;
       border-radius:999px;
     }
     nav ul li a:hover, nav ul li a.active{
@@ -437,7 +437,6 @@
         <li><a href="#about" id="nav-about" onclick="showPage('about')" data-i18n="nav-company">회사 개요</a></li>
         <li><a href="#vision" id="nav-vision" onclick="showPage('vision')" data-i18n="nav-vision">미래 비전</a></li>
         <li><a href="#business" id="nav-business" onclick="showPage('business')" data-i18n="nav-business">주요 사업</a></li>
-        <li><a href="#facilities" id="nav-facilities" onclick="showPage('facilities')" data-i18n="nav-facilities">시설 및 인프라</a></li>
         <li><a href="#network" id="nav-network" onclick="showPage('network')" data-i18n="nav-network">파트너/네트워크</a></li>
         <li><a href="#contact" id="nav-contact" onclick="showPage('contact')" data-i18n="nav-contact">협력 문의</a></li>
       </ul>
@@ -783,18 +782,24 @@
   </div>
 
 
-  <!-- ================= 3. PAGE: BUSINESS (주요 사업) ================= -->
+  <!-- ================= 3. PAGE: MAIN BUSINESS (주요 사업 - PDF p.16~p.28 재구성) ================= -->
   <div id="page-business" class="page-view">
     <div class="page-banner">
       <div class="wrap">
         <div class="eyebrow" data-i18n="business-eyebrow">Main Business</div>
-        <h1 data-i18n="business-title">5대 핵심 축, 하나의 통합 산업 시스템</h1>
-        <p data-i18n="business-desc">전기차부터 원자재 무역까지, 페이또는 지속 가능한 모빌리티와 글로벌 무역의 전 가치 사슬을 운영합니다.</p>
+        <h1 data-i18n="biz-banner-title">5대 핵심 축, 하나의 통합 산업 시스템</h1>
+        <p data-i18n="biz-banner-desc">전기차 라인업부터 자동차 부품, 공공 가전, 원자재 무역, 배터리 리사이클링, 태양광 발전까지 페이또의 주요 비즈니스 포트폴리오입니다.</p>
       </div>
     </div>
 
+    <!-- 01. 5대 핵심 사업 분야 -->
     <section>
       <div class="wrap">
+        <div class="sectionhead">
+          <div class="eyebrow" style="justify-content:center;" data-i18n="biz-sec1-tag">01. 5대 핵심 사업 분야</div>
+          <h2 class="title" data-i18n="business-title">5대 핵심 축, 하나의 통합 산업 시스템</h2>
+          <p class="lede" data-i18n="business-desc">전기차부터 원자재 무역까지, 페이또는 지속 가능한 모빌리티와 글로벌 무역의 전 가치 사슬을 운영합니다.</p>
+        </div>
         <div class="grid g5">
           <div class="card">
             <div class="num">01</div>
@@ -825,101 +830,128 @@
       </div>
     </section>
 
+    <!-- 02. 전 차종 전기차 & 부품 공급 (PDF p.17-19) -->
     <section class="section-alt">
       <div class="wrap">
+        <div class="sectionhead">
+          <div class="eyebrow" style="justify-content:center;" data-i18n="biz-sec2-tag">02. 전 차종 전기차 &amp; 부품 공급</div>
+          <h2 class="title" data-i18n="ev-models-title">지자체 &amp; 공공기관 전용 전기차 라인업 (EV 7대 시리즈)</h2>
+        </div>
+        
+        <div class="pillrow" style="justify-content:center;margin-bottom:40px;">
+          <span class="pill" data-i18n="ev-m1">EV 세단 (Sedan)</span>
+          <span class="pill" data-i18n="ev-m2">EV SUV</span>
+          <span class="pill" data-i18n="ev-m3">EV 픽업트럭 (Pickup)</span>
+          <span class="pill" data-i18n="ev-m4">EV 밴 (VAN)</span>
+          <span class="pill" data-i18n="ev-m5">EV 버스 (BUS)</span>
+          <span class="pill" data-i18n="ev-m6">EV 청소차 (Sanitation)</span>
+          <span class="pill" data-i18n="ev-m7">EV 소방차 (Fire Truck)</span>
+        </div>
+
         <div class="split rev">
           <div class="imgcard"><img src="__VEHICLE_LINEUP__" alt="PAYTTO EV lineup"></div>
           <div>
-            <div class="eyebrow" data-i18n="fac1-eyebrow">전기 모빌리티 라인업</div>
-            <h2 class="title" data-i18n="fac1-title">상용 및 승용 전기차 글로벌 유통</h2>
-            <p class="lede" data-i18n="fac1-desc">글로벌 유수 OEM 제조사와의 제휴를 통해 안정적인 승용 EV, 상용 밴 및 트럭을 글로벌 시장에 공급합니다.</p>
-            <ul class="taglist">
-              <li><b data-i18n="tag1-lbl">승용 EV &amp; SUV</b> — <span data-i18n="tag1-desc">출퇴근 및 가정용 스마트 전기 승용차</span></li>
-              <li><b data-i18n="tag2-lbl">상용 밴 &amp; 픽업</b> — <span data-i18n="tag2-desc">도심 물류 및 상업용 특화 차량</span></li>
-              <li><b data-i18n="tag3-lbl">전기 버스</b> — <span data-i18n="tag3-desc">시내버스 및 공공 대중교통 라인업</span></li>
-              <li><b data-i18n="tag4-lbl">특수목적 EV</b> — <span data-i18n="tag4-desc">청소차, 소방차 등 지자체 맞춤형 차량</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-
-  <!-- ================= 4. PAGE: FACILITIES (시설 및 인프라) ================= -->
-  <div id="page-facilities" class="page-view">
-    <div class="page-banner">
-      <div class="wrap">
-        <div class="eyebrow" data-i18n="nav-facilities">Facilities</div>
-        <h1 data-i18n="fac2-title">최첨단 전시장 및 물류 거점 센터</h1>
-        <p data-i18n="fac2-desc">차량 검수, 정비 센터, 고객 전용 라운지가 통합된 고품격 서비스 네트워크.</p>
-      </div>
-    </div>
-
-    <section>
-      <div class="wrap">
-        <div class="sectionhead">
-          <div class="eyebrow" style="justify-content:center;" data-i18n="fac2-eyebrow">전국 거점 인프라</div>
-          <h2 class="title" data-i18n="fac2-title">Showroom — Deokyang-gu, Goyang-si</h2>
-          <p class="lede" data-i18n="fac2-desc">고양시 덕양구 본사 전시장 및 고객 라운지 인프라 공간.</p>
-        </div>
-        <div class="imgcard"><img src="__SHOWROOM_GRID__" alt="PAYTTO showroom gallery"></div>
-      </div>
-    </section>
-
-    <section class="section-alt">
-      <div class="wrap">
-        <div class="split">
-          <div>
-            <div class="eyebrow" data-i18n="fac3-eyebrow">클린 에너지 솔루션</div>
-            <h2 class="title" data-i18n="fac3-title">고효율 전기차 충전 인프라</h2>
-            <p class="lede" data-i18n="fac3-desc">급속 충전소부터 가정용 충전기까지, 법인 차고지 및 공공장소에 최적화된 인증 충전 시스템 공급.</p>
-            <div class="grid g3" style="margin-top:26px;gap:16px;">
-              <div class="card" style="padding:18px;text-align:center;">
-                <h3 style="margin:0;font-size:26px;">300</h3>
-                <p style="margin-top:4px;" data-i18n="stat-c1">2030년 10만 대 EV 보급 목표</p>
-              </div>
-              <div class="card" style="padding:18px;text-align:center;">
-                <h3 style="margin:0;font-size:26px;">20,000</h3>
-                <p style="margin-top:4px;" data-i18n="stat-c2">2030년 급속 충전기 보급 목표</p>
-              </div>
-              <div class="card" style="padding:18px;text-align:center;">
-                <h3 style="margin:0;font-size:26px;">48</h3>
-                <p style="margin-top:4px;" data-i18n="stat-c3">전국 총판 및 공식 지정 딜러망</p>
-              </div>
+            <div class="card" style="margin-bottom:20px;">
+              <h3 data-i18n="parts-title">한국자동차부품협회 &amp; 택시·렌터카 조합 부품 공급</h3>
+              <p data-i18n="parts-desc">한국자동차부품협회 회원사 부품 공급 및 전국 택시조합, 렌터카협회와의 상호 협력 협약 체결.</p>
+            </div>
+            <div class="card">
+              <h3 data-i18n="appliance-title">공공기관 전용 전자제품 및 가전 유통</h3>
+              <p data-i18n="appliance-desc">공공기관 및 인프라 단체에 맞춘 다양한 규격의 고품질 전자·가전 제품 전용 수급 체계.</p>
             </div>
           </div>
-          <div class="imgcard"><img src="__CHARGING__" alt="EV charging stations"></div>
         </div>
       </div>
     </section>
 
+    <!-- 03. 독점 총판 파트너십 (BAIC & BAW - PDF p.26-27) -->
     <section>
       <div class="wrap">
         <div class="sectionhead">
-          <div class="eyebrow" style="justify-content:center;" data-i18n="fac4-eyebrow">원자재 수급 리더십</div>
-          <h2 class="title" data-i18n="fac4-title">핵심 산업 원자재 및 원유 트레이딩</h2>
-          <p class="lede" data-i18n="fac4-desc">알루미늄, 구리, 석탄, 금 등 첨단 제조 및 에너지 인프라에 필수적인 핵심 자원 공급망 확보.</p>
+          <div class="eyebrow" style="justify-content:center;" data-i18n="biz-sec5-tag">03. 독점 총판 파트너십</div>
+          <h2 class="title">BAIC &amp; BAW 한국 총판 독점 유통</h2>
         </div>
-        <div class="grid g3">
-          <div class="imgcard" style="grid-column:span 2;"><img src="__RAW_MATERIALS__" alt="Raw materials: aluminum, copper, coal, gold" style="height:100%;"></div>
-          <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
-            <h3 data-i18n="res1-title">원자재 트레이딩</h3>
-            <p data-i18n="res1-desc">카메룬 알루미늄, 가봉 구리를 포함하여 알루미늄 잉곳, 구리 케소드, 석탄, 금 등 최상급 원자재를 안정적으로 유통합니다.</p>
+        <div class="grid g2">
+          <div class="card">
+            <span class="badge-box">BAIC Group</span>
+            <h3 data-i18n="baic-title">BAIC (베이징자동차그룹) 한국 총판 독점 계약</h3>
+            <p data-i18n="baic-desc">1958년 설립, 벤츠·현대 합작선 보유 및 ARCFOX, Foton 등 다각화 브랜드를 보유한 중국 국영 자동차 그룹.</p>
+          </div>
+          <div class="card">
+            <span class="badge-box">BAW Factory</span>
+            <h3 data-i18n="baw-title">BAW (베이징자동차제조창) 한국 총판 독점 계약</h3>
+            <p data-i18n="baw-desc">1951년 설립, 전통 군용 오프로드 및 경형 상용차 전문 제조사로 신에너지 모빌리티 라인업 확장.</p>
           </div>
         </div>
-        <div class="grid g3" style="margin-top:26px;">
-          <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
+      </div>
+    </section>
+
+    <!-- 04. 원자재 & 에너지 무역 실적 (PDF p.21, p.28) -->
+    <section class="section-alt">
+      <div class="wrap">
+        <div class="sectionhead">
+          <div class="eyebrow" style="justify-content:center;" data-i18n="biz-sec3-tag">04. 원자재 &amp; 에너지 무역 실적</div>
+          <h2 class="title">글로벌 원자재 &amp; 에너지 무역 거래량</h2>
+        </div>
+
+        <div class="grid g3">
+          <div class="card">
+            <div class="num"><i class="fa-solid fa-cubes" style="color:#e5e5e5;"></i></div>
+            <h3>알루미늄 잉곳</h3>
+            <p data-i18n="vol-aluminum">알루미늄 잉곳: 월 20,000톤 (연간 24만 톤)</p>
+          </div>
+          <div class="card">
+            <div class="num"><i class="fa-solid fa-plug" style="color:#ff7f50;"></i></div>
+            <h3>구리 케소드 (음극재)</h3>
+            <p data-i18n="vol-copper">구리 케소드: 월 5,000톤 (연간 6만 톤)</p>
+          </div>
+          <div class="card">
+            <div class="num"><i class="fa-solid fa-fire-flame-simple" style="color:#555555;"></i></div>
+            <h3>산업용 석탄</h3>
+            <p data-i18n="vol-coal">산업용 석탄: 연간 약 150만 톤</p>
+          </div>
+          <div class="card">
+            <div class="num"><i class="fa-solid fa-oil-well" style="color:#00e5ff;"></i></div>
+            <h3>원유 (Crude Oil)</h3>
+            <p data-i18n="vol-oil">원유 트레이딩: 월 100,000톤 (연간 120만 톤)</p>
+          </div>
+          <div class="card">
+            <div class="num"><i class="fa-solid fa-seedling" style="color:#3ddc97;"></i></div>
+            <h3>브라질 대두 (콩)</h3>
+            <p data-i18n="vol-soybean">브라질 대두(콩): 연간 약 150톤</p>
+          </div>
+          <div class="card">
+            <div class="num"><i class="fa-solid fa-coins" style="color:#ffd700;"></i></div>
+            <h3>실물 금괴 (Gold)</h3>
+            <p data-i18n="vol-gold">실물 금괴 &amp; 귀금속 자산 무역</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. 신재생 에너지 & 특수 제품 (PDF p.22-25) -->
+    <section>
+      <div class="wrap">
+        <div class="sectionhead">
+          <div class="eyebrow" style="justify-content:center;" data-i18n="biz-sec4-tag">05. 신재생 에너지 &amp; 특수 제품</div>
+          <h2 class="title">배터리 리사이클링 &amp; 태양광 발전 &amp; 특수 무역</h2>
+        </div>
+
+        <div class="grid g3">
+          <div class="card">
+            <div class="num"><i class="fa-solid fa-battery-three-quarters"></i></div>
             <h3 data-i18n="res2-title">배터리 리사이클링</h3>
             <p data-i18n="res2-desc">사용 후 전기차 배터리의 회수 및 재활용을 통해 원자재 수입 의존도를 낮추고 지속 가능한 자원 순환 체계를 구축합니다.</p>
           </div>
-          <div class="imgcard" style="grid-column:span 2;"><img src="__BATTERY__" alt="Battery recycling business" style="height:100%;"></div>
-        </div>
-        <div class="grid g3" style="margin-top:26px;">
-          <div class="imgcard" style="grid-column:span 2;"><img src="__SOLAR__" alt="Kazakhstan solar power project" style="height:100%;"></div>
-          <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="card">
+            <div class="num"><i class="fa-solid fa-sun"></i></div>
             <h3 data-i18n="res3-title">태양광 발전 프로젝트</h3>
             <p data-i18n="res3-desc">카자흐스탄 및 우즈베키스탄 태양광 발전소 프로젝트와 태양광 수산 양식 사업 등 100MW 규모의 친환경 에너지를 개발합니다.</p>
+          </div>
+          <div class="card">
+            <div class="num"><i class="fa-solid fa-shield-cat"></i></div>
+            <h3 data-i18n="special-title">특수 모빌리티 &amp; 바이오 제품</h3>
+            <p data-i18n="special-desc">전기 오토바이, 수륙양용차, 차량용 질식 소화포, 친환경 효소 바이오 제품 유통.</p>
           </div>
         </div>
       </div>
@@ -927,7 +959,7 @@
   </div>
 
 
-  <!-- ================= 5. PAGE: PARTNERS & NETWORK (파트너/네트워크) ================= -->
+  <!-- ================= 4. PAGE: PARTNERS & NETWORK (파트너/네트워크) ================= -->
   <div id="page-network" class="page-view">
     <div class="page-banner">
       <div class="wrap">
@@ -995,7 +1027,7 @@
   </div>
 
 
-  <!-- ================= 6. PAGE: CONTACT (협력 문의) ================= -->
+  <!-- ================= 5. PAGE: CONTACT (협력 문의) ================= -->
   <div id="page-contact" class="page-view">
     <div class="page-banner">
       <div class="wrap">
@@ -1061,8 +1093,8 @@
       <h4 data-i18n="footer-col2">사업 분야</h4>
       <ul>
         <li><a onclick="showPage('business')" data-i18n="pill1">전기자동차</a></li>
-        <li><a onclick="showPage('facilities')" data-i18n="pill2">EV 충전 인프라</a></li>
-        <li><a onclick="showPage('facilities')" data-i18n="pill3">원자재 무역</a></li>
+        <li><a onclick="showPage('business')" data-i18n="pill2">EV 충전 인프라</a></li>
+        <li><a onclick="showPage('business')" data-i18n="pill3">원자재 무역</a></li>
       </ul>
     </div>
   </div>
@@ -1080,7 +1112,6 @@
       "nav-company": "회사 개요",
       "nav-vision": "미래 비전",
       "nav-business": "주요 사업",
-      "nav-facilities": "시설 및 인프라",
       "nav-network": "파트너/네트워크",
       "nav-contact": "협력 문의",
       "nav-cta": "문의하기",
@@ -1194,7 +1225,15 @@
       "proj-solar-kaz": "카자흐스탄 — 100 MW급 태양광 발전소 및 태양광 수산 양식 사업 개발",
       "proj-solar-vnm": "베트남 — 100 MW 태양광 발전소 & EV 완성차 제조 공장 설립 추진",
 
-      "business-eyebrow": "주요 사업 분야",
+      "business-eyebrow": "Main Business",
+      "biz-banner-title": "5대 핵심 축, 하나의 통합 산업 시스템",
+      "biz-banner-desc": "전기차 라인업부터 자동차 부품, 공공 가전, 원자재 무역, 배터리 리사이클링, 태양광 발전까지 페이또의 주요 비즈니스 포트폴리오입니다.",
+      "biz-sec1-tag": "01. 5대 핵심 사업 분야",
+      "biz-sec2-tag": "02. 전 차종 전기차 &amp; 부품 공급",
+      "biz-sec3-tag": "03. 원자재 &amp; 에너지 무역 실적",
+      "biz-sec4-tag": "04. 신재생 에너지 &amp; 특수 제품",
+      "biz-sec5-tag": "05. 독점 총판 파트너십",
+
       "business-title": "5대 핵심 축, 하나의 통합 산업 시스템",
       "business-desc": "전기차부터 원자재 무역까지, 페이또는 지속 가능한 모빌리티와 글로벌 무역의 전 가치 사슬을 운영합니다.",
       "biz1-title": "전기차 유통 및 A/S",
@@ -1208,34 +1247,28 @@
       "biz5-title": "비즈니스 컨설팅",
       "biz5-desc": "축적된 국제 무역 전문성과 인프라를 활용한 시장 조사 및 전략 컨설팅.",
 
-      "fac1-eyebrow": "전기 모빌리티 라인업",
-      "fac1-title": "상용 및 승용 전기차 글로벌 유통",
-      "fac1-desc": "글로벌 유수 OEM 제조사와의 제휴를 통해 안정적인 승용 EV, 상용 밴 및 트럭을 글로벌 시장에 공급합니다.",
-      "tag1-lbl": "승용 EV & SUV", "tag1-desc": "출퇴근 및 가정용 스마트 전기 승용차",
-      "tag2-lbl": "상용 밴 & 픽업", "tag2-desc": "도심 물류 및 상업용 특화 차량",
-      "tag3-lbl": "전기 버스", "tag3-desc": "시내버스 및 공공 대중교통 라인업",
-      "tag4-lbl": "특수목적 EV", "tag4-desc": "청소차, 소방차 등 지자체 맞춤형 차량",
+      "ev-models-title": "지자체 &amp; 공공기관 전용 전기차 라인업 (EV 7대 시리즈)",
+      "ev-m1": "EV 세단 (Sedan)", "ev-m2": "EV SUV", "ev-m3": "EV 픽업트럭 (Pickup)",
+      "ev-m4": "EV 밴 (VAN)", "ev-m5": "EV 버스 (BUS)", "ev-m6": "EV 청소차 (Sanitation)", "ev-m7": "EV 소방차 (Fire Truck)",
 
-      "fac2-eyebrow": "전국 거점 인프라",
-      "fac2-title": "최첨단 전시장 및 물류 거점 센터",
-      "fac2-desc": "차량 검수, 정비 센터, 고객 전용 라운지가 통합된 고품격 서비스 네트워크.",
+      "parts-title": "한국자동차부품협회 &amp; 택시·렌터카 조합 부품 공급",
+      "parts-desc": "한국자동차부품협회 회원사 부품 공급 및 전국 택시조합, 렌터카협회와의 상호 협력 협약 체결.",
+      "appliance-title": "공공기관 전용 전자제품 및 가전 유통",
+      "appliance-desc": "공공기관 및 인프라 단체에 맞춘 다양한 규격의 고품질 전자·가전 제품 전용 수급 체계.",
 
-      "fac3-eyebrow": "클린 에너지 솔루션",
-      "fac3-title": "고효율 전기차 충전 인프라",
-      "fac3-desc": "급속 충전소부터 가정용 충전기까지, 법인 차고지 및 공공장소에 최적화된 인증 충전 시스템 공급.",
-      "stat-c1": "2030년 10만 대 EV 보급 목표",
-      "stat-c2": "2030년 급속 충전기 보급 목표",
-      "stat-c3": "전국 총판 및 공식 지정 딜러망",
+      "vol-aluminum": "알루미늄 잉곳: 월 20,000톤 (연간 24만 톤)",
+      "vol-copper": "구리 케소드: 월 5,000톤 (연간 6만 톤)",
+      "vol-coal": "산업용 석탄: 연간 약 150만 톤",
+      "vol-oil": "원유 트레이딩: 월 100,000톤 (연간 120만 톤)",
+      "vol-soybean": "브라질 대두(콩): 연간 약 150톤",
+      "vol-gold": "실물 금괴 &amp; 귀금속 자산 무역",
 
-      "fac4-eyebrow": "원자재 수급 리더십",
-      "fac4-title": "핵심 산업 원자재 및 원유 트레이딩",
-      "fac4-desc": "알루미늄, 구리, 석탄, 금 등 첨단 제조 및 에너지 인프라에 필수적인 핵심 자원 공급망 확보.",
-      "res1-title": "원자재 트레이딩",
-      "res1-desc": "카메룬 알루미늄, 가봉 구리를 포함하여 알루미늄 잉곳, 구리 케소드, 석탄, 금 등 최상급 원자재를 안정적으로 유통합니다.",
-      "res2-title": "배터리 리사이클링",
-      "res2-desc": "사용 후 전기차 배터리의 회수 및 재활용을 통해 원자재 수입 의존도를 낮추고 지속 가능한 자원 순환 체계를 구축합니다.",
-      "res3-title": "태양광 발전 프로젝트",
-      "res3-desc": "카자흐스탄 및 우즈베키스탄 태양광 발전소 프로젝트와 태양광 수산 양식 사업 등 100MW 규모의 친환경 에너지를 개발합니다.",
+      "special-title": "특수 모빌리티 &amp; 친환경 바이오/안전 제품",
+      "special-desc": "전기 오토바이, 수륙양용차, 차량용 질식 소화포, 친환경 효소 바이오 제품 유통.",
+      "baic-title": "BAIC (베이징자동차그룹) 한국 총판 독점 계약",
+      "baic-desc": "1958년 설립, 벤츠·현대 합작선 보유 및 ARCFOX, Foton 등 다각화 브랜드를 보유한 중국 국영 자동차 그룹.",
+      "baw-title": "BAW (베이징자동차제조창) 한국 총판 독점 계약",
+      "baw-desc": "1951년 설립, 전통 군용 오프로드 및 경형 상용차 전문 제조사로 신에너지 모빌리티 라인업 확장.",
 
       "net-eyebrow": "글로벌 파트너십",
       "net-title": "신뢰 기반의 글로벌 네트워크 &amp; 전국 딜러망",
@@ -1288,7 +1321,6 @@
       "nav-company": "Company",
       "nav-vision": "Future Vision",
       "nav-business": "Business",
-      "nav-facilities": "Facilities",
       "nav-network": "Partners & Network",
       "nav-contact": "Contact",
       "nav-cta": "Get in Touch",
@@ -1403,7 +1435,15 @@
       "proj-solar-vnm": "Vietnam — 100 MW solar power plant & EV manufacturing plant setup",
 
       "business-eyebrow": "Main Business",
-      "business-title": "Five pillars, one integrated industrial system.",
+      "biz-banner-title": "Five Pillars, One Integrated Industrial System",
+      "biz-banner-desc": "PAYTTO's business portfolio spanning EVs, auto parts, appliances, raw materials, battery recycling, and solar power.",
+      "biz-sec1-tag": "01. Five Core Business Pillars",
+      "biz-sec2-tag": "02. Full EV Lineup &amp; Auto Parts",
+      "biz-sec3-tag": "03. Raw Materials &amp; Energy Commerce Volume",
+      "biz-sec4-tag": "04. Renewable Energy &amp; Special Products",
+      "biz-sec5-tag": "05. Exclusive Automaker Distribution",
+
+      "business-title": "Five Pillars, One Integrated Industrial System",
       "business-desc": "From electric vehicles to raw materials, PAYTTO operates across the full value chain of sustainable mobility and global trade.",
       "biz1-title": "EV Sales & After-Service",
       "biz1-desc": "Import and export of pure electric vehicles and components, with comprehensive after-sales support.",
@@ -1416,34 +1456,28 @@
       "biz5-title": "Business Consulting",
       "biz5-desc": "Market research and strategy development leveraging deep international trade expertise.",
 
-      "fac1-eyebrow": "Full Electric Vehicle Lineup",
-      "fac1-title": "Commercial & Passenger EV Distribution",
-      "fac1-desc": "Partnering with top global OEMs, PAYTTO brings reliable passenger EVs, commercial vans, and trucks to markets across Asia and beyond.",
-      "tag1-lbl": "EV Sedan & SUV", "tag1-desc": "Personal commuting and family travel",
-      "tag2-lbl": "EV Van & Pickup", "tag2-desc": "Logistics and commercial operations",
-      "tag3-lbl": "EV Bus", "tag3-desc": "Public and municipal transportation",
-      "tag4-lbl": "Special EV", "tag4-desc": "Sanitation and municipal service fleets",
+      "ev-models-title": "Full EV Model Lineup for Public &amp; Municipal Fleets",
+      "ev-m1": "EV Sedan", "ev-m2": "EV SUV", "ev-m3": "EV Pickup Truck",
+      "ev-m4": "EV VAN", "ev-m5": "EV BUS", "ev-m6": "EV Sanitation Vehicle", "ev-m7": "EV Fire Truck",
 
-      "fac2-eyebrow": "Facilities",
-      "fac2-title": "State-of-the-Art Showroom & Logistics",
-      "fac2-desc": "Integrated vehicle inspection, maintenance facilities, and customer lounge — built for seamless service and delivery.",
+      "parts-title": "Auto Parts Supply for Automotive Parts Association &amp; Taxi/Rent Alliances",
+      "parts-desc": "Supplying automotive parts to Korea Automotive Parts Association members and taxi/rental car alliances.",
+      "appliance-title": "Supply of Electronic &amp; Home Appliance Products to Public Institutions",
+      "appliance-desc": "Supplying high-quality electronics and home appliances tailored for public organizations.",
 
-      "fac3-eyebrow": "EV Charging Infrastructure",
-      "fac3-title": "Powering the road ahead.",
-      "fac3-desc": "From fast-charging stations to residential wallboxes, we supply certified charging hardware for fleets, public spaces, and private owners.",
-      "stat-c1": "10k units, EV projection by 2030",
-      "stat-c2": "Fast-charging stations by 2030",
-      "stat-c3": "General distributors & dealers nationwide",
+      "vol-aluminum": "Aluminum Ingots: 20,000 tons/month (240,000 tons/year)",
+      "vol-copper": "Copper Cathodes: 5,000 tons/month (60,000 tons/year)",
+      "vol-coal": "Industrial Coal: Approx. 1.5 million tons/year",
+      "vol-oil": "Crude Oil: 100,000 tons/month (1.2 million tons/year)",
+      "vol-soybean": "Brazilian Soybeans: Approx. 150 tons/year",
+      "vol-gold": "Physical Gold Bullion &amp; Precious Metals",
 
-      "fac4-eyebrow": "Resources & New Energy",
-      "fac4-title": "Trade, recycle, regenerate.",
-      "fac4-desc": "Securing stable supply chains of aluminum, copper, coal, and gold to support global manufacturing and energy infrastructure.",
-      "res1-title": "Raw Materials",
-      "res1-desc": "Aluminum ingots, copper cathodes, coal and gold — traded with efficient circulation and high quality standards, including aluminum from Cameroon and copper from Gabon.",
-      "res2-title": "Battery Recycling",
-      "res2-desc": "Recycling and reutilization of used EV batteries — reducing dependence on raw material imports and supporting a sustainable supply chain.",
-      "res3-title": "Solar Power",
-      "res3-desc": "Solar power plant projects in Kazakhstan and Uzbekistan, plus a solar-powered aquaculture project — each targeting 100 MW installations.",
+      "special-title": "Special Mobility &amp; Eco Bio/Safety Products",
+      "special-desc": "Distribution of electric motorcycles, amphibious vehicles, vehicle fire blankets, and bio enzymes.",
+      "baic-title": "BAIC (Beijing Automotive Group) Korea Exclusive Distribution",
+      "baic-desc": "Founded in 1958, state-owned group with Mercedes-Benz and Hyundai JVs, owner of ARCFOX & Foton.",
+      "baw-title": "BAW (Beijing Automobile Manufacturing Factory) Korea Exclusive Distribution",
+      "baw-desc": "Founded in 1951, specialized manufacturer of off-road & light commercial EVs.",
 
       "net-eyebrow": "Partners & Network",
       "net-title": "Trusted Global Network & Nationwide Dealers",
@@ -1496,7 +1530,6 @@
       "nav-company": "公司概况",
       "nav-vision": "未来愿景",
       "nav-business": "核心业务",
-      "nav-facilities": "设施与基础设施",
       "nav-network": "合作伙伴与网络",
       "nav-contact": "联系我们",
       "nav-cta": "立即咨询",
@@ -1610,7 +1643,15 @@
       "proj-solar-kaz": "哈萨克斯坦 — 100 MW 光伏电站与水产养殖项目",
       "proj-solar-vnm": "越南 — 推进 100 MW 光伏电站与电动车整车制造厂建设",
 
-      "business-eyebrow": "核心业务",
+      "business-eyebrow": "Main Business",
+      "biz-banner-title": "五大核心支柱，一个集成产业体系",
+      "biz-banner-desc": "从电动车到汽车零部件、公共家电、大宗原材料、电池回收及光伏发电的 PAYTTO 核心业务组合。",
+      "biz-sec1-tag": "01. 五大核心业务领域",
+      "biz-sec2-tag": "02. 全系电动车与零部件供应",
+      "biz-sec3-tag": "03. 原材料与能源大宗贸易",
+      "biz-sec4-tag": "04. 可再生能源与特种产品",
+      "biz-sec5-tag": "05. 独家总代理合作",
+
       "business-title": "五大核心支柱，一个集成产业体系",
       "business-desc": "从电动汽车到原材料贸易，PAYTTO 运营着可持续出行与全球贸易的全产业链。",
       "biz1-title": "电动车销售与售后",
@@ -1624,34 +1665,28 @@
       "biz5-title": "商业咨询",
       "biz5-desc": "依托深厚的国际贸易专业知识，提供市场调研与战略规划。",
 
-      "fac1-eyebrow": "电动出行阵容",
-      "fac1-title": "商用与乘用电动车全球分销",
-      "fac1-desc": "与全球顶尖 OEM 合作，PAYTTO 将可靠的乘用电动车、商用货车及卡车推向亚洲及全球市场。",
-      "tag1-lbl": "乘用 EV & SUV", "tag1-desc": "通勤与家庭智能纯电动乘用车",
-      "tag2-lbl": "商用货车 & 皮卡", "tag2-desc": "城市物流与商业运输专用车",
-      "tag3-lbl": "电动公交", "tag3-desc": "城市公交与公共交通阵容",
-      "tag4-lbl": "特种电动车", "tag4-desc": "环卫车、消防车等市政定制车辆",
+      "ev-models-title": "面向地方政府与公共机构的全系电动车阵容",
+      "ev-m1": "电动轿车", "ev-m2": "电动 SUV", "ev-m3": "电动皮卡",
+      "ev-m4": "电动货车", "ev-m5": "电动公交", "ev-m6": "电动环卫车", "ev-m7": "电动消防车",
 
-      "fac2-eyebrow": "基础设施",
-      "fac2-title": "先进展示中心与物流基地",
-      "fac2-desc": "集车辆检验、维修设施与客户尊享休息室于一体的无缝服务与交付网络。",
+      "parts-title": "韩国汽车零部件协会与出租车/租车联合会零部件供应",
+      "parts-desc": "为韩国汽车零部件协会会员企业及全国出租车、租车联合会提供零部件供应。",
+      "appliance-title": "公共机构专用电子产品与家电分销",
+      "appliance-desc": "为公共机构及基础设施团体提供多规格高质量电子与家电设备。",
 
-      "fac3-eyebrow": "清洁能源",
-      "fac3-title": "高效电动车充电基础设施",
-      "fac3-desc": "从快充站到家用充电桩，我们为车队、公共场所和私人业主提供认证充电硬件。",
-      "stat-c1": "2030年10万台电动车普及目标",
-      "stat-c2": "2030年快充桩普及目标",
-      "stat-c3": "全国总代理与授权经销商",
+      "vol-aluminum": "铝锭：每月 20,000 吨 (每年 24 万吨)",
+      "vol-copper": "阴极铜：每月 5,000 吨 (每年 6 万吨)",
+      "vol-coal": "工业煤炭：每年约 150 万吨",
+      "vol-oil": "原油贸易：每月 100,000 吨 (每年 120 万吨)",
+      "vol-soybean": "巴西大豆：每年约 150 吨",
+      "vol-gold": "实物金条与贵金属",
 
-      "fac4-eyebrow": "大宗资源贸易",
-      "fac4-title": "工业原材料与原油贸易",
-      "fac4-desc": "保障铝、铜、煤炭和黄金的稳定供应链，支持全球制造与能源基础设施建设。",
-      "res1-title": "原材料贸易",
-      "res1-desc": "稳定分销包括喀麦隆铝和加蓬铜在内的铝锭、阴极铜、煤炭及黄金等优质原材料。",
-      "res2-title": "电池回收利用",
-      "res2-desc": "回收和循环利用废旧电动车电池，降低对原材料进口依赖，构建可持续资源循环体系。",
-      "res3-title": "太阳能发电项目",
-      "res3-desc": "开发哈萨克斯坦和乌兹别克斯坦光伏电站项目及光伏水产养殖项目，目标规模各达 100 MW。",
+      "special-title": "特种出行与环保生物/安全产品",
+      "special-desc": "分销电动摩托车、水陆两栖车、车载灭火毯及环保酶生物产品。",
+      "baic-title": "BAIC (北京汽车集团) 韩国独家总代理",
+      "baic-desc": "成立于1958年，拥有奔驰、现代合资公司，旗下拥有 ARCFOX、福田等品牌的中国国有汽车集团。",
+      "baw-title": "BAW (北京汽车制造厂) 韩国独家总代理",
+      "baw-desc": "成立于1951年，专注于越野及轻型商用电动车的传统车企。",
 
       "net-eyebrow": "合作伙伴与网络",
       "net-title": "值得信赖的全球网络与全国经销商",
@@ -1702,7 +1737,7 @@
   };
 
   function showPage(pageId) {
-    const validPages = ['about', 'vision', 'business', 'facilities', 'network', 'contact'];
+    const validPages = ['about', 'vision', 'business', 'network', 'contact'];
     if (!validPages.includes(pageId)) pageId = 'about';
 
     // Update active page view

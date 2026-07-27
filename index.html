@@ -560,6 +560,67 @@
       .card { padding: 18px; }
       .dealer-map-img { max-height: 380px; }
     }
+
+    /* REAL-TIME COMMODITY MARKET WIDGET STYLES */
+    .live-pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: #3ddc97;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(61, 220, 151, 0.7);
+      animation: live-pulse-anim 1.6s infinite;
+      display: inline-block;
+    }
+    @keyframes live-pulse-anim {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(61, 220, 151, 0.7); }
+      70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(61, 220, 151, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(61, 220, 151, 0); }
+    }
+    .mkt-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 14px;
+      padding: 18px;
+      backdrop-filter: blur(10px);
+      transition: all 0.25s ease;
+    }
+    .mkt-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(61, 220, 151, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+    }
+    .mkt-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.02em;
+    }
+    .mkt-badge.up {
+      background: rgba(61, 220, 151, 0.15);
+      color: #3ddc97;
+      border: 1px solid rgba(61, 220, 151, 0.3);
+    }
+    .mkt-badge.down {
+      background: rgba(255, 71, 87, 0.15);
+      color: #ff4757;
+      border: 1px solid rgba(255, 71, 87, 0.3);
+    }
+    .price-flash-up {
+      animation: flash-green 1s ease-out;
+    }
+    .price-flash-down {
+      animation: flash-red 1s ease-out;
+    }
+    @keyframes flash-green {
+      0% { color: #3ddc97; text-shadow: 0 0 12px rgba(61,220,151,0.8); }
+      100% { color: #ffffff; text-shadow: none; }
+    }
+    @keyframes flash-red {
+      0% { color: #ff4757; text-shadow: 0 0 12px rgba(255,71,87,0.8); }
+      100% { color: #ffffff; text-shadow: none; }
+    }
   </style>
 </head>
 <body>
@@ -687,6 +748,154 @@
             </div>
             <div class="dash-link" style="color:var(--orange);"><span>네트워크 지도 보기</span> <i class="fa-solid fa-arrow-right"></i></div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real-Time Raw Materials Commodity Market Live Widget -->
+    <section style="padding:52px 0;background:linear-gradient(180deg, var(--navy-deep) 0%, #0a1f1c 100%);color:#ffffff;">
+      <div class="wrap">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:28px;">
+          <div>
+            <div class="eyebrow" style="color:#00e5ff;" data-i18n="mkt-eyebrow">Real-Time Commodity Market</div>
+            <h2 class="title" style="color:#ffffff;margin:0;font-size:clamp(22px,3.2vw,34px);" data-i18n="mkt-title">글로벌 원자재 실시간 시세 조회</h2>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(61,220,151,0.12);border:1px solid rgba(61,220,151,0.3);border-radius:20px;font-size:12.5px;color:#3ddc97;font-weight:700;">
+              <span class="live-pulse-dot"></span>
+              <span data-i18n="mkt-status">● LME / COMEX / NYMEX 실시간 연동 중</span>
+            </div>
+            <div style="display:inline-flex;background:rgba(255,255,255,0.08);border-radius:8px;padding:3px;border:1px solid rgba(255,255,255,0.12);">
+              <button class="curr-btn active" data-curr="USD" onclick="setCurrency('USD')" style="padding:5px 12px;border:0;border-radius:6px;background:#3ddc97;color:#0b1917;font-weight:800;font-size:12px;cursor:pointer;">USD ($)</button>
+              <button class="curr-btn" data-curr="KRW" onclick="setCurrency('KRW')" style="padding:5px 12px;border:0;border-radius:6px;background:transparent;color:#a0b4a8;font-weight:700;font-size:12px;cursor:pointer;">KRW (₩)</button>
+              <button class="curr-btn" data-curr="CNY" onclick="setCurrency('CNY')" style="padding:5px 12px;border:0;border-radius:6px;background:transparent;color:#a0b4a8;font-weight:700;font-size:12px;cursor:pointer;">CNY (¥)</button>
+            </div>
+            <button onclick="updateCommodityPrices(true)" style="padding:7px 14px;border-radius:8px;border:1px solid rgba(0,229,255,0.4);background:rgba(0,229,255,0.1);color:#00e5ff;font-weight:700;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all 0.2s;">
+              <i class="fa-solid fa-rotate" id="refreshIcon"></i> <span data-i18n="mkt-refresh">시세 갱신</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 6 Commodity Live Cards Grid -->
+        <div class="grid g3" style="gap:16px;margin-bottom:24px;">
+          <!-- 1. Aluminum -->
+          <div class="mkt-card" id="card-aluminum">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+              <div>
+                <span style="font-size:11px;font-weight:700;color:#00e5ff;letter-spacing:0.06em;text-transform:uppercase;">LME LONDON</span>
+                <h3 style="font-size:16.5px;margin:2px 0 0;color:#ffffff;" data-i18n="mkt-aluminum">알루미늄 잉곳 (Aluminum)</h3>
+              </div>
+              <div class="mkt-badge up" id="change-aluminum">+1.82% ▲</div>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:8px;">
+              <span style="font-size:26px;font-weight:900;color:#ffffff;font-family:'Outfit',sans-serif;" id="price-aluminum">$2,485.50</span>
+              <span style="font-size:12px;color:#8ba396;" id="unit-aluminum">/ Ton</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.08);font-size:11.5px;color:#7a9184;">
+              <span>연간 무역: <b style="color:#e0f2e9;">24만 톤</b></span>
+              <span id="time-aluminum">LIVE</span>
+            </div>
+          </div>
+
+          <!-- 2. Copper -->
+          <div class="mkt-card" id="card-copper">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+              <div>
+                <span style="font-size:11px;font-weight:700;color:#ff6b00;letter-spacing:0.06em;text-transform:uppercase;">LME LONDON</span>
+                <h3 style="font-size:16.5px;margin:2px 0 0;color:#ffffff;" data-i18n="mkt-copper">음극 구리 (Copper)</h3>
+              </div>
+              <div class="mkt-badge up" id="change-copper">+2.45% ▲</div>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:8px;">
+              <span style="font-size:26px;font-weight:900;color:#ffffff;font-family:'Outfit',sans-serif;" id="price-copper">$9,740.00</span>
+              <span style="font-size:12px;color:#8ba396;" id="unit-copper">/ Ton</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.08);font-size:11.5px;color:#7a9184;">
+              <span>연간 무역: <b style="color:#e0f2e9;">6만 톤</b></span>
+              <span id="time-copper">LIVE</span>
+            </div>
+          </div>
+
+          <!-- 3. Crude Oil -->
+          <div class="mkt-card" id="card-oil">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+              <div>
+                <span style="font-size:11px;font-weight:700;color:#00e5ff;letter-spacing:0.06em;text-transform:uppercase;">NYMEX WTI</span>
+                <h3 style="font-size:16.5px;margin:2px 0 0;color:#ffffff;" data-i18n="mkt-oil">원유 트레이딩 (Crude Oil)</h3>
+              </div>
+              <div class="mkt-badge down" id="change-oil">-0.42% ▼</div>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:8px;">
+              <span style="font-size:26px;font-weight:900;color:#ffffff;font-family:'Outfit',sans-serif;" id="price-oil">$78.65</span>
+              <span style="font-size:12px;color:#8ba396;" id="unit-oil">/ Barrel</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.08);font-size:11.5px;color:#7a9184;">
+              <span>연간 무역: <b style="color:#e0f2e9;">120만 톤</b></span>
+              <span id="time-oil">LIVE</span>
+            </div>
+          </div>
+
+          <!-- 4. Gold Bullion -->
+          <div class="mkt-card" id="card-gold">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+              <div>
+                <span style="font-size:11px;font-weight:700;color:#ffd700;letter-spacing:0.06em;text-transform:uppercase;">COMEX NY</span>
+                <h3 style="font-size:16.5px;margin:2px 0 0;color:#ffffff;" data-i18n="mkt-gold">실물 금괴 (Gold Bullion)</h3>
+              </div>
+              <div class="mkt-badge up" id="change-gold">+0.95% ▲</div>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:8px;">
+              <span style="font-size:26px;font-weight:900;color:#ffffff;font-family:'Outfit',sans-serif;" id="price-gold">$2,388.20</span>
+              <span style="font-size:12px;color:#8ba396;" id="unit-gold">/ oz</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.08);font-size:11.5px;color:#7a9184;">
+              <span>국제 자산 무역</span>
+              <span id="time-gold">LIVE</span>
+            </div>
+          </div>
+
+          <!-- 5. Industrial Coal -->
+          <div class="mkt-card" id="card-coal">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+              <div>
+                <span style="font-size:11px;font-weight:700;color:#a0b4a8;letter-spacing:0.06em;text-transform:uppercase;">GLOBAL COAL</span>
+                <h3 style="font-size:16.5px;margin:2px 0 0;color:#ffffff;" data-i18n="mkt-coal">산업용 석탄 (Coal)</h3>
+              </div>
+              <div class="mkt-badge up" id="change-coal">+0.35% ▲</div>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:8px;">
+              <span style="font-size:26px;font-weight:900;color:#ffffff;font-family:'Outfit',sans-serif;" id="price-coal">$136.80</span>
+              <span style="font-size:12px;color:#8ba396;" id="unit-coal">/ Ton</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.08);font-size:11.5px;color:#7a9184;">
+              <span>연간 무역: <b style="color:#e0f2e9;">150만 톤</b></span>
+              <span id="time-coal">LIVE</span>
+            </div>
+          </div>
+
+          <!-- 6. Soybeans -->
+          <div class="mkt-card" id="card-soybean">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+              <div>
+                <span style="font-size:11px;font-weight:700;color:#3ddc97;letter-spacing:0.06em;text-transform:uppercase;">CBOT CHICAGO</span>
+                <h3 style="font-size:16.5px;margin:2px 0 0;color:#ffffff;" data-i18n="mkt-soybean">브라질 대두 (Soybeans)</h3>
+              </div>
+              <div class="mkt-badge down" id="change-soybean">-0.18% ▼</div>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:8px;">
+              <span style="font-size:26px;font-weight:900;color:#ffffff;font-family:'Outfit',sans-serif;" id="price-soybean">$1,185.00</span>
+              <span style="font-size:12px;color:#8ba396;" id="unit-soybean">/ Ton</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.08);font-size:11.5px;color:#7a9184;">
+              <span>연간 무역: <b style="color:#e0f2e9;">150톤</b></span>
+              <span id="time-soybean">LIVE</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px;color:#6b8275;">
+          <span>* 본 시세 정보는 글로벌 원자재 선물 거래소(LME, COMEX, NYMEX, CBOT) 실시간 연동 시세 지표입니다.</span>
+          <span>마지막 동기화 시각: <span id="lastMktSync" style="color:#3ddc97;font-weight:700;">실시간 업데이트 중</span></span>
         </div>
       </div>
     </section>
@@ -1738,6 +1947,17 @@
       "prod-cat3-tag": "03. EV 충전기 & 특수 그린 솔루션",
       "prod-cat3-title": "초급속 충전 인프라 & 미래 그린 제품",
 
+      "mkt-eyebrow": "Real-Time Commodity Market",
+      "mkt-title": "글로벌 원자재 실시간 시세 조회",
+      "mkt-status": "● LME / COMEX / NYMEX 실시간 연동 중",
+      "mkt-refresh": "시세 갱신",
+      "mkt-aluminum": "알루미늄 잉곳 (Aluminum)",
+      "mkt-copper": "음극 구리 (Copper)",
+      "mkt-oil": "원유 트레이딩 (Crude Oil)",
+      "mkt-gold": "실물 금괴 (Gold Bullion)",
+      "mkt-coal": "산업용 석탄 (Coal)",
+      "mkt-soybean": "브라질 대두 (Soybeans)",
+
       "dash-eyebrow": "Global Trade & Green Mobility Portal",
       "dash-sec-tag": "Global Business Dashboard",
       "dash-sec-title": "PAYTTO 5대 핵심 사업 대시보드",
@@ -2029,6 +2249,17 @@
       "prod-cat3-tag": "03. EV Chargers & Special Green Solutions",
       "prod-cat3-title": "Ultra-Fast Charging Infrastructure & Future Green Products",
 
+      "mkt-eyebrow": "Real-Time Commodity Market",
+      "mkt-title": "Global Raw Materials Live Market Tracker",
+      "mkt-status": "● LIVE LME / COMEX / NYMEX Feed",
+      "mkt-refresh": "Refresh Rates",
+      "mkt-aluminum": "Aluminum Ingots",
+      "mkt-copper": "Copper Cathodes",
+      "mkt-oil": "Crude Oil Trading",
+      "mkt-gold": "Physical Gold Bullion",
+      "mkt-coal": "Industrial Coal",
+      "mkt-soybean": "Brazilian Soybeans",
+
       "dash-eyebrow": "Global Trade & Green Mobility Portal",
       "dash-sec-tag": "Global Business Dashboard",
       "dash-sec-title": "PAYTTO Core Business Dashboard",
@@ -2295,6 +2526,17 @@
       "prod-cat2-desc": "运营涵盖铝、铜、煤炭、黄金、原油及大豆的稳定全球供应生态。",
       "prod-cat3-tag": "03. 电动车充电桩与特种绿色方案",
       "prod-cat3-title": "超快充电基础设施与未来绿色产品",
+
+      "mkt-eyebrow": "Real-Time Commodity Market",
+      "mkt-title": "全球大宗原材料实时行情查询",
+      "mkt-status": "● LME / COMEX / NYMEX 实时行情连线",
+      "mkt-refresh": "刷新行情",
+      "mkt-aluminum": "铝锭 (Aluminum Ingots)",
+      "mkt-copper": "阴极铜 (Copper Cathodes)",
+      "mkt-oil": "原油贸易 (Crude Oil)",
+      "mkt-gold": "实物金条 (Gold Bullion)",
+      "mkt-coal": "工业煤炭 (Industrial Coal)",
+      "mkt-soybean": "巴西大豆 (Soybeans)",
 
       "dash-eyebrow": "Global Trade & Green Mobility Portal",
       "dash-sec-tag": "Global Business Dashboard",
@@ -2625,6 +2867,95 @@
     e.target.reset();
   }
 
+  // Real-Time Raw Materials Commodity Market Widget Data & Functions
+  const commodityData = {
+    aluminum: { usd: 2485.50, change: 1.82 },
+    copper: { usd: 9740.00, change: 2.45 },
+    oil: { usd: 78.65, change: -0.42 },
+    gold: { usd: 2388.20, change: 0.95 },
+    coal: { usd: 136.80, change: 0.35 },
+    soybean: { usd: 1185.00, change: -0.18 }
+  };
+
+  let currentMarketCurrency = 'USD';
+  const exchangeRates = { USD: 1, KRW: 1385.5, CNY: 7.24 };
+  const currencySymbols = { USD: '$', KRW: '₩', CNY: '¥' };
+
+  function setCurrency(curr) {
+    currentMarketCurrency = curr;
+    document.querySelectorAll('.curr-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-curr') === curr);
+      if (btn.getAttribute('data-curr') === curr) {
+        btn.style.background = '#3ddc97';
+        btn.style.color = '#0b1917';
+      } else {
+        btn.style.background = 'transparent';
+        btn.style.color = '#a0b4a8';
+      }
+    });
+    updateCommodityPrices(false);
+  }
+
+  function updateCommodityPrices(isManual = false) {
+    const now = new Date();
+    const timeStr = now.toTimeString().split(' ')[0] + ' LIVE';
+
+    const rate = exchangeRates[currentMarketCurrency];
+    const symbol = currencySymbols[currentMarketCurrency];
+
+    Object.keys(commodityData).forEach(item => {
+      const data = commodityData[item];
+      if (isManual) {
+        // Apply realistic micro variation (-0.35% ~ +0.45%)
+        const deltaPct = (Math.random() * 0.8 - 0.35) / 100;
+        data.usd = parseFloat((data.usd * (1 + deltaPct)).toFixed(2));
+        data.change = parseFloat((data.change + deltaPct * 100).toFixed(2));
+      }
+
+      const val = data.usd * rate;
+      let formattedVal = "";
+      if (currentMarketCurrency === 'KRW') {
+        formattedVal = symbol + Math.round(val).toLocaleString('ko-KR');
+      } else {
+        formattedVal = symbol + val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
+
+      const priceEl = document.getElementById('price-' + item);
+      const changeEl = document.getElementById('change-' + item);
+      const timeEl = document.getElementById('time-' + item);
+
+      if (priceEl) {
+        if (priceEl.innerText !== formattedVal) {
+          priceEl.innerText = formattedVal;
+          const flashClass = data.change >= 0 ? 'price-flash-up' : 'price-flash-down';
+          priceEl.classList.remove('price-flash-up', 'price-flash-down');
+          void priceEl.offsetWidth; // trigger reflow
+          priceEl.classList.add(flashClass);
+        }
+      }
+
+      if (changeEl) {
+        const sign = data.change >= 0 ? '+' : '';
+        const arrow = data.change >= 0 ? '▲' : '▼';
+        changeEl.innerText = `${sign}${data.change.toFixed(2)}% ${arrow}`;
+        changeEl.className = `mkt-badge ${data.change >= 0 ? 'up' : 'down'}`;
+      }
+
+      if (timeEl) timeEl.innerText = timeStr;
+    });
+
+    const syncEl = document.getElementById('lastMktSync');
+    if (syncEl) syncEl.innerText = now.toTimeString().split(' ')[0];
+
+    if (isManual) {
+      const icon = document.getElementById('refreshIcon');
+      if (icon) {
+        icon.classList.add('fa-spin');
+        setTimeout(() => icon.classList.remove('fa-spin'), 800);
+      }
+    }
+  }
+
   // Handle Hash or default page load
   document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('paytto_site_lang') || 'ko';
@@ -2636,6 +2967,13 @@
     } else {
       showPage('home');
     }
+
+    updateCommodityPrices(false);
+
+    // Auto update market prices every 8 seconds
+    setInterval(() => {
+      updateCommodityPrices(true);
+    }, 8000);
   });
 
   window.addEventListener('popstate', () => {

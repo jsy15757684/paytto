@@ -1,0 +1,14 @@
+# 루트 레벨 대용량/소스 파일만 제외 (assets/ 내부 파일은 앵커링으로 보호)
+/*.pdf
+/*.mp4
+/index_inline_backup.html
+/template.html
+/apply_fix.py
+/generate_translated_pdf.py
+/paytto_raw_pdf_text.json
+/check_js.js
+/test_script.js
+/test_script_0.js
+/ship
+/image
+/모듈러 주택 사진

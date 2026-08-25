@@ -1,4 +1,18 @@
 .DS_Store
 .vercel
+.claude
 .env*
 *.bak
+/*.pdf
+/*.mp4
+index_inline_backup.html
+apply_fix.py
+generate_translated_pdf.py
+paytto_raw_pdf_text.json
+check_js.js
+test_script*.js
+/ship
+/image
+/PAYTTO_드론_카탈로그_추가_10종
+/드론_용도별_사진
+/모듈러 주택 사진

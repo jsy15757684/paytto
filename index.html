@@ -4071,70 +4071,105 @@ nav li.active {
                         </div>
                       </div>
 
-                      <!-- 구조 및 자재 · 5단 레이어 & 6대 핵심 성능 인증 -->
-                      <div class="card" style="padding:24px;background:#ffffff;border-radius:18px;margin-bottom:24px;">
-                        <span class="badge-box" style="background:rgba(16,185,129,0.12);color:#047857;border-color:rgba(16,185,129,0.3);" data-i18n="capsule-struct-badge">Structure &amp; Materials</span>
-                        <h3 style="font-size:20px;margin:10px 0 6px;color:#0f172a;" data-i18n="capsule-struct-title">구조 및 자재 — 5단 레이어 시스템 &amp; KC 인증 취득</h3>
-                        <p style="font-size:13.5px;color:#475569;margin:0 0 16px;line-height:1.6;" data-i18n="capsule-struct-desc">
-                          항공우주급 자재 5계층 결합 — 방청·단열·방수·방화·내진 6대 핵심 성능을 동시 충족하며, 2024년 국내 최초로 KC 인증을 취득했습니다.
-                        </p>
+                      <!-- 구조 및 자재 (5단 레이어) & 6대 핵심 성능 인증 (2분할 세로 배치) -->
+                      <div class="grid g2" style="gap:24px;margin-bottom:24px;">
+                        
+                        <!-- Part 1: 5단 레이어 구조 및 자재 -->
+                        <div class="card" style="padding:24px;background:#ffffff;border-radius:18px;display:flex;flex-direction:column;justify-content:space-between;">
+                          <div>
+                            <span class="badge-box" style="background:rgba(16,185,129,0.12);color:#047857;border-color:rgba(16,185,129,0.3);" data-i18n="capsule-struct-badge">Structure &amp; Materials</span>
+                            <h3 style="font-size:19px;margin:8px 0 6px;color:#0f172a;" data-i18n="capsule-struct-title">5단 레이어 항공우주급 자재 시스템</h3>
+                            <p style="font-size:13px;color:#475569;margin:0 0 16px;line-height:1.55;" data-i18n="capsule-struct-desc">
+                              항공우주급 첨단 자재 5계층 결합 — 방청·단열·방수·방화·내진 성능을 복합 구현한 고내구성 일체형 구조체입니다.
+                            </p>
 
-                        <!-- 5 Layer Specs Grid -->
-                        <div class="grid g5" style="gap:10px;margin-bottom:20px;">
-                          <div style="background:#f8fafc;border:1.5px solid #cbd5e1;padding:12px;border-radius:10px;">
-                            <div style="font-size:11px;color:#0284c7;font-weight:800;">LAYER 01</div>
-                            <div style="font-size:13.5px;font-weight:900;color:#0f172a;margin:2px 0;">아연도금 강철 프레임</div>
-                            <div style="font-size:11.5px;color:#64748b;line-height:1.4;">두께 4T 메인 구조체, 내진 8레벨·내풍 12레벨</div>
-                          </div>
-                          <div style="background:#f8fafc;border:1.5px solid #cbd5e1;padding:12px;border-radius:10px;">
-                            <div style="font-size:11px;color:#0284c7;font-weight:800;">LAYER 02</div>
-                            <div style="font-size:13.5px;font-weight:900;color:#0f172a;margin:2px 0;">플루오로카본 패널</div>
-                            <div style="font-size:11.5px;color:#64748b;line-height:1.4;">PVDF 코팅 알루미늄, 20년+ 내후성·부식 방지</div>
-                          </div>
-                          <div style="background:#f8fafc;border:1.5px solid #cbd5e1;padding:12px;border-radius:10px;">
-                            <div style="font-size:11px;color:#0284c7;font-weight:800;">LAYER 03</div>
-                            <div style="font-size:13.5px;font-weight:900;color:#0f172a;margin:2px 0;">Low-E 복층 강화유리</div>
-                            <div style="font-size:11.5px;color:#64748b;line-height:1.4;">54mm 삼중곡면 유리, 열차단·보온·방음 동시</div>
-                          </div>
-                          <div style="background:#f8fafc;border:1.5px solid #cbd5e1;padding:12px;border-radius:10px;">
-                            <div style="font-size:11px;color:#0284c7;font-weight:800;">LAYER 04</div>
-                            <div style="font-size:13.5px;font-weight:900;color:#0f172a;margin:2px 0;">PU 폼 단열재</div>
-                            <div style="font-size:11.5px;color:#64748b;line-height:1.4;">0.15 W/㎡K 고밀도 폼, -40℃ 단열 및 방화</div>
-                          </div>
-                          <div style="background:#f8fafc;border:1.5px solid #cbd5e1;padding:12px;border-radius:10px;">
-                            <div style="font-size:11px;color:#0284c7;font-weight:800;">LAYER 05</div>
-                            <div style="font-size:13.5px;font-weight:900;color:#0f172a;margin:2px 0;">SPC 친환경 바닥재</div>
-                            <div style="font-size:11.5px;color:#64748b;line-height:1.4;">석재-플라스틱 복합, 내수·내마모 즉시 입주</div>
+                            <div style="display:flex;flex-direction:column;gap:10px;">
+                              <div style="background:#f8fafc;border:1px solid #cbd5e1;padding:10px 14px;border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                                <div>
+                                  <span style="font-size:10.5px;color:#0284c7;font-weight:800;background:#e0f2fe;padding:2px 6px;border-radius:6px;">LAYER 01</span>
+                                  <div style="font-size:13.5px;font-weight:800;color:#0f172a;margin-top:2px;">아연도금 강철 프레임</div>
+                                </div>
+                                <div style="font-size:12px;color:#64748b;text-align:right;">두께 4T 메인 골조 · 내진 8 / 내풍 12</div>
+                              </div>
+
+                              <div style="background:#f8fafc;border:1px solid #cbd5e1;padding:10px 14px;border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                                <div>
+                                  <span style="font-size:10.5px;color:#0284c7;font-weight:800;background:#e0f2fe;padding:2px 6px;border-radius:6px;">LAYER 02</span>
+                                  <div style="font-size:13.5px;font-weight:800;color:#0f172a;margin-top:2px;">플루오로카본 패널 (PVDF)</div>
+                                </div>
+                                <div style="font-size:12px;color:#64748b;text-align:right;">PVDF 알루미늄 외장 · 20년+ 색상유지</div>
+                              </div>
+
+                              <div style="background:#f8fafc;border:1px solid #cbd5e1;padding:10px 14px;border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                                <div>
+                                  <span style="font-size:10.5px;color:#0284c7;font-weight:800;background:#e0f2fe;padding:2px 6px;border-radius:6px;">LAYER 03</span>
+                                  <div style="font-size:13.5px;font-weight:800;color:#0f172a;margin-top:2px;">Low-E 복층 강화유리</div>
+                                </div>
+                                <div style="font-size:12px;color:#64748b;text-align:right;">54mm 삼중곡면 · 열차단 &amp; 방음 동시</div>
+                              </div>
+
+                              <div style="background:#f8fafc;border:1px solid #cbd5e1;padding:10px 14px;border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                                <div>
+                                  <span style="font-size:10.5px;color:#0284c7;font-weight:800;background:#e0f2fe;padding:2px 6px;border-radius:6px;">LAYER 04</span>
+                                  <div style="font-size:13.5px;font-weight:800;color:#0f172a;margin-top:2px;">고밀도 PU 폼 단열재</div>
+                                </div>
+                                <div style="font-size:12px;color:#64748b;text-align:right;">0.15 W/㎡K · -40℃ 단열 및 방화</div>
+                              </div>
+
+                              <div style="background:#f8fafc;border:1px solid #cbd5e1;padding:10px 14px;border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                                <div>
+                                  <span style="font-size:10.5px;color:#0284c7;font-weight:800;background:#e0f2fe;padding:2px 6px;border-radius:6px;">LAYER 05</span>
+                                  <div style="font-size:13.5px;font-weight:800;color:#0f172a;margin-top:2px;">SPC 친환경 바닥재</div>
+                                </div>
+                                <div style="font-size:12px;color:#64748b;text-align:right;">석재-플라스틱 복합 · 내수·내마모</div>
+                              </div>
+                            </div>
                           </div>
                         </div>
 
-                        <!-- 6대 성능 그리드 -->
-                        <div class="grid g6" style="gap:10px;">
-                          <div style="background:#ffffff;border:1.5px solid #cbd5e1;padding:12px;border-radius:10px;text-align:center;">
-                            <div style="font-size:11px;color:#475569;font-weight:800;" data-i18n="capsule-cert1-lbl">내진 등급</div>
-                            <div style="font-size:16px;color:#0f172a;font-weight:900;margin-top:2px;" data-i18n="capsule-cert1-val">8 레벨</div>
+                        <!-- Part 2: 6대 핵심 성능 등급 & KC 인증 -->
+                        <div class="card" style="padding:24px;background:#ffffff;border-radius:18px;display:flex;flex-direction:column;justify-content:space-between;">
+                          <div>
+                            <span class="badge-box" style="background:rgba(2,132,199,0.12);color:#0284c7;border-color:rgba(2,132,199,0.3);">Performance &amp; Certification</span>
+                            <h3 style="font-size:19px;margin:8px 0 6px;color:#0f172a;">6대 핵심 성능 등급 &amp; KC 인증</h3>
+                            <p style="font-size:13px;color:#475569;margin:0 0 16px;line-height:1.55;">
+                              내진·내풍·방수·단열·방화·방청 6대 기준을 완벽하게 검증받아 국내 최초로 공식 KC 인증을 취득했습니다.
+                            </p>
+
+                            <!-- 6대 성능 2x3 그리드 -->
+                            <div class="grid g2" style="gap:10px;margin-bottom:14px;">
+                              <div style="background:#f8fafc;border:1.5px solid #cbd5e1;padding:12px 14px;border-radius:10px;">
+                                <div style="font-size:11px;color:#475569;font-weight:800;" data-i18n="capsule-cert1-lbl">01 · 내진 등급</div>
+                                <div style="font-size:16px;color:#0f172a;font-weight:900;margin-top:2px;" data-i18n="capsule-cert1-val">8 레벨 (진동 흡수)</div>
+                              </div>
+                              <div style="background:#f8fafc;border:1.5px solid #cbd5e1;padding:12px 14px;border-radius:10px;">
+                                <div style="font-size:11px;color:#475569;font-weight:800;" data-i18n="capsule-cert2-lbl">02 · 내풍 등급</div>
+                                <div style="font-size:16px;color:#0f172a;font-weight:900;margin-top:2px;" data-i18n="capsule-cert2-val">12 레벨 (태풍 대응)</div>
+                              </div>
+                              <div style="background:#f8fafc;border:1.5px solid #cbd5e1;padding:12px 14px;border-radius:10px;">
+                                <div style="font-size:11px;color:#475569;font-weight:800;" data-i18n="capsule-cert3-lbl">03 · 방수 등급</div>
+                                <div style="font-size:16px;color:#0369a1;font-weight:900;margin-top:2px;" data-i18n="capsule-cert3-val">IPX5 (폭우 차단)</div>
+                              </div>
+                              <div style="background:#f8fafc;border:1.5px solid #cbd5e1;padding:12px 14px;border-radius:10px;">
+                                <div style="font-size:11px;color:#475569;font-weight:800;" data-i18n="capsule-cert4-lbl">04 · 단열 성능</div>
+                                <div style="font-size:16px;color:#0f172a;font-weight:900;margin-top:2px;" data-i18n="capsule-cert4-val">-40℃ 단열 유지</div>
+                              </div>
+                              <div style="background:#f8fafc;border:1.5px solid #cbd5e1;padding:12px 14px;border-radius:10px;">
+                                <div style="font-size:11px;color:#475569;font-weight:800;" data-i18n="capsule-cert5-lbl">05 · 방화 등급</div>
+                                <div style="font-size:16px;color:#0f172a;font-weight:900;margin-top:2px;" data-i18n="capsule-cert5-val">A급 불연 자재</div>
+                              </div>
+                              <div style="background:#f8fafc;border:1.5px solid #cbd5e1;padding:12px 14px;border-radius:10px;">
+                                <div style="font-size:11px;color:#475569;font-weight:800;" data-i18n="capsule-cert6-lbl">06 · 방청 내구성</div>
+                                <div style="font-size:16px;color:#059669;font-weight:900;margin-top:2px;" data-i18n="capsule-cert6-val">20년+ 내부식</div>
+                              </div>
+                            </div>
                           </div>
-                          <div style="background:#ffffff;border:1.5px solid #cbd5e1;padding:12px;border-radius:10px;text-align:center;">
-                            <div style="font-size:11px;color:#475569;font-weight:800;" data-i18n="capsule-cert2-lbl">내풍 등급</div>
-                            <div style="font-size:16px;color:#0f172a;font-weight:900;margin-top:2px;" data-i18n="capsule-cert2-val">12 레벨</div>
-                          </div>
-                          <div style="background:#ffffff;border:1.5px solid #cbd5e1;padding:12px;border-radius:10px;text-align:center;">
-                            <div style="font-size:11px;color:#475569;font-weight:800;" data-i18n="capsule-cert3-lbl">방수 등급</div>
-                            <div style="font-size:16px;color:#0369a1;font-weight:900;margin-top:2px;" data-i18n="capsule-cert3-val">IPX5</div>
-                          </div>
-                          <div style="background:#ffffff;border:1.5px solid #cbd5e1;padding:12px;border-radius:10px;text-align:center;">
-                            <div style="font-size:11px;color:#475569;font-weight:800;" data-i18n="capsule-cert4-lbl">단열 성능</div>
-                            <div style="font-size:16px;color:#0f172a;font-weight:900;margin-top:2px;" data-i18n="capsule-cert4-val">-40℃ 단열</div>
-                          </div>
-                          <div style="background:#ffffff;border:1.5px solid #cbd5e1;padding:12px;border-radius:10px;text-align:center;">
-                            <div style="font-size:11px;color:#475569;font-weight:800;" data-i18n="capsule-cert5-lbl">방화 등급</div>
-                            <div style="font-size:16px;color:#0f172a;font-weight:900;margin-top:2px;" data-i18n="capsule-cert5-val">A급 불연</div>
-                          </div>
-                          <div style="background:#ffffff;border:1.5px solid #cbd5e1;padding:12px;border-radius:10px;text-align:center;">
-                            <div style="font-size:11px;color:#475569;font-weight:800;" data-i18n="capsule-cert6-lbl">방청 내구성</div>
-                            <div style="font-size:16px;color:#059669;font-weight:900;margin-top:2px;" data-i18n="capsule-cert6-val">20년+</div>
+
+                          <div style="background:#ecfdf5;border:1px solid #a7f3d0;padding:10px 14px;border-radius:10px;font-size:12.5px;color:#065f46;font-weight:700;display:flex;align-items:center;gap:6px;">
+                            <i class="fa-solid fa-certificate" style="color:#059669;"></i> 2024년 국내 최초 KC 인증 취득 완료 (전 모델 표준 규격 적합)
                           </div>
                         </div>
+
                       </div>
 
                       <!-- 표준 시스템 & 스마트 인테리어 쇼케이스 -->
